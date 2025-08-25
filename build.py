@@ -1,14 +1,20 @@
+import json
 import os
 import re
-import xml.etree.ElementTree as ET
+import time
 from xml.dom import minidom
 from openai import OpenAI
-import time
+from dotenv import load_dotenv
+from tqdm import tqdm
 
 # --- 配置 ---
-LLM_MODEL = "qwen/qwen3-coder"
-LLM_API_KEY = ""
-LLM_BASE_URL = "https://ai-assistant.jianguoyun.net.cn/openid/openrouter"
+load_dotenv(override=True)
+LLM_MODEL = os.getenv("llm_model")
+LLM_API_KEY = os.getenv("llm_api_key")
+LLM_BASE_URL = os.getenv("llm_base_url")
+print(f"LLM_MODEL: {LLM_MODEL}")
+print(f"LLM_API_KEY: {LLM_API_KEY[:4]}***")
+print(f"LLM_BASE_URL: {LLM_BASE_URL}")
 llm_client = OpenAI(api_key=LLM_API_KEY, base_url=LLM_BASE_URL)
 
 # --- 工具函数 ---
@@ -26,15 +32,17 @@ def pretty_print_xml(xml_string):
         print("将返回原始字符串:")
         return xml_string
 
-def call_llm_with_prompt(prompt):
-    """封装调用LLM API的函数 (通过 LiteLLM)，包含重试机制"""
-    messages = [{"role": "user", "content": prompt}]
-    
+def call_llm_with_prompt(prompt, system_prompt=None):
+    messages = []
+    if system_prompt:
+        messages.append({"role": "system", "content": system_prompt})
+    messages.append({"role": "user", "content": prompt})
+
     max_retries = 3
     delay = 5  # seconds
     for attempt in range(max_retries):
         try:
-            print(f"正在LLM API (尝试次数 {attempt + 1}/{max_retries})...")
+            print(f"正在调用LLM API (尝试次数 {attempt + 1}/{max_retries})...")
             # 使用 litellm.completion 调用模型
             response = llm_client.chat.completions.create(
                 model=LLM_MODEL,
@@ -115,7 +123,7 @@ def parse_markdown_sections(markdown_text):
     
     # 为每个章节分割内容，包含所有子章节
     sections = []
-    references = ""
+    references = []
     for i, header in enumerate(header_matches):
         # 确定章节内容的结束位置（下一个同级别标题之前）
         end_position = len(markdown_text)  # 默认到文档末尾
@@ -131,13 +139,20 @@ def parse_markdown_sections(markdown_text):
         content = markdown_text[start_position:end_position]
 
         if "references" in header['text'].lower():
-            references = content
+            ref_dict = {}
+            for line in content.split('\n'):
+                line = line.strip()
+                num = re.match(r'\[(\d+)\]', line)
+                ref = re.sub(r'\[\d+\]\s*', '', line).strip()
+                if num and ref:
+                    ref_dict[num.group(1)] = ref
+            references = [ref_dict[key] for key in sorted(ref_dict.keys(), key=int)]
         else:
-          sections.append({
-              'level': header['level'],
-              'text': header['text'],
-              'content': content
-          })
+            sections.append({
+                'level': header['level'],
+                'text': header['text'],
+                'content': content
+            })
     
     return sections, references
 
@@ -178,20 +193,34 @@ def extract_xml(text: str, tag: str) -> str:
 
 # --- Pipeline 主流程 ---
 
-# 章节内知识抽取
-def knowledge_extraction(chapter_text, references):
-    print("\n" + "="*20 + " 步骤 1: 章节内知识抽取 " + "="*20)
-    
+def references_extraction(chapter_text, references):
+    # 提取章节文本中的所有引用编号（如 [5] 或 [1,2]）
+    def extract_reference_numbers(text):
+        # 匹配 [数字] 或 [数字,数字,...]
+        pattern = r'\[(\d+(?:,\s*\d+)*)\]'
+        matches = re.findall(pattern, text)
+        ref_nums = set()
+        for match in matches:
+            nums = [int(num.strip()) for num in match.split(',')]
+            ref_nums.update(nums)
+        return sorted(ref_nums, key=int)
+
+    ref_nums = extract_reference_numbers(chapter_text)
+    extracted_references = [f"[{ref_num}] {references[ref_num-1]}" for ref_num in ref_nums]
+    return "\n".join(extracted_references)
+
+# Chapter knowledge extraction
+def knowledge_extraction(chapter_text, reference_text):
     prompt_template = """
 <ROLE>
-你是一位严谨的知识工程师，你的任务是将学术论文的特定章节内容，精确地抽取并结构化为XML格式。你必须严格遵循我定义的Schema，不得遗漏信息或添加无关内容。
+You are a rigorous knowledge engineer. Your task is to precisely extract and structure specific chapter content from academic papers into XML format. You must strictly follow the Schema I define, without omitting information or adding irrelevant content.
 </ROLE>
 
 <TASK>
-请仔细阅读我提供的章节全文`<CHAPTER>`和参考文献`<REFERENCES>`，并根据定义的XML Schema，抽取出所有的核心实体和它们之间的关系。特别注意：
-- **实体识别:** 准确识别出所有的技术、概念、优点、缺点和关键参考文献。
-- **关系建立:** 将优点、缺点和参考文献与对应的技术/概念关联起来。
-- **引用溯源:** `<citation>` 标签内必须包含论文中对应的引用编号，例如 `[117]`。
+Please carefully read the complete chapter text I provide in `<CHAPTER>` and references in this chapter`<REFERENCES>`, and extract all core entities and their relationships according to the defined XML Schema. Pay special attention to:
+- **Entity identification:** Accurately identify all technologies, concepts, advantages, disadvantages, and key references.
+- **Relationship establishment:** Associate advantages, disadvantages, and references with corresponding technologies/concepts.
+- **Citation tracing:** The `<citation>` tag must contain the corresponding citation number from the paper, e.g., `[117]`.
 </TASK>
 
 <CHAPTER>
@@ -203,39 +232,39 @@ def knowledge_extraction(chapter_text, references):
 </REFERENCES>
 
 <OUTPUT_SCHEMA>
-请严格按照以下XML结构输出结果：
+Please strictly output results according to the following XML structure:
 ```xml
 <knowledge_extraction>
   <scope>
-    <chapter>章节标题</chapter>
-    <section>如果适用，填写小节标题</section>
+    <chapter>Chapter title</chapter>
+    <section>If applicable, fill in section title</section>
   </scope>
   <entities>
     <technologies_and_concepts>
       <concept>
-        <name>实体名称 (例如: Poisson Process)</name>
-        <description>对该技术或概念的简要描述 (1-3句话)。</description>
+        <name>Entity name (e.g., Poisson Process)</name>
+        <description>A brief description of this technology or concept (1-3 sentences).</description>
         <attributes>
           <advantages>
-            <advantage>优点1</advantage>
+            <advantage>Advantage 1</advantage>
           </advantages>
           <limitations>
-            <limitation>局限性1</limitation>
+            <limitation>Limitation 1</limitation>
           </limitations>
           <key_findings>
-            <finding>关键发现1</finding>
+            <finding>Key finding 1</finding>
           </key_findings>
         </attributes>
         <citations>
-          <citation>[相关的参考文献编号1]</citation>
+          <citation>[Related reference number 1]</citation>
         </citations>
       </concept>
     </technologies_and_concepts>
   </entities>
   <key_references_in_chapter>
     <reference>
-      <citation_id>[引用编号]</citation_id>
-      <description>这篇文献的主要贡献是什么。</description>
+      <citation_id>[Citation number]</citation_id>
+      <description>What is the main contribution of this literature.</description>
     </reference>
   </key_references_in_chapter>
 </knowledge_extraction>
@@ -243,120 +272,140 @@ def knowledge_extraction(chapter_text, references):
 </OUTPUT_SCHEMA>
 
 <INSTRUCTION>
-请开始处理我提供的章节文本，并生成符合上述Schema的XML输出。
+Please begin processing the chapter text I provide and generate XML output that conforms to the above Schema.
 </INSTRUCTION>
 """
-    prompt = prompt_template.format(CHAPTER=chapter_text, REFERENCES=references)
+    prompt = prompt_template.format(CHAPTER=chapter_text, REFERENCES=reference_text)
     knowledge_xml = call_llm_with_prompt(prompt)
+    return knowledge_xml
 
-    print("\n--- LLM 返回的结构化知识 (XML格式) ---")
-    print(pretty_print_xml(knowledge_xml))
-
-    knowledge = {}
-    knowledge_extraction_xml = extract_xml(knowledge_xml, "knowledge_extraction")
-    if knowledge_extraction_xml:
-        scope_xml = extract_xml(knowledge_extraction_xml, "scope")
-        if scope_xml:
-            chapter = extract_xml(scope_xml, "chapter")
-            section = extract_xml(scope_xml, "section")
-            knowledge["scope"] = {"chapter": chapter, "section": section}
-
-            # entities_xml = extract_xml(knowledge_extraction_xml, "entities")
-            # for entity_xml in entities_xml:
-            #     name = extract_xml(entity_xml, "name")
-            #     description = extract_xml(entity_xml, "description")
-            #     advantages = extract_xml(entity_xml, "advantages")
-            #     limitations = extract_xml(entity_xml, "limitations")
-            #     key_findings = extract_xml(entity_xml, "key_findings")
-            #     citations = extract_xml(entity_xml, "citations")
-            #     knowledge["entities"].append({
-            #         "name": name,
-            #         "description": description,
-            #         "advantages": advantages,
-            #         "limitations": limitations,
-            #         "key_findings": key_findings,
-            #         "citations": citations
-            #     })
-
-    return knowledge
-
-# 4. 构建聚焦型查询-答案对 (Prompt 4)
-def step_4_qa_formulation(knowledge_xml):
-    """
-    执行流程的第四步：根据结构化知识构建QA对。
-    """
-    print("\n" + "="*20 + " 步骤 4: 构建聚焦型查询-答案对 " + "="*20)
-    
+# 构建聚焦型查询-答案对
+def qa_extraction(knowledge_text, chapter_text, reference_text):
     prompt_template = """
-# ROLE
-你是一位专业的教育评估专家，你的任务是基于一份结构化的知识摘要（XML格式），设计一系列能够精确评估AI研究助理能力的查询-答案对。
+<ROLE>
+You are a professional educational assessment expert. Your task is to design a series of query-answer pairs that can accurately assess the capabilities of AI research assistants based on a structured knowledge summary (XML format).
+</ROLE>
 
-# TASK
-请分析我提供的XML格式的知识摘要，并创建3-5个高质量的查询-答案对。这些查询应覆盖不同类型的认知能力，并严格遵循我定义的输出格式。
-查询类型应至少包含以下几种中的三种：
-1.  **总结型 (summary):** 要求对某个技术或概念进行全面总结。
-2.  **比较型 (comparison):** 要求比较两个或多个技术的优缺点。
-3.  **细节型 (specific_detail):** 针对某个具体的优点、缺点或关键发现提问。
-4.  **追溯型 (reference_tracing):** 询问某项关键贡献对应的参考文献。
+<TASK>
+Please analyze the XML format knowledge summary `KNOWLEDGE`, the full chapter text `<CHAPTER>` and the reference of this chapter `<REFERENCES>`, and create 3-5 high-quality query-answer pairs. These queries should cover different types of cognitive abilities and strictly follow the output format I defined.
+The query types must include at least three of the following:
+1.  **Summary (summary):** Requires a comprehensive summary of a specific technology or concept.
+2.  **Comparison (comparison):** Requires a comparison of the advantages and disadvantages of two or more technologies.
+3.  **Specific Detail (specific_detail):** Asks about a specific advantage, disadvantage, or key finding.
+4.  **Reference Tracing (reference_tracing):** Inquires about the reference literature corresponding to a key contribution.
+</TASK>
 
-# INPUT CONTEXT
-[INPUT_CONTEXT]
+<KNOWLEDGE>
+{KNOWLEDGE}
+</KNOWLEDGE>
 
-# OUTPUT FORMAT
-请严格按照以下XML格式，将所有生成的查询-答案对包裹在一个根元素`<qa_pairs>`中：
+<CHAPTER>
+{CHAPTER}
+</CHAPTER>
+
+<REFERENCES>
+{REFERENCES}
+</REFERENCES>
+
+<OUTPUT_FORMAT>
+Please strictly follow the XML format below, wrapping all generated query-answer pairs in a root element `<qa_pairs>`:
 ```xml
 <qa_pairs>
-  <qa_pair id="自动生成的唯一ID (例如: NTS_Survey_Chap4_Q1)">
-    <scope>
-      <chapter>源章节标题</chapter>
-      <section>源小节标题</section>
-    </scope>
-    <query_type>查询类型 (summary, comparison, specific_detail, reference_tracing)</query_type>
-    <query_text>生成的查询问题文本。</query_text>
+  <qa_pair id="Auto-generated unique ID (e.g., NTS_Survey_Chap4_Q1)">
+    <chapter>Source chapter title</chapter>
+    <section>Source section title</section>
+    <query_type>Query type (summary, comparison, specific_detail, reference_tracing)</query_type>
+    <query_text>Generated query question text.</query_text>
     <ground_truth>
       <key_points>
         <point>
-          <text>必须回答的关键点1。</text>
+          <text>Key point 1 that must be answered.</text>
           <citations>
-            <citation>支持该观点的参考文献编号</citation>
+            <citation>Reference number supporting this viewpoint</citation>
           </citations>
         </point>
       </key_points>
       <expected_keywords>
-        <keyword>用于评估的关键词1</keyword>
+        <keyword>Keyword 1 for evaluation</keyword>
       </expected_keywords>
     </ground_truth>
   </qa_pair>
 </qa_pairs>
 ```
+</OUTPUT_FORMAT>
 
-# INSTRUCTION
-请根据我提供的知识摘要XML，开始生成查询-答案对。
+<INSTRUCTION>
+Please begin generating query-answer pairs based on the knowledge summary XML I provide.
+</INSTRUCTION>
 """
-    qa_pairs_xml = call_llm_with_prompt(prompt_template, knowledge_xml)
-    
-    print("\n--- LLM 生成的最终基准数据集模块 (XML格式) ---")
-    print(pretty_print_xml(qa_pairs_xml))
-    
-    return qa_pairs_xml
+    prompt = prompt_template.format(KNOWLEDGE=knowledge_text, CHAPTER=chapter_text, REFERENCES=reference_text)
+    response = call_llm_with_prompt(prompt)
+
+    qa = []
+    qa_pairs_xml = re.findall(r'<qa_pair id=".*?">.*?</qa_pair>', response, re.DOTALL)
+    for qa_pair_xml in qa_pairs_xml:
+        chapter = extract_xml(qa_pair_xml, "chapter")
+        section = extract_xml(qa_pair_xml, "section")
+        query_type = extract_xml(qa_pair_xml, "query_type")
+        query_text = extract_xml(qa_pair_xml, "query_text")
+        ground_truth_xml = extract_xml(qa_pair_xml, "ground_truth")
+        key_points_xml = re.findall(r'<point>.*?</point>', ground_truth_xml, re.DOTALL)
+        key_points = []
+        for key_point_xml in key_points_xml:
+            key_point = extract_xml(key_point_xml, "text")
+            citations_xml = re.findall(r'<citation>.*?</citation>', key_point_xml, re.DOTALL)
+            citations = []
+            for citation_xml in citations_xml:
+                citation = extract_xml(citation_xml, "citation")
+                citations.append(citation.removeprefix("[").removesuffix("]"))
+            key_points.append({
+                "text": key_point,
+                "citations": citations
+            })
+        keywords = []
+        keywords_xml = re.findall(r'<keyword>.*?</keyword>', ground_truth_xml, re.DOTALL)
+        for keyword_xml in keywords_xml:
+            keyword = extract_xml(keyword_xml, "keyword")
+            keywords.append(keyword)
+        qa.append({
+            "chapter": chapter,
+            "section": section,
+            "query_type": query_type,
+            "query_text": query_text,
+            "ground_truth": {
+                "key_points": key_points,
+                "expected_keywords": keywords
+            }
+        })
+
+    return qa
 
 # --- 运行完整的 Pipeline ---
 if __name__ == "__main__":
-    dir = "src/evaluation/data/raw"
-    for file in os.listdir(dir):
-        print(f"\n正在处理文件: {file}")
-        full_paper_text = load_paper(os.path.join(dir, file))
-        sections, references = parse_markdown_sections(full_paper_text)
-        print(len(sections), "个章节被解析。")
+    file = "data/AI4Research - A Survey of Artificial Intelligence for Scientific Research.md"
+    print(f"\n正在处理文件: {file}")
+    full_paper_text = load_paper(file)
+    sections, references = parse_markdown_sections(full_paper_text)
+    print(f"{len(sections)}个章节被解析。")
 
-        for section in sections:
-            knowledge = knowledge_extraction(section["content"], references)
-            print(knowledge.to_dict())
+    idx = 0
+    for section in tqdm(sections, desc="Processing sections"):
+        if section["level"] == 1:
+            continue
+        section_content = section["content"]
+        print(f"章节总字数: {len(section_content)} 字")
+        reference_text = references_extraction(chapter_text=section_content, references=references)
+        print(f"章节引用总字数: {len(reference_text)} 字")
+        knowledge = knowledge_extraction(section_content, reference_text)
+        print(f"知识抽取结果: {knowledge}")
+        print(f"知识抽取结果总字数: {len(knowledge)} 字")
+        qa_pairs = qa_extraction(knowledge, section_content, reference_text)
+        data = {
+            "section_content": section_content,
+            "qa_pairs": qa_pairs,
+            "references": references
+        }
+        print(json.dumps(data["qa_pairs"], ensure_ascii=False, indent=2))
+        idx += 1
+        if idx >= 2:
             break
-
-    #     final_dataset_module = step_4_qa_formulation(extracted_knowledge)
-
-    #     print("\n" + "="*20 + " Pipeline 执行完毕 " + "="*20)
-    #     print("您已成功生成一个Veritas Benchmark的数据集模块。")
-    #     print("您可以将最后一个XML输出保存为文件，作为基准测试的一部分。")
-        break

@@ -10,7 +10,7 @@ Abstract - Weed mapping plays a critical role in precision management by providi
 
 Keywords: Weed mapping, remote sensing, machine learning, deep learning, drone, satellite
 
-# I. Introduction
+## I. Introduction
 
 Invasive weeds present a major threat to both agricultural productivity and environmental sustainability globally. Their spread leads to considerable economic losses by competing with the crop and reducing crop yields, disrupting harvesting, and promoting insect pests and diseases [1, 2]. As the agricultural sector contends with these impacts, effective weed management strategies are crucial to support sustainable food production and protect natural ecosystems.
 
@@ -40,7 +40,7 @@ Figure 2: The literature selection flowchart through consecutive inclusion/exclu
 
 flow of technical discussions is summarized in Figure 1, covering acquisition, processing, and mapping. Section III discusses data acquisition tools used in weed mapping, including a review of imaging sensors, agricultural machinery, and remote sensing platforms such as drones and satellites. Section IV explores weed data processing techniques and technologies, covering key aspects such as big data handling, data annotation, deep learning models, and edge computing solutions. Section V focuses on weed mapping technologies, discussing spatiotemporal weed patterns, the impact of farm management practices, and commonly used mapping tools and decision- support systems. Finally, Section VI outlines future research directions and technological innovations needed to advance the field of precision weed management.
 
-# II. Survey Methodology
+## II. Survey Methodology
 
 This systematic review was conducted following the PRISMA guidelines, ensuring a transparent, methodical, and replicable approach to synthesizing the literature on weed mapping in agriculture. The use of PRISMA enhances the scientific quality of the study by reducing bias through comprehensive and structured literature searches, while providing a clear account of the procedures undertaken throughout the review process. The methodology was carried out in three main phases: identification, screening, and eligibility, as illustrated in Figure 2.
 
@@ -52,23 +52,23 @@ In the final eligibility phase, the remaining 207 articles were subjected to a m
 
 These 151 studies comprise 135 journal articles, 8 government, web, book, or thesis reports, and 8 conference papers. Their publication years span from 2003 to 2025. A detailed breakdown of these studies based on publication type, publication year, and conceptual focus is presented in Figure 3.
 
-# III. Data Acquisition
+## III. Data Acquisition
 
 Traditional methods for monitoring incursions of invasive weeds are often labor- intensive, time- consuming, expensive, and rarely fully effective [2]. Advancements depend on the development of efficient and scalable data acquisition and processing technologies. Innovative tools, including cameras and sensor- based systems, must be capable of addressing the dynamic characteristics of weeds and the vast scale of agricultural landscapes to enable effective detection and tracking of infestations. This section will explore modern approaches to data acquisition in weed surveillance.
 
-# Data Capture Modalities
+### Data Capture Modalities
 
 The integration of advanced imaging technologies in agriculture has significantly enhanced weed mapping and crop monitoring. These technologies leverage different parts of the electromagnetic spectrum in Figure
 
 4a to capture vital information about crops, soil, and surrounding vegetation. The following subsections discuss various imaging modalities and their applications in agricultural practices, particularly in weed management.
 
-# X-ray
+#### X-ray
 
 X- ray technology is widely utilized in agriculture for detecting contaminants in food packaging and assessing the quality of agricultural products. X- rays reveal spatial information and acquire three- dimensional data, making them effective for detecting density variations in varied materials. Most agricultural applications employ soft X- rays, which have been extensively used for studying crops, soil, grains, tree nuts, and fruits [11]. Soft X- ray technology with low energy and longer wavelength (compared to hard X- rays) allows for detailed visualization of internal structures in thin- film materials, making it a valuable tool for quality assessment in agricultural products.
 
 In weed management, soft X- ray imaging plays a crucial role in seed inspection, commonly known as seed radiography [12]. This technique helps identify and remove weed seeds from agricultural good seed batches by analyzing their internal structures before planting. By sorting out undesirable weed seeds, farmers can reduce the risk of weed infestations, leading to improved crop productivity and quality.
 
-# Visible RGB
+#### Visible RGB
 
 RGB imaging relies on visible light to capture high- resolution images of crops and weeds. The quality of image acquisition is dependent on two primary components: illumination sources and camera systems. The choice of illumination significantly influences the ability to extract texture, shape, and color features of agricultural objects.
 
@@ -88,7 +88,7 @@ Cameras, the other major component of RGB imaging, include monocular and binocul
 
 Binocular cameras are successfully utilized in [15] for weed detection in rice fields, significantly improving classification accuracy compared to conventional single- source cameras. By capturing stereoscopic video data and incorporating 3D depth perception under controlled light conditions, the study leveraged a computer vision system that achieved  $96.95\%$  weed classification accuracy. This helps distinguish between similar- looking plants more effectively than single- camera systems.
 
-# Spectral
+#### Spectral
 
 Spectral remote sensors have transformed the way we collect and analyze data on various weed species across different environments. These advanced sensors capture detailed spectral reflectance information from target plants, supporting agricultural applications such as weed identification, crop yield estimation, and disease monitoring. Spectral imaging includes multispectral and hyperspectral techniques [16]. Figure 4b compares these techniques with each other and with the RGB imaging method.
 
@@ -102,7 +102,7 @@ Table 1: RGB and spectral imaging technologies reported in the latest weed contr
 
 <table><tr><td rowspan="4">RGB</td><td>Weed</td><td>Amaranthus blitoides</td><td>Amaranthus tuberculatus</td><td>Chromolaena odorata</td><td>Cirsium arvense</td></tr><tr><td>Crop</td><td>Maize [17]</td><td>Black bean, canola, corn, flax, soybean, and sugar beets [18]</td><td>Crop of tropical climate regions [19]</td><td>Wheat [20] and barley [21]</td></tr><tr><td>Weed</td><td>Cynodon dactylon</td><td>Ambrosia artemisiifolia</td><td>Sorghum halepense</td><td>Tussilago farfara</td></tr><tr><td>Crop</td><td>Vine [22]</td><td>Black bean, canola, corn, flax, soybean, and sugar beets [18]</td><td>Maize [17]</td><td>Barley [21]</td></tr><tr><td rowspan="8">Spectral</td><td>Weed</td><td>Ageratum conyzoides</td><td>Avena sterilis</td><td>Amaranthus palmeri</td><td>Bassia scoparia</td></tr><tr><td>Crop</td><td>Sugarcane [23]</td><td>Wheat [24]</td><td>Corn, soybeans, and cotton [25]</td><td>Barley, corn, dry pea, garbanzo, lentils, pinto bean, safflower, and sugar beet [26]</td></tr><tr><td>Weed</td><td>Chenopodium album</td><td>Cirsium arvense</td><td>Commelina bengalensis</td><td>Conyza canadensis</td></tr><tr><td>Crop</td><td>Maize [27]</td><td>Maize and sugar beet [27]</td><td>Sugarcane [23]</td><td>Barley, corn, dry pea, garbanzo, lentils, pinto bean, safflower, and sugar beet [26]</td></tr><tr><td>Weed</td><td>Crotalaria juncea</td><td>Fallopia convolvulus</td><td>Ipomoea hederifolia and Ipomoea purpurea</td><td>Lolium multiflorum and Lolium rigidum</td></tr><tr><td>Crop</td><td>Sugarcane [23]</td><td>Sugar beet [27]</td><td>Sugarcane [23]</td><td>Sugar beet [27] and wheat [24]</td></tr><tr><td>Weed</td><td>Megathyrsus maximus</td><td>Phalaris brachystachys</td><td>Sorghum halepense</td><td>Urochloa brizantha</td></tr><tr><td>Crop</td><td>Sugarcane [23]</td><td>Wheat [24]</td><td>Maize [28]</td><td>Sugarcane [23]</td></tr></table>
 
-# NIR and Thermal
+#### NIR and Thermal
 
 Both Near- Infrared (NIR) and thermal cameras use infrared radiation but differ in their detected wavelength ranges. NIR imaging detects reflected light in the  $700-$ $2500\mathrm{nm}$  range, while thermal imaging captures emitted heat in the  $3\mathrm{- }14\mu \mathrm{m}$  range. These technologies offer critical insights into plant health, transpiration rates, and water potential.
 
@@ -110,15 +110,15 @@ In weed control applications, NIR and thermal cameras can be used in temperature
 
 Weeds often exhibit different thermal properties compared to crops due to variations in water content, leaf structure, and metabolic activity. For example, weeds, competing with crops for resources like water, may have different water content levels, influencing their thermal behavior [30]. Furthermore, leaf structures of crops and weeds, including area and thickness, as well as their metabolic activities (reflected in processes like photosynthesis and respiration) contribute to a plant's energy balance and thus its thermal properties [31].
 
-# Terahertz
+#### Terahertz
 
 Terahertz (THz) imaging is an emerging technology used for detecting small unwanted objects in agricultural environments, such as pests, worms, or foreign bodies in crop yields. This technique employs orthogonally polarized terahertz waves to enhance detection accuracy in various agricultural settings, including conveyor belts and land surveying vehicles.
 
 As THz waves interact differently with plant tissues (based on their water content, chemical composition, and cellular structure) a precise differentiation can be detected between weed species and crops, even in dense vegetation. This differentiation can help identify weeds at early growth stages, even before visible differences appear. THz imaging can also be combined with machine learning algorithms to improve weed classification accuracy, helping farmers and researchers develop targeted weed control strategies [32].
 
-# Data Capture Equipment
+### Data Capture Equipment
 
-# Agri-tech Machinery
+#### Agri-tech Machinery
 
 The application of imaging technologies (discussed in the previous subsection) can benefit from Agri- tech machinery that enables improved spatial resolution, greater coverage, and enhanced temporal flexibility. Among the most appealing approaches are All- Terrain Vehicles (ATVs) and autonomous robotic systems, which provide flexible and responsive solutions to farming operations. These intelligent machines, equipped with state- of- the- art navigation systems, sensors, and AI- driven automation, enable efficient and precise location- specific agricultural tasks, even in challenging terrains [1].
 
@@ -126,7 +126,7 @@ ATVs and agricultural robots enhance productivity by facilitating various farmin
 
 In advanced weed control systems, these machineries employ sophisticated image recognition and classification models to differentiate between crops and weeds [33]. By leveraging real- time sensor data, they execute precise and automated physical weed removal or targeted herbicide applications, reducing the reliance on broad- spectrum chemical treatments. This approach enhances crop health, minimizes agrochemical overspray, and lowers environmental risks associated with traditional weed management strategies [34]. The collection of studies in Table 2 explores various machine vision and AI- based techniques for precision agriculture, focusing on weed and pest detection, automated spraying, and robotic weeding. Commercial solutions (e.g., Trimble's Bilberry, John Deere's See & Spray, and GreenEye) are excluded, as the table focuses exclusively on research- based literature. Besides, some of the listed machines, for example [35], have not been directly used for weed data collection, detection, and management, they provide examples of other machinery and sensors applicable to weed data collection.
 
-# Remote Sensing
+#### Remote Sensing
 
 Remote sensing involves collecting physical information about an object without direct contact [36]. This plays a crucial role in precision agriculture by enabling crops and farmlands monitoring from varying distances. Technologies such as UAVs and satellites provide superior support for agricultural applications, assisting in crop scouting, yield estimation, precise agrochemical application, and weed control.
 
@@ -174,7 +174,9 @@ Table 3: Common satellites in large-scale agricultural applications that have be
 
 MS: Multispectral, HS: Hyperspectral
 
-Satellites: Before the emergence of drones, satellites were the primary platform for agricultural remote sensing due to their widespread availability and costeffectiveness. Satellite- based remote sensing has played a crucial role in monitoring large- scale agricultural landscapes, providing valuable insights into crop health, soil conditions, and environmental factors. Satellites are equipped with a variety of sensors, including optical, multispectral, hyperspectral, radar, and thermal imaging technologies, making them versatile tools for precision agriculture [45].
+##### Satellites
+
+Before the emergence of drones, satellites were the primary platform for agricultural remote sensing due to their widespread availability and costeffectiveness. Satellite- based remote sensing has played a crucial role in monitoring large- scale agricultural landscapes, providing valuable insights into crop health, soil conditions, and environmental factors. Satellites are equipped with a variety of sensors, including optical, multispectral, hyperspectral, radar, and thermal imaging technologies, making them versatile tools for precision agriculture [45].
 
 One of the key advantages of satellite remote sensing is its ability to cover vast or inaccessible areas where traditional field- based data collection methods would be impractical. Several commercial and freely available satellites are equipped with image sensors. However, high- resolution commercial satellite images can be expensive, limiting access for smallholder farmers. A selection of available free and commercial satellites is summarized in Table 3.
 
@@ -188,7 +190,9 @@ As an example of high- resolution commercial satellite application, a noteworthy
 
 grass is an invasive pasture grass that is rapidly spreading through the tropical savannas of northern Australia, increasing fire intensity, and causing ecological damage. To effectively monitor and manage its spread, the researchers developed a machine learning model to ingest high- resolution WorldView- 3 satellite imagery. The results demonstrated that under optimal conditions, gamba grass can be mapped from satellite imagery with an accuracy of up to  $91\%$ . Additionally, spectral indices derived from the imagery significantly improved detection accuracy compared to using raw spectral bands alone.
 
-Drones: While satellites remain indispensable for large- scale and long- term agricultural monitoring, drones have revolutionized precision agriculture by offering ultra- high- resolution imagery with greater flexibility. Advances in sensory and imaging technologies, along with improvements in data processing techniques, continue to enhance the role of drone remote sensing in modern precision farming.
+##### Drones
+
+While satellites remain indispensable for large- scale and long- term agricultural monitoring, drones have revolutionized precision agriculture by offering ultra- high- resolution imagery with greater flexibility. Advances in sensory and imaging technologies, along with improvements in data processing techniques, continue to enhance the role of drone remote sensing in modern precision farming.
 
 Drones, also known as Unmanned Aerial/Aircraft Systems (UAS), offer a cost- effective way to collect aerial data. Although they generate large volumes of data that demand substantial storage and processing, drones can enable farmers to increase productivity and make informed decisions through real- time aerial observation, early disease detection, targeted interventions, and improved agricultural sustainability. A list of drones that have been or can be used in weed mapping is presented in Table 4. Specifically, their capability to flexibly cover large areas and generate high- resolution images aids in identifying and managing weed patches [66].
 
@@ -234,13 +238,13 @@ In addition to data collection, drones can be used for precision spraying. Table
 
 and Yamaha), suitable for smaller fields, feature different tank capacities and nozzle configurations to accommodate varying crop densities and in- flight maneuverability. Fixed- wing drones on the other hand (e.g., Freeman), are more suitable for open- field farms.
 
-# IV. Data Processing
+## IV. Data Processing
 
-# Data
+### Data
 
 Building on the data collection technologies and methods outlined in the previous section, large volumes of data can be gathered, requiring intelligent processing algorithms with advanced capabilities. These algorithms can be applied in a variety of management applications including monitoring vegetation health, identifying crop stress, detecting weeds and insect infestations, and enabling precise application of treatments such as herbicides, pesticides, or fungicides [107]. To effectively develop processing algorithms for these applications, large and diverse datasets, capturing variability across different domains and collected using the collection technologies discussed, are essential. This, in turn, gives rise to the big data challenge in agriculture.
 
-# Big Data
+#### Big Data
 
 Big data refers to extremely large and/or diverse data types that are difficult to manage using traditional data processing tools. Agricultural data is especially getting big, due to the increasing use of technology like Internet of Things (IoT), drones, and satellites [108, 109]. Effectively handling heterogeneous agricultural data, such as environmental (temperature, humidity, rainfall), soil data (pH, moisture, nutrient levels), crop data (yield, health, growth stages, weed, pest, disease), and market data (prices, demand, supply), necessitates sophisticated data warehouses capable of storing, cleaning, standardizing, and integrating/fusing information from disparate sources [110]. Data storage and processing require scalable and cost- effective infrastructure, often leveraging cloud computing platforms. Hadoop [link] and other big data tools offer a promising solution to handle massive volumes of data generated in agriculture.
 
@@ -248,7 +252,7 @@ Cleaning data to remove noise and outliers, along with standardizing formats and
 
 FAIR (Findable, Accessible, Interoperable, and Reusable) principles of data stewardship.
 
-# Data Fusion
+#### Data Fusion
 
 Once cleaned and standardized, the data can be more easily fused to develop integrated systems that support precision agriculture, where timely and accurate information is critical. Data fusion techniques integrate information from multiple sources, including satellites, drones, sensor networks, and weather stations. By combining these diverse datasets, a more comprehensive understanding of field conditions is obtained, identifying key farming patterns, predicting risks, and enhancing the accuracy and reliability of agricultural decision- making [3].
 
@@ -286,7 +290,7 @@ The fused image will then be reconstructed by an inverse transformation.</td></t
 
 Another noteworthy work is conducted by Xia et al. [118], where they introduced a novel approach to weed resistance management by developing a comprehensive resistance score and using multimodal data sources, i.e., spectral, structural, and textural, to map herbicide- resistant weeds. By employing deep learning and various fusion strategies, especially late deep fusion models, the researchers enhanced resistance assessment accuracy. The hyperspectral data proved most informative individually, but combining all modalities coupled with deep learning, significantly improved regression performance across different weed densities.
 
-# Citizen Science
+#### Citizen Science
 
 Citizen science in agriculture involves the active participation of non- specialists, such as farmers, in scientific research processes. This approach leverages the collective power of individuals to gather data, conduct experiments, and contribute to agricultural innovation. By engaging citizens, researchers can access vast amounts of localized data that would otherwise be difficult or expensive to collect. In agriculture, citizen science has been particularly valuable for on- farm testing of crop varieties, monitoring environmental conditions, and assessing pest and weed infestations.
 
@@ -303,7 +307,7 @@ Weed mapping is a critical application of citizen science in agriculture, as it 
 
 The potential of citizen science for weed mapping extends beyond data collection to fostering collaboration between farmers, researchers, and policymakers. By involving farmers in the research process, citizen science projects can generate locally relevant solutions that are more likely to be adopted. Moreover, the data collected can inform sustainable weed management strategies, such as ecological redesign of cropping systems and the use of microbial nitrogen immobilization to suppress weed growth [122].
 
-# Data Annotation
+#### Data Annotation
 
 A fundamental objective shared across computer visionbased precision agriculture tasks is the accurate detection of specific objects of interest, e.g., weeds, crops, or fruits, while distinguishing them from the surrounding environment. Achieving this not only depends on well- designed model architecture and reliable hardware implementations but also requires robust supervised or semi- supervised data. This typically involves training machine learning models on carefully annotated images to enable accurate and consistent identification [123].
 
@@ -330,25 +334,25 @@ extensive retraining. This is achieved by aligning visual features with rich sem
 
 Furthermore, Few- shot segmentation, a technique designed to perform image segmentation with minimal training examples, is particularly useful in weed mapping due to the excessive cost and effort associated with acquiring labeled data. By combining LLMs with few- shot learning techniques [130], researchers can develop robust weed mapping systems that require only a handful of annotated images to accurately segment different weed species.
 
-# Machine/Deep Learning
+### Machine/Deep Learning
 
 Machine Learning (ML) and Deep Learning (DL) are foundational to the advancement of modern weed mapping technologies in agriculture. These computational methods have significantly outperformed traditional approaches in terms of detection accuracy, cost efficiency, and implementation adaptability. By leveraging intelligent algorithms, ML and DL facilitate various tasks such as weed identification, spatial mapping, resource optimization, and automated treatment strategies [131].
 
 This section explores the major applications of ML in weed mapping, organized into four key areas: classification, detection, segmentation, and LLMs. These key application areas are illustrated in Figure 5. Classification models can identify the presence or absence of weeds in an image [132], but lack precise spatial information. Object detection models locate weeds by drawing bounding boxes around them, providing spatial coordinates but limited pixel- level detail [80]. Semantic and instance segmentation models classify each pixel in an image as either weed or crop, generating detailed weed maps and facilitating precise herbicide application [132]. While the application of LLMs in weed mapping is nascent, their potential lies in integrating contextual information with image data to answer end- users' queries. This can be particularly important in analyzing farmer's field notes and improving weed prediction and management [130].
 
-# Classification
+#### Classification
 
 As stated before, weed classification involves categorizing different plant species, particularly distinguishing between weeds and crops, from images or sensor- derived data. This is essential for speciesspecific control and effective weed management strategies. Traditional Machine Learning: Algorithms like K- Nearest Neighbors (KNN), Random Forest, and Decision Trees remain effective for smaller datasets or environments with limited computational capabilities. These methods require manual feature extraction, such as color, shape, and texture descriptors, and are still viable for initial feasibility studies or resource- limited settings [41].
 
 Modern DL architectures such as ResNet, EfficientNet, and Vision Transformers (ViTs) have demonstrated exceptional accuracy in plant classification tasks. These models automatically learn complex visual features and patterns from large agricultural image datasets, offering improved performance over handcrafted feature methods. Lightweight Convolutional Neural Networks (CNNs) are also widely used [133], especially for scenarios with complex backgrounds or constrained hardware resources [8].
 
-# Detection
+#### Detection
 
 Weed detection focuses on locating the presence and position of weeds within an image or field. A variety of architectures are employed, with You Only Look Once (YOLO) variants, including YOLOv3 to YOLOv10, being particularly popular due to their speed and efficiency in real- time applications. For instance, when detecting volunteer cotton weed plants in corn fields, YOLOv3 achieved an average detection accuracy exceeding  $80\%$  with an F1- score of  $78.5\%$  [98].A study in 2025 compared YOLOv5 and YOLOv8 for weed detection in cotton farming, highlighting their effectiveness in identifying weeds that compete with cotton crops [134]. Furthermore, research explores modifications and enhancements to the YOLO architecture, such as the PMDNet model built upon YOLOv5, designed for efficient weed detection in wheat fields [135].
 
 Beyond the YOLO family, other deep learning architectures are also being explored for weed detection. Region- based Convolutional Neural Networks (RCNNs) have been applied to detect and classify weeds in potato field, demonstrating the potential of these models in specific agricultural contexts [97]. ViTs are also being considered as effective DL architectures, where these attention- based models are implemented as intelligent weed control system in natural corn fields [136].
 
-# Segmentation
+#### Segmentation
 
 Weed segmentation involves partitioning an image into distinct regions/pixels corresponding to crops and weeds. This provides a more detailed understanding of weed distribution and density compared to detection alone, allowing for precise herbicide application, reducing overall chemical usage, minimizing
 
@@ -360,7 +364,7 @@ Farmers usually plant a specific type of crop in their farms. Some studies use t
 
 Data augmentation techniques to increase the size and diversity of training datasets [141], synthetic data generation (i.e., creating realistic training samples) by pasting segmented plant patches onto soil backgrounds to address the scarcity of labeled data [142], and transfer- learning approaches to leverage knowledge from existing datasets and improve model performance in new environments or with different crop types [143] are among the other weed segmentation improvement solutions.
 
-# Large Language Models
+#### Large Language Models
 
 LLMs are increasingly being explored for their potential to revolutionize various aspects of the agricultural sector, including weed management. They offer a promising avenue for automating and enhancing annotation delays, especially without human expert involvement, leading to more efficient and targeted weed control strategies [144]. These models can integrate image features from DL models with textual contexts from natural language processing models to offer a unified query- able neural network.
 
@@ -368,7 +372,7 @@ LLMs are also being used to enhance named entity recognition for agricultural co
 
 The combination of Reinforcement Learning (RL) and LLMs represents a novel approach with transformative potential in the agricultural sector, offering adaptive strategies. In research conducted by Chen et al. [147], the study emphasizes the importance of efficient and sustainable crop production management, aiming to minimize environmental impacts through RL- LLM integration. Traditional methods struggle to adapt to the evolving dynamics influenced by climate change, soil variability, and market conditions, whereas RL- LLM integration has enhanced crop management decision support systems by optimizing decision- making through data- driven approaches. Despite considerable progress, challenges related to real- world deployment complexities remain.
 
-# Edge Processing
+#### Edge Processing
 
 Edge processing, defined as the deployment of ML and DL models on local devices rather than relying on cloud- based computing, holds significant promise in agricultural applications such as weed mapping. Traditional approaches often require extensive computational resources and suffer from latency issues when processing substantial amounts of data from remote locations. By contrast, edge processing allows for real- time analysis directly at the source, which is crucial for off- grid, time- sensitive, and/or continuous detection tasks in field vehicles/robots [148]. This capability is especially advantageous in environments where real- time monitoring and immediate response are necessary.
 
@@ -376,9 +380,9 @@ In weed mapping, edge processing offers several advantages. Firstly, it enables 
 
 Edge processing has certain limitations, such as lower throughput, limited memory that restricts model complexity, and constrained energy availability. Nonetheless, it plays a crucial role in enabling faster and more precise weed control strategies. Once weeds are identified on edge, immediate management action can be taken. This approach not only enhances operational efficiency but also supports sustainable farming practices by reducing chemical usage and preserving soil health [149].
 
-# V. Weed Mapping
+## V. Weed Mapping
 
-# Spatiotemporal Patterns
+### Spatiotemporal Patterns
 
 Understanding the spatial and temporal distribution of weed species within agricultural and environmental systems presents a complex challenge due to the inherent heterogeneity of agroecosystems. Variability in weed distribution arises from both regional and local factors. At the regional scale, differences in climate, field management histories, landscape structure, and soil composition contribute to weed diversity. Locally, factors such as farmer expertise, cultural practices, soil characteristics, topography, and microclimatic conditions significantly affect weed emergence and distribution. Temporal dynamics of weed distribution are also essential for optimizing long- term management strategies. Weed patches keep changing spatially over time, including the annual changes in patch boundaries, and instabilities in their distributions [150].
 
@@ -388,7 +392,7 @@ Seeds' weight, morphology, aerodynamic, and parent's height are other factors th
 
 Temporal weed mapping is as important as its spatial patterns. However,  $63\%$  of studies spanned only one to two years, making them insufficient for assessing longterm temporal weed trends. Only  $6\%$  extended beyond five years. Species with wind- dispersed seeds or low population density tend to show less temporal stability. Understanding temporal trends in time- based weed mapping allows for strategic pre- emergence and postemergence herbicide applications based on historical data. For persistent weed patches, farmers can timely localize their pre- emergent herbicides, thus optimizing product efficiency. The exact timing of post- emergence treatments also depends on the weed emergence pattern to avoid inefficiencies and off- target effects [150].
 
-# Farm Management Effects
+### Farm Management Effects
 
 Farm management practices significantly influence weed distribution by altering soil conditions, crop rotation patterns, and disturbance regimes. In this regard, cropping systems (i.e., crop type and its associated management practices) heavily influence the weed population and distribution dynamics. Crop canopy architecture, growth vigor, and competitive traits affect weed suppression [154]. For example, maize creates dense shade that limits weed growth, while onion with slow growth and weak canopy cover is a poor competitor. Mechanical cropping operations, like harvesting, also affect seed dispersal and subsequent weed distribution. For example, combine harvesters can spread seeds along the direction of travel, contributing to elongated weed patches [155].
 
@@ -408,7 +412,7 @@ Global efforts to maintain an accurate database of herbicide- resistant weed cas
 
 As can be seen, enhancing farm management, particularly in weed control, requires software- based spatiotemporal data visualization on weed distribution, soil conditions, and crop health. Satellite, drone, and field observation data can be visualized by GIS maps and tools, providing a strong decision- support basis in agriculture. These tools will be studied in detail in the next section.
 
-# Common Maps and Tools
+### Common Maps and Tools
 
 2D and 3D thematic maps are essential tools in weed mapping applications, for visualizing spatial data, analyzing field conditions, and supporting precision management. A breakdown of the most common types of 2D maps used in this context include: Choropleth Maps to display variations of a variable (e.g., weed density or zoned statistics) using color gradients; Dot Density Maps to represent frequency of features (e.g., weed populations or distribution patterns) with dots; Isoline/Contour Maps to connect points of equal value (e.g., farm/land topography or soil parameters levels) by lines; Raster Maps of grid cells (e.g., weed vigor or vegetation indices) where each cell holds a value; Symbol Maps with proportional symbols and their sizes (e.g., weed biomass or herbicide intensity) according to data magnitude; and Heat Maps to represent data density or intensity (e.g., weed infestation zones or hotspots) with color gradients.
 
@@ -418,85 +422,85 @@ estimation, and canopy analysis); 3D Vegetation Index Maps to combine remote sen
 
 A comparison between the key software packages in agricultural science and weed mapping is presented in Table 8. This table summarizes the most common tools based on their cost, ease of use, key features, and application scenarios. This comparison is helpful in choosing the right tool depending on project's needs, whether it is academic research, commercial farm management, or field surveying.
 
-# VI. Future Directions
+## VI. Future Directions
 
-VI. Future DirectionsAlthough modern technologies for weed mapping have advanced significantly, many barriers are left unaddressed, preventing these advancements from being used in real-world applications. Key challenges include the lack of practical and cohesive data and outdated hard and soft technologies. This underscores the need for balanced and unbiased data collection, and modern deep learning analysis, and more intuitive weed mapping techniques to meet diverse agricultural demands. This section explores some of these major challenges in depth, highlighting key opportunities for advancing data-driven solutions to support the evolving needs of precision weed management.
+Although modern technologies for weed mapping have advanced significantly, many barriers are left unaddressed, preventing these advancements from being used in real-world applications. Key challenges include the lack of practical and cohesive data and outdated hard and soft technologies. This underscores the need for balanced and unbiased data collection, and modern deep learning analysis, and more intuitive weed mapping techniques to meet diverse agricultural demands. This section explores some of these major challenges in depth, highlighting key opportunities for advancing data-driven solutions to support the evolving needs of precision weed management.
 
-# Data Acquisition
+### Data Acquisition
 
-# Environmental Diversity
+#### Environmental Diversity
 
 Comprehensive annotated datasets that encompass various weed growth stages and environmental conditions will enhance ML model robustness and generalizability across diverse agricultural settings. Future studies should incorporate multi- regional trials that consider environmental variables such as climate, vegetation types, and seasonal shifts [91]. Trials and data collection conducted across different regions and at varied times of day will increase the robustness and transferability of weed detection models. Besides, there is a pressing need for long- term and multi- season data collection to better understand temporal weed distribution and to evaluate management strategies over time.
 
-# Early-stage Data
+#### Early-stage Data
 
 Accurate detection of weeds and plant diseases in their early development stages is still limited. New research should develop technologies capable of collecting data and identifying weeds before outbreak being visible, potentially using machine learning- enhanced remote sensing methods [105]. This also counts for sparse weed densities, especially at lower thresholds, to prevent misclassification and enhance weed resistance evaluation accuracy. Accurate detection of weeds in their early development stage would also translate into more effective weed control as younger weeds are easier to control with herbicides at lower rates.
 
-# Remote Sensing Constraints
+#### Remote Sensing Constraints
 
 UAVs often lack the space and frequency resolution sensors necessary for precise weed identification. Future advancements are expected to focus on wideband or multi- band, as well as high- resolution hyperspectral and multispectral sensors to enhance the precision of weed identification [96]. Compared to RGB cameras, spectral sensors provide richer information, enabling more accurate discrimination of plant species.
 
 In addition to sensor integration, optimizing the power consumption of UAV embedded systems is crucial for developing low- cost, long- endurance drones suitable for high- range agricultural applications. Sensors and onboard processing units can be energy- intensive, limiting flight times and operational efficiency. By optimizing both hardware and software components for energy efficiency, future UAVs can achieve longer flight durations, covering larger areas.
 
-# Internet of Agricultural Things
+### Internet of Agricultural Things
 
-Internet of Agricultural ThingsAdvancing the use of IoT networks, including Bluetooth Low Energy, Radio- Frequency Identification (RFID), and IP- based sensors will allow better data collection, tracking, and monitoring of weeds and associated biosecurity threats across the agricultural supply chain. Towards this end, solving interoperability issues between devices, platforms, and datasets is critical [4]. Open- source standards and platform- agnostic data formats will facilitate smoother integration and decision- making across the agricultural ecosystem.
+Advancing the use of IoT networks, including Bluetooth Low Energy, Radio- Frequency Identification (RFID), and IP- based sensors will allow better data collection, tracking, and monitoring of weeds and associated biosecurity threats across the agricultural supply chain. Towards this end, solving interoperability issues between devices, platforms, and datasets is critical [4]. Open- source standards and platform- agnostic data formats will facilitate smoother integration and decision- making across the agricultural ecosystem.
 
-# Citizen Science
+### Citizen Science
 
-Citizen ScienceAn emerging and highly scalable approach to addressing the challenges of weed control data collection is the integration of citizen science with smartphone- based imaging. With over five billion unique mobile subscribers worldwide, engaging local communities in image data collection offers a cost- effective and logistically feasible alternative to conventional methods [120]. However, image quality and consistency remain critical challenges.
+An emerging and highly scalable approach to addressing the challenges of weed control data collection is the integration of citizen science with smartphone- based imaging. With over five billion unique mobile subscribers worldwide, engaging local communities in image data collection offers a cost- effective and logistically feasible alternative to conventional methods [120]. However, image quality and consistency remain critical challenges.
 
-# Data Processing
+### Data Processing
 
-# Data Fusion Techniques
+#### Data Fusion Techniques
 
-Data ProcessingData Fusion TechniquesEspecially in the realm of spectral imaging, the future of weed detection is centered around the fusion of multispectral and hyperspectral data with deep learning methodologies. The utilization of vegetation indices, such as Normalized Difference Vegetation Index (NDVI) and Green NDVI (GNDVI), derived from spectral bands, provides valuable information on plant
+Especially in the realm of spectral imaging, the future of weed detection is centered around the fusion of multispectral and hyperspectral data with deep learning methodologies. The utilization of vegetation indices, such as Normalized Difference Vegetation Index (NDVI) and Green NDVI (GNDVI), derived from spectral bands, provides valuable information on plant
 
 health and stress levels, aiding in the discrimination between crops and weeds. In the meantime, the fusion of multi- source data (e.g., UAV, satellite, IoT) offers promise for high- resolution, real- time weed mapping [9]. Future research should prioritize data fusion models that leverage deep learning to integrate multi- source spatiotemporal data seamlessly.
 
-# Image Annotation & Segmentation
+#### Image Annotation & Segmentation
 
-Image Annotation & SegmentationRobust annotation tools that can manage occlusions, lighting variations, crop diversity, and the complex morphology of weeds are necessary. Advancements in automated annotation methods, such as semi- supervised learning frameworks utilizing adversarial strategies, have shown promise in reducing the manual effort required for pixel- level annotations [163]. Additionally, the integration of multi- sensor segmentation techniques, combining data from RGB, multispectral, and hyperspectral sensors, can enhance the accuracy of weed identification by leveraging the strengths of each modality. AI- assisted annotation platforms, like those employing superpixel algorithms, offer interactive and efficient means to annotate complex plant structures, thereby accelerating the creation of high- quality annotated datasets.
+Robust annotation tools that can manage occlusions, lighting variations, crop diversity, and the complex morphology of weeds are necessary. Advancements in automated annotation methods, such as semi- supervised learning frameworks utilizing adversarial strategies, have shown promise in reducing the manual effort required for pixel- level annotations [163]. Additionally, the integration of multi- sensor segmentation techniques, combining data from RGB, multispectral, and hyperspectral sensors, can enhance the accuracy of weed identification by leveraging the strengths of each modality. AI- assisted annotation platforms, like those employing superpixel algorithms, offer interactive and efficient means to annotate complex plant structures, thereby accelerating the creation of high- quality annotated datasets.
 
-# Generative AI
+#### Generative AI
 
-Generative AIGenerative AI offers a solution to the challenge of data scarcity in weed mapping by enabling the creation of synthetic datasets that mimic real- world conditions. Techniques such as diffusion models and generative adversarial networks can generate high- fidelity images of various weed species under different environmental conditions, enhancing the robustness of detection models. These synthetic datasets can be used to train deep learning models, improving their performance in real- world scenarios where annotated data is limited. Additionally, combining synthetic data with real- world data through domain adaptation techniques can further enhance model generalization [141]. Nonetheless, challenges remain in ensuring the realism of synthetic data and its alignment with actual field conditions, necessitating ongoing research to refine these methods.
+Generative AI offers a solution to the challenge of data scarcity in weed mapping by enabling the creation of synthetic datasets that mimic real- world conditions. Techniques such as diffusion models and generative adversarial networks can generate high- fidelity images of various weed species under different environmental conditions, enhancing the robustness of detection models. These synthetic datasets can be used to train deep learning models, improving their performance in real- world scenarios where annotated data is limited. Additionally, combining synthetic data with real- world data through domain adaptation techniques can further enhance model generalization [141]. Nonetheless, challenges remain in ensuring the realism of synthetic data and its alignment with actual field conditions, necessitating ongoing research to refine these methods.
 
-# Advanced Models on the Edge
+#### Advanced Models on the Edge
 
 Advanced Models on the EdgeThe deployment of efficient and lightweight models, such as YOLO and Region- Fusion Detection Transformer (RF- DETR), on edge devices like drones and autonomous ground vehicles is anticipated to facilitate on- the- fly weed identification and mapping. This real- time capability is crucial for implementing precision agriculture practices, enabling timely and targeted weed management interventions [148]. The incorporation of ensemble learning techniques is also expected to improve detection accuracy by combining predictions from multiple models, thereby mitigating the limitations of individual models in complex field scenarios [138]. Furthermore, the integration of temporal data through time- series analysis is expected to capture the phenological changes of vegetation, enhancing the detection of weed emergence patterns over time.
 
-# Vision Language Models
+### Vision Language Models
 
-Vision Language ModelsThe integration of VLMs into weed mapping presents promising avenues for enhancing annotation efficiency and detection accuracy. VLMs can assist in automating the weed annotation process by interpreting complex weed imagery, thereby reducing the reliance on manual labelling. This capability is particularly beneficial in scenarios involving occlusions and diverse crop types. Moreover, VLMs can be fine- tuned to understand the nuances of different weed species, enabling more precise identification and classification [147]. However, to ensure reliability and affordability, further research is needed to optimize these models for agricultural applications, considering factors such as computational resources and the need for explainable AI to gain trust among end- users.
+The integration of VLMs into weed mapping presents promising avenues for enhancing annotation efficiency and detection accuracy. VLMs can assist in automating the weed annotation process by interpreting complex weed imagery, thereby reducing the reliance on manual labelling. This capability is particularly beneficial in scenarios involving occlusions and diverse crop types. Moreover, VLMs can be fine- tuned to understand the nuances of different weed species, enabling more precise identification and classification [147]. However, to ensure reliability and affordability, further research is needed to optimize these models for agricultural applications, considering factors such as computational resources and the need for explainable AI to gain trust among end- users.
 
-# Mapping and Interpretation
+### Mapping and Interpretation
 
-# Spatiotemporal Distribution Modelling
+#### Spatiotemporal Distribution Modelling
 
 Mapping and InterpretationSpatiotemporal Distribution ModellingFuture works need to expand spatial pattern analysis across diverse geographies and multi- year timelines. Current models often lack the capacity to capture the dynamic nature of weed populations over space- time, limiting their effectiveness in long- term management strategies. This modelling is essential for understanding the persistence and evolution of weed populations in varying agricultural landscapes [150]. Moreover, future research should focus on improving seed dispersal modelling, including natural [153] and equipment- driven [155] mechanisms for better understanding/interpreting spatial distribution of weeds. Additionally, the effect of other factors such as soil type, moisture levels, and topography, on weed distribution, establishment, and proliferation need to be studied [152]. Integrating these variables into spatiotemporal models can provide a more comprehensive understanding of weed dynamics, leading to more effective and site- specific management strategies.
 
-# Real-Time Decision Support
+#### Real-Time Decision Support
 
-Real- Time Decision SupportFuture advancements in real- time decision support systems for weed control can integrate advanced detection techniques and weed density and distribution models to facilitate site- specific management strategies. By leveraging technologies such as UAVs, IoT, and ML models, these systems can provide farmers with timely, actionable insights tailored to their specific field conditions [105]. These decision support systems should incorporate user- friendly interfaces to ensure that farmers, regardless of their technical expertise, can interpret and act upon the data effectively. Moreover, the integration of predictive analytics allows for
+Future advancements in real- time decision support systems for weed control can integrate advanced detection techniques and weed density and distribution models to facilitate site- specific management strategies. By leveraging technologies such as UAVs, IoT, and ML models, these systems can provide farmers with timely, actionable insights tailored to their specific field conditions [105]. These decision support systems should incorporate user- friendly interfaces to ensure that farmers, regardless of their technical expertise, can interpret and act upon the data effectively. Moreover, the integration of predictive analytics allows for
 
 proactive weed management, optimizing resource allocation and minimizing environmental impact.
 
-# Global Biosecurity Governance
+### Global Biosecurity Governance
 
 Weed mapping as a biosecurity measure requires a multilateral governance approach. Establishing international conventions [2] and promoting open- data ecosystems [120] will foster collaboration and accelerate response to invasive threats. Future research should focus on making global weed mapping information affordable and accessible to small- scale farmers. This includes the development of user- friendly and mobile platforms, along with farmer- centric training programs.
 
-# VII. Conclusion
+## VII. Conclusion
 
 This review systematically explored the landscape of weed mapping by analyzing the latest advancements in data acquisition, processing, and mapping techniques. We identified the major sensing platforms, ranging from handheld and vehicle- mounted devices to UAVs and satellites, and evaluated their integration with RGB, spectral, NIR, thermal, and terahertz imaging technologies. In the data processing domain, we reviewed deep learning- based approaches for data annotation, weed classification, detection, and segmentation, as well as the emerging use of edge computing and large language models for real- time, infield processing. By focusing on spatial and temporal weed dynamics, as well as the influence of farm management practices, this review also shed light on the essential role of GIS- based mapping tools in supporting informed and targeted weed control decisions.
 
 Importantly, this work fills a critical gap in the literature by being the first systematic review dedicated solely to weed mapping, following the PRISMA methodology to ensure methodological strength and transparency. The findings serve as a comprehensive knowledge base for scientists, Agri- tech developers, and decision- makers, helping them understand current capabilities, limitations, and opportunities for innovation. The insights presented herein not only guide future research in the design of smarter, data- driven weed management systems, but also support the broader goal of sustainable agriculture through reduced chemical usage and enhanced crop and environment health. As such, this review is positioned to influence both scientific inquiry and practical implementation in the evolving landscape of precision weed management.
 
-# Acknowledgements
+## Acknowledgements
 
 This research is supported by the Australian Research Council Industrial Transformation Research Program (ITRP) through the Training Centre in Plant Biosecurity (IC230100027).
 
-# References
+## References
 
 1. Thakur, A., S. Venu, and M. Gurusamy, An extensive review on agricultural robots with a focus on their perception systems. Computers and Electronics in Agriculture, 2023. 212: p. 108146.  
 2. Hulme, P.E., Importance of greater interdisciplinarity and geographic scope when tackling the driving forces behind biological invasions. Conservation Biology, 2022. 36(2): p. 13817.  
@@ -513,40 +517,22 @@ This research is supported by the Australian Research Council Industrial Transfo
 13. Raja, R., et al., Real-time weed-crop classification and localisation technique for robotic weed control in lettuce. Biosystems Engineering, 2020. 192: p. 257.  
 14. Saleh, A., et al., FieldNet: Efficient real-time shadow removal for enhanced vision in field robotics. Expert Systems with Applications, 2025. 279: p. 127442.  
 15. Dadashzadeh, M., et al., A stereoscopic video computer vision system for weed discrimination in rice field under both natural and controlled light conditions by machine learning. Measurement, 2024. 237: p. 115072.  
-16. Ram, B.G., et al., A systematic review of hyperspectral imaging in precision agriculture: Analysis of its current
-
-state and future prospects. Computers and Electronics in Agriculture, 2024. 222: p. 109037.
-
+16. Ram, B.G., et al., A systematic review of hyperspectral imaging in precision agriculture: Analysis of its current state and future prospects. Computers and Electronics in Agriculture, 2024. 222: p. 109037.
 17. Pena, J.M., et al., Weed Mapping in Early-Season Maize Fields Using Object-Based Analysis of Unmanned Aerial Vehicle (UAV) Images. Public Library of Science, 2013. 8(10): p. 77151.
-
 18. G C, S., et al., Weed and crop species classification using computer vision and deep learning technologies in greenhouse conditions. Journal of Agriculture and Food Research, 2022. 9: p. 100325.
-
 19. Mawardi, Z., D. Gautam, and T.G. Whiteside, Utilization of Remote Sensing Dataset and a Deep Learning Object Detection Model to Map Siam Weed Infestations. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 2024. 17: p. 18939.
-
 20. Rasmussen, J., et al., Pre-harvest weed mapping of Cirrium arvense in wheat and barley with off-the-shelf UAVs. Precision Agriculture, 2019. 20(5): p. 983.
-
 21. Rasmussen, J., et al., Potential uses of small unmanned aircraft systems (UAS) in weed research. Weed Research, 2013. 53(4): p. 242.
-
 22. de Castro, A.I., et al., Mapping Cynodon dactylon in vineyards using UAV images for site-specific weed control. Advances in Animal Biosciences, 2017. 8(2): p. 267.
-
 23. Souza, M.F.d., et al., Spectral differentiation of sugarcane from weeds. Biosystems Engineering, 2020. 190: p. 41.
-
 24. LOPEZ-GRANADOS, F., et al., Multispectral classification of grass weeds and wheat (Triticum durum) using linear and nonparametric functional discriminant analysis and neural networks. Weed Research, 2008. 48(1): p. 28.
-
 25. Reddy, K.N., et al., Glyphosate-resistant and glyphosate-susceptible Palmer amaranth (Amaranthus palmeri S. Wats.): hyperspectral reflectance properties of plants and potential for classification. Pest Management Science, 2014. 70(12): p. 1910.
-
 26. Scherrer, B., et al., Hyperspectral imaging and neural networks to classify herbicide-resistant weeds. Journal of Applied Remote Sensing, 2019. 13(4): p. 044516.
-
 27. Louargant, M., et al. Unsupervised Classification Algorithm for Early Weed Detection in Row-Crops by Combining Spatial and Spectral Information. Remote Sensing, 2018. 10.
-
 28. Lopez-Granados, F., et al., Object-based early monitoring of a grass weed in a grass crop using high resolution UAV imagery. Agronomy for Sustainable Development, 2016. 36(4): p. 67.
-
 29. Rahkonen, J. and H. Jokela, Infrared Radiometry for Measuring Plant Leaf Temperature during Thermal Weed Control Treatment. Biosystems Engineering, 2003. 86(3): p. 257.
-
 30. Abdelaal, K., et al., Physiological and Biochemical Changes in Vegetable and Field Crops under Drought, Salinity and Weeds Stresses: Control Strategies and Management. Agriculture, 2022. 12(12): p. 2084.
-
 31. Haworth, M., et al., Impaired photosynthesis and increased leaf construction costs may induce floral
-
 32. Shen, Y., et al., Detection of impurities in wheat using terahertz spectral imaging and convolutional neural networks. Computers and Electronics in Agriculture, 2021. 181: p. 105931.  
 33. Ahmadi, A., et al., BonnBot-I Plus: A Bio-Diversity Aware Precise Weed Management Robotic Platform. IEEE Robotics and Automation Letters, 2024. 9(7): p. 6560.  
 34. Zhao, P., et al., Design and Testing of an autonomous laser weeding robot for strawberry fields based on DIN-LW-YOLO. Computers and Electronics in Agriculture, 2025. 229: p. 109088.  
@@ -562,39 +548,20 @@ state and future prospects. Computers and Electronics in Agriculture, 2024. 222:
 44. Raja, R., et al., Real-time precision crop identification in high weed-density environments for robotic weed control using spectral fluorescence imaging in celery. Computers and Electronics in Agriculture, 2025. 231.  
 45. Yang, L., et al., Applications of remote sensing for crop residue cover mapping. Smart Agricultural Technology, 2025. 11: p. 100880.  
 46. Alam, M.M.T., et al., Optimizing Empirical and Hybrid Modeling for Advanced Canopy Chlorophyll and Nitrogen Retrieval Technique Using EnMAP Data. Environmental Challenges, 2025. 18: p. 101114.
-
 47. Dahiya, N., et al., Chapter 13 - Crop land assessment with deep neural network using hyperspectral satellite dataset, in Hyperautomation in Precision Agriculture, S. Singh, et al., Editors. 2025, Academic Press. p. 159.
-
 48. Galloza, M.S., M.M. Crawford, and G.C. Heathman, Crop Residue Modeling and Mapping Using Landsat, ALI, Hyperion and Airborne Remote Sensing Data. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 2013. 6(2): p. 446.
-
 49. Bukhamsin, A., et al., Early and high-throughput plant diagnostics: strategies for disease detection. Trends in Plant Science, 2025. 30(3): p. 324.
-
 50. Arrechea-Castillo, D.A. and Y.T. Solano-Correa, Chapter 14 - Deep learning in multi-sensor agriculture and crop management, in Deep Learning for Multi-Sensor Earth Observation, S. Saha, Editor. 2025, Elsevier. p. 335.
-
 51. Trivedi, S., et al., Chapter 15 - Assessment of agroforestry land use systems for sustainable agriculture development: geospatial perspective using AI, in Sustainable Development Perspectives in Earth Observation, M.D. Behera, et al., Editors. 2025, Elsevier. p. 249.
-
 52. Matongera, T.N., et al., Detection and mapping the spatial distribution of bracken fern weeds using the Landsat 8 OLI new generation sensor. International Journal of Applied Earth Observation and Geoinformation, 2017. 57: p. 93.
-
 53. Mor-Mussery, A., et al., Quantifying the dynamic of cereals and broadleaf plants in semi-arid grasslands using a high-spatial-resolution satellite imaging. Agriculture, Ecosystems & Environment, 2025. 377: p. 109233.
-
 54. Rahali, L., et al., CubeSat installations: New era for precision agriculture? Computers and Electronics in Agriculture, 2025. 230: p. 109764.
-
 55. Sari, I.L., et al., Tree counting of tropical tree plantations using the maximum probability spectral features of high-resolution satellite images and drones. Geomatica, 2025. 77(1): p. 100045.
-
 56. Vaglio Laurin, G., et al., Monitoring habitat diversity with PRISMA hyperspectral and lidar-derived data in Natura 2000 sites: Case study from a Mediterranean forest. Ecological Indicators, 2025. 172: p. 113254.
-
 57. Pepe, M., et al., Mapping spatial distribution of crop residues using PRISMA satellite imaging spectroscopy. European Journal of Remote Sensing, 2023. 56(1): p. 2122872.
-
 58. Palakuru, M., et al., Investigation of Rice Crop Phenology Using C Band SENTINEL-1 SAR Data: A Case Study in Chittoor, Andhra Pradesh. Heliyon, 2025: p. 42900.
-
 59. Xiao, T., et al., Identification of soybean planting areas using Sentinel-1/2 remote sensing data: A combined approach of reduced redundancy feature optimization and ensemble learning. European Journal of Agronomy, 2025. 164: p. 127480.
-
-60. Karimi, N., et al., An advanced high resolution land use/land cover dataset for Iran (ILULC-2022) by focusing on agricultural areas based on remote sensing
-
-data. Computers and Electronics in Agriculture, 2025. 228: p. 109677. 61. Rasmussen, J., S. Azim, and J. Nielsen, Pre- harvest weed mapping of Cirsium arvense L. based on free satellite imagery - The importance of weed aggregation and image resolution. European Journal of Agronomy, 2021. 130: p. 126373. 62. Rouault, P., et al., High- resolution satellite imagery to assess orchard characteristics impacting water use. Agricultural Water Management, 2024. 295: p. 108763. 63. Liu, J., et al., Plant diversity on islands in the Anthropocene: Integrating the effects of the theory of island biogeography and human activities. Basic and Applied Ecology, 2023. 72: p. 45. 64. Quemada, M., et al., Improved crop residue cover estimates obtained by coupling spectral indices for residue and moisture. Remote Sensing of Environment, 2018. 206: p. 33. 65. Shendryk, Y., et al., Leveraging High- Resolution Satellite Imagery and Gradient Boosting for Invasive Weed Mapping. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 2020. 13: p. 4443. 66. Anam, I., et al., A systematic review of UAV and AI integration for targeted disease detection, weed management, and pest control in precision agriculture. Smart Agricultural Technology, 2024. 9: p. 100647. 67. Sapkota, R., et al., Towards reducing chemical usage for weed control in agriculture using UAS imagery analysis and computer vision techniques. Scientific Reports, 2023. 13(1). 68. Torres- Sanchez, J., et al., Detection of Ecballium elaterium in hedgerow olive orchards using a low- cost uncrewed aerial vehicle and open- source algorithms. Pest Management Science, 2023. 79(2): p. 645. 69. Canicatti, M. and M. Vallone, Drones in vegetable crops: A systematic literature review. Smart Agricultural Technology, 2024. 7: p. 100396. 70. Rosa, L.E.C.L., et al. FCRN- Based Multi- Task Learning for Automatic Citrus Tree Detection From UAV Images. in Latin American GRSS & ISPRS Remote Sensing Conference (LAGIRS). 2020. IEEE. 71. Qu, H., et al., A fast and efficient approach to estimate wild blueberry yield using machine learning with drone photography: Flight altitude, sampling method and model effects. Computers and Electronics in Agriculture, 2024. 216: p. 108543. 72. Rayamajhi, A., H. Jahanifar, and M.S. Mahmud, Measuring ornamental tree canopy attributes for precision spraying using drone technology and self- supervised segmentation. Computers and Electronics in Agriculture, 2024. 225: p. 109359. 73. Shen, L., et al., GSP- AI: An AI- Powered Platform for Identifying Key Growth Stages and the Vegetative- to- Reproductive Transition in Wheat Using Trilateral Drone Imagery and Meteorological Data. Plant Phenomics, 2024. 6: p. 255. 74. Amarasingam, N., et al., Mapping of insect pest infestation for precision agriculture: A UAV- based multispectral imaging and deep learning techniques.
-
-International Journal of Applied Earth Observation and Geoinformation, 2025. 137: p. 104413.
-
+60. Karimi, N., et al., An advanced high resolution land use/land cover dataset for Iran (ILULC-2022) by focusing on agricultural areas based on remote sensing data. Computers and Electronics in Agriculture, 2025. 228: p. 109677. 61. Rasmussen, J., S. Azim, and J. Nielsen, Pre- harvest weed mapping of Cirsium arvense L. based on free satellite imagery - The importance of weed aggregation and image resolution. European Journal of Agronomy, 2021. 130: p. 126373. 62. Rouault, P., et al., High- resolution satellite imagery to assess orchard characteristics impacting water use. Agricultural Water Management, 2024. 295: p. 108763. 63. Liu, J., et al., Plant diversity on islands in the Anthropocene: Integrating the effects of the theory of island biogeography and human activities. Basic and Applied Ecology, 2023. 72: p. 45. 64. Quemada, M., et al., Improved crop residue cover estimates obtained by coupling spectral indices for residue and moisture. Remote Sensing of Environment, 2018. 206: p. 33. 65. Shendryk, Y., et al., Leveraging High- Resolution Satellite Imagery and Gradient Boosting for Invasive Weed Mapping. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 2020. 13: p. 4443. 66. Anam, I., et al., A systematic review of UAV and AI integration for targeted disease detection, weed management, and pest control in precision agriculture. Smart Agricultural Technology, 2024. 9: p. 100647. 67. Sapkota, R., et al., Towards reducing chemical usage for weed control in agriculture using UAS imagery analysis and computer vision techniques. Scientific Reports, 2023. 13(1). 68. Torres- Sanchez, J., et al., Detection of Ecballium elaterium in hedgerow olive orchards using a low- cost uncrewed aerial vehicle and open- source algorithms. Pest Management Science, 2023. 79(2): p. 645. 69. Canicatti, M. and M. Vallone, Drones in vegetable crops: A systematic literature review. Smart Agricultural Technology, 2024. 7: p. 100396. 70. Rosa, L.E.C.L., et al. FCRN- Based Multi- Task Learning for Automatic Citrus Tree Detection From UAV Images. in Latin American GRSS & ISPRS Remote Sensing Conference (LAGIRS). 2020. IEEE. 71. Qu, H., et al., A fast and efficient approach to estimate wild blueberry yield using machine learning with drone photography: Flight altitude, sampling method and model effects. Computers and Electronics in Agriculture, 2024. 216: p. 108543. 72. Rayamajhi, A., H. Jahanifar, and M.S. Mahmud, Measuring ornamental tree canopy attributes for precision spraying using drone technology and self- supervised segmentation. Computers and Electronics in Agriculture, 2024. 225: p. 109359. 73. Shen, L., et al., GSP- AI: An AI- Powered Platform for Identifying Key Growth Stages and the Vegetative- to- Reproductive Transition in Wheat Using Trilateral Drone Imagery and Meteorological Data. Plant Phenomics, 2024. 6: p. 255. 74. Amarasingam, N., et al., Mapping of insect pest infestation for precision agriculture: A UAV- based multispectral imaging and deep learning techniques. International Journal of Applied Earth Observation and Geoinformation, 2025. 137: p. 104413.
 75. Su, J., et al., Aerial Visual Perception in Smart Farming: Field Study of Wheat Yellow Rust Monitoring. IEEE Transactions on Industrial Informatics, 2021. 17(3): p. 2242.  
 76. Barrile, V., et al. Experimenting Agriculture 4.0 with Sensors: A Data Fusion Approach between Remote Sensing, UAVs and Self-Driving Tractors. Sensors, 2022. 22.  
 77. Akdogan, C., T. Ozer, and Y. Oguz, PP-YOLO: Deep learning based detection model to detect apple and cherry trees in orchard based on Histogram and Wavelet preprocessing techniques. Computers and Electronics in Agriculture, 2025. 232: p. 110052.  
@@ -608,10 +575,7 @@ International Journal of Applied Earth Observation and Geoinformation, 2025. 137
 85. Narmilan, A., et al., Detection of White Leaf Disease in Sugarcane Using Machine Learning Techniques over UAV Multispectral Images. Drones, 2022. 6(9): p. 230.  
 86. Ecke, S., et al., Towards operational UAV-based forest health monitoring: Species identification and crown condition assessment by means of deep learning. Computers and Electronics in Agriculture, 2024. 219: p. 108785.  
 87. Donmez, C., et al., Computer vision-based citrus tree detection in a cultivated environment using UAV imagery. Computers and Electronics in Agriculture, 2021. 187: p. 106273.  
-88. Sun, Q., et al., Monitoring maize canopy chlorophyll density under lodging stress based on UAV
-
-hyperspectral imagery. Computers and Electronics in Agriculture, 2022. 193: p. 106671. 89. Song, B. and K. Park Detection of Aquatic Plants Using Multispectral UAV Imagery and Vegetation Index. Remote Sensing, 2020. 12. 90. Hashemi- Beni, L., et al., Deep Convolutional Neural Networks for Weeds and Crops Discrimination From UAS Imagery. Frontiers in Remote Sensing, 2022. 3. 91. Mesias- Ruiz, G.A., et al., Drone imagery dataset for early- season weed classification in maize and tomato crops. Data in Brief, 2025. 58: p. 111203. 92. Jimenez- Brenes, F.M., et al., Automatic UAV- based detection of Cymodon dactylon for site- specific vineyard management. PloS one, 2019. 14(6): p. 218132. 93. Qi, H., et al., Monitoring of peanut leaves chlorophyll content based on drone- based multispectral image feature extraction. Computers and Electronics in Agriculture, 2021. 187: p. 106292. 94. Meesaragandla, S., et al., Herbicide spraying and weed identification using drone technology in modern farms: A comprehensive review. Results in Engineering, 2024. 21: p. 101870. 95. Diykh, M., et al., Empirical curvelet transform based deep DenseNet model to predict NDVI using RGB drone imagery data. Computers and Electronics in Agriculture, 2024. 221: p. 108964. 96. Betitame, K., et al., A practical guide to UAV- based weed identification in soybean: Comparing RGB and multispectral sensor performance. Journal of Agriculture and Food Research, 2025. 20: p. 101784. 97. Goyal, R., A. Nath, and U. Niranjan, Weed detection using deep learning in complex and highly occluded potato field environment. Crop Protection, 2025. 187: p. 106948. 98. Kumar Yadav, P., et al., Detecting volunteer cotton plants in a corn field with deep learning on UAV remote- sensing imagery. Computers and Electronics in Agriculture, 2023. 204: p. 107551. 99. Xu, B., et al., Improved weed mapping in corn fields by combining UAV- based spectral, textural, structural, and thermal measurements. Pest Management Science, 2023. 79(7): p. 2591. 100. Rozenberg, G., et al., Using a low- cost unmanned aerial vehicle for mapping giant smutgrass in bahiagrass pastures. Precision Agriculture, 2023. 24(3): p. 971. 101. Dubuis, P.- H., et al., Environmental, bystander and resident exposure from orchard applications using an agricultural unmanned aerial spraying system. Science of The Total Environment, 2023. 881: p. 163371. 102. Milindi, P.S., E.E. Nsenuka, and S.S. Chopra, Driving sustainability in the sugarcane industry: Life Cycle Assessment of conventional and emerging spraying technologies in Tanzania. Science of The Total Environment, 2024. 955: p. 176963. 103. Ahmad, F., et al., Effect of operational parameters of UAV sprayer on spray deposition pattern in target and off- target zones during outer field weed control application. Computers and Electronics in Agriculture, 2020. 172: p. 105350.
-
+88. Sun, Q., et al., Monitoring maize canopy chlorophyll density under lodging stress based on UAV hyperspectral imagery. Computers and Electronics in Agriculture, 2022. 193: p. 106671. 89. Song, B. and K. Park Detection of Aquatic Plants Using Multispectral UAV Imagery and Vegetation Index. Remote Sensing, 2020. 12. 90. Hashemi- Beni, L., et al., Deep Convolutional Neural Networks for Weeds and Crops Discrimination From UAS Imagery. Frontiers in Remote Sensing, 2022. 3. 91. Mesias- Ruiz, G.A., et al., Drone imagery dataset for early- season weed classification in maize and tomato crops. Data in Brief, 2025. 58: p. 111203. 92. Jimenez- Brenes, F.M., et al., Automatic UAV- based detection of Cymodon dactylon for site- specific vineyard management. PloS one, 2019. 14(6): p. 218132. 93. Qi, H., et al., Monitoring of peanut leaves chlorophyll content based on drone- based multispectral image feature extraction. Computers and Electronics in Agriculture, 2021. 187: p. 106292. 94. Meesaragandla, S., et al., Herbicide spraying and weed identification using drone technology in modern farms: A comprehensive review. Results in Engineering, 2024. 21: p. 101870. 95. Diykh, M., et al., Empirical curvelet transform based deep DenseNet model to predict NDVI using RGB drone imagery data. Computers and Electronics in Agriculture, 2024. 221: p. 108964. 96. Betitame, K., et al., A practical guide to UAV- based weed identification in soybean: Comparing RGB and multispectral sensor performance. Journal of Agriculture and Food Research, 2025. 20: p. 101784. 97. Goyal, R., A. Nath, and U. Niranjan, Weed detection using deep learning in complex and highly occluded potato field environment. Crop Protection, 2025. 187: p. 106948. 98. Kumar Yadav, P., et al., Detecting volunteer cotton plants in a corn field with deep learning on UAV remote- sensing imagery. Computers and Electronics in Agriculture, 2023. 204: p. 107551. 99. Xu, B., et al., Improved weed mapping in corn fields by combining UAV- based spectral, textural, structural, and thermal measurements. Pest Management Science, 2023. 79(7): p. 2591. 100. Rozenberg, G., et al., Using a low- cost unmanned aerial vehicle for mapping giant smutgrass in bahiagrass pastures. Precision Agriculture, 2023. 24(3): p. 971. 101. Dubuis, P.- H., et al., Environmental, bystander and resident exposure from orchard applications using an agricultural unmanned aerial spraying system. Science of The Total Environment, 2023. 881: p. 163371. 102. Milindi, P.S., E.E. Nsenuka, and S.S. Chopra, Driving sustainability in the sugarcane industry: Life Cycle Assessment of conventional and emerging spraying technologies in Tanzania. Science of The Total Environment, 2024. 955: p. 176963. 103. Ahmad, F., et al., Effect of operational parameters of UAV sprayer on spray deposition pattern in target and off- target zones during outer field weed control application. Computers and Electronics in Agriculture, 2020. 172: p. 105350.
 104. Chen, P., et al., Droplet distributions in cotton harvest aid applications vary with the interactions among the unmanned aerial vehicle spraying parameters. Industrial Crops and Products, 2021. 163: p. 113324.  
 105. Ehrampoosh, A., et al., Intelligent weed management using aerial image processing and precision herbicide spraying: An overview. Crop Protection, 2025: p. 107206.  
 106. Wang, J., et al., Meteorological and flight altitude effects on deposition, penetration, and drift in pineapple aerial spraying. Asia-Pacific Journal of Chemical Engineering, 2020. 15(1): p. 2382.  
@@ -628,7 +592,6 @@ hyperspectral imagery. Computers and Electronics in Agriculture, 2022. 193: p. 1
 117. Alkanov, A., A. Nugmanova, and M. Sutala, Research on crop classification methods based on machine learning using wavelet transformations. Eurasian Journal of Applied Biotechnology, 2023(2).  
 118. Xia, F., et al., Weed resistance assessment through airborne multimodal data fusion and deep learning: A novel approach towards sustainable agriculture. International Journal of Applied Earth Observation and Geoinformation, 2023. 120: p. 103352.  
 119. Quiros, C., et al., ClimMob: Software to support experimental citizen science in agriculture. Computers and Electronics in Agriculture, 2024. 217: p. 108539.
-
 120. Dehnen-Schmutz, K., et al., Exploring the role of smartphone technology for citizen science in agriculture. Agronomy for Sustainable Development, 2017. 36(2): p. 25.  
 121. Rocha, F., et al., Weed mapping using techniques of precision agriculture. Planta daninha, 2015. 33(1): p. 157.  
 122. MacLaren, C., et al., An ecological future for weed science to sustain crop production and the environment. A review. Agronomy for Sustainable Development, 2020. 40(4): p. 24.  
@@ -646,57 +609,30 @@ hyperspectral imagery. Computers and Electronics in Agriculture, 2022. 193: p. 1
 134. Kanade, A.K., et al., Weed detection in cotton farming by YOLOv5 and YOLOv8 object detectors. European Journal of Agronomy, 2025. 168: p. 127617.  
 135. Qi, Z. and J. Wang, PMDNet: An Improved Object Detection Model for Wheat Field Weed. Agronomy, 2025. 15(1): p. 55.  
 136. Garibaldi-Márquez, F., et al., Enhancing site-specific weed detection using deep learning transformer architectures. Crop Protection, 2025. 190: p. 107075.
-
 137. Garibaldi-Márquez, F., G. Flores, and L.M. Valentin-Coronado, Leveraging deep semantic segmentation for assisted weed detection. Journal of Agricultural Engineering, 2025.
-
 138. Ganapathy, S. and S. Srinivasan, Crop weed separation through image-level segmentation: an ensemble of modified U-Net and encoder-decoder. Neural Computing and Applications, 2025.
-
 139. Kong, X., et al., Lightweight cabbage segmentation network and improved weed detection method. Computers and Electronics in Agriculture, 2024. 226: p. 109403.
-
 140. Li, Y., et al., An improved U-net and attention mechanism-based model for sugar beet and weed segmentation. Frontiers in Plant Science, 2025. 15.
-
 141. Li, T., et al., A Patch-Level Data Synthesis Pipeline Enhances Species-Level Crop and Weed Segmentation in Natural Agricultural Scenes. Agriculture, 2025. 15(2): p. 138.
-
 142. Sreeja, K., et al., Implementing Innovative Weed Detection Techniques for Environmental Sustainability. J. Environ. Nanotechnol, 2024. 13(4): p. 287.
-
 143. Chen, H., et al., PIS-Net: Efficient weakly supervised instance segmentation network based on annotated points for rice field weed identification. Smart Agricultural Technology, 2024. 9: p. 100557.
-
 144. Banerjee, S., S. Das, and A.C. Mondal, A Study of the Application Domain of a Large Language Models in the Agricultural Sector. International Journal of Innovative Research in Computer Science and Technology, 2024. 12(5).
-
 145. Lam, H.Y.I., X.E. Ong, and M. Mutwil, Large language models in plant biology. Trends in Plant Science, 2024. 29(10): p. 1145.
-
 146. Marinoudi, V., et al., Large language models impact on agricultural workforce dynamics: Opportunity or risk? Smart Agricultural Technology, 2024. 9: p. 100677.
-
 147. Chen, D. and Y. Huang, Integrating reinforcement learning and large language models for crop production process management optimization and control through a new knowledge-based deep learning paradigm. Computers and Electronics in Agriculture, 2025. 232: p. 110028.
-
 148. Jahanbakht, M., et al., Distributed Deep Learning and Energy-Efficient Real-Time Image Processing at the Edge for Fish Segmentation in Underwater Videos. IEEE Access, 2022. 10: p. 117796.
-
 149. Qureshi, M.F., et al., Real-Time Weed Segmentation in Tobacco Crops Utilizing Deep Learning on a Jetson Nano. in International Conference on Engineering & Computing Technologies (ICECT). 2024. IEEE.
-
 150. Blank, L., G. Rozenberg, and R. Gafni, Spatial and temporal aspects of weeds distribution within agricultural fields - A review. Crop Protection, 2023. 172: p. 106300.
-
 151. Chen, G., et al., Diversity and Life History Traits of Native Weed Communities in Agricultural Areas: A Case Study in Eastern China. Biology, 2024. 13(9): p. 704.
-
 152. Schatke, M., et al., Estimation of weed distribution for site-specific weed management—can Gaussian copula reduce the smoothing effect? Precision Agriculture, 2025. 26(2): p. 37.
-
 153. Xue, K., Modeling Analysis of Factors Influencing Wind-Borne Seed Dispersal: A Case Study on Dandelion. American Journal of Plant Sciences, 2024. 15(4): p. 252.
-
 154. Boinot, S., A. Alignier, and J. Storkey, Landscape perspectives for agroecological weed management. A review. Agronomy for Sustainable Development, 2024. 44(1): p. 7.
-
 155. Jones, E. and P. Rozeboom. Evidence That Combines Can Transport Weed Seeds. 2023; Available from: https://extension.sdstate.edu/evidence-combines-cantransport-weed-seeds.
-
 156. ISDA. Aquatic Noxious Weed Treatment Plans. 2024; Available from: https://gisidaho.hub.arcgis.com/apps/idaho::aquatic-noxiousweed-2024-treatment-plans-mapping-app/explore.
-
 157. Villa, J., Mapping Arundo donax (Arundo cane) with multispectral imagery before, during, and after herbicide treatment along the Rio Grande in Webb County, Texas, 2020-21. 2024, US Geological Survey.
-
 158. Randall, J., et al., From Meadow to Map: Integrating Field Surveys and Interactive Visualizations for Invasive Species Management in a National Park. ISPRS International Journal of Geo-Information, 2022. 11(10): p. 525.
-
 159. Bueno, J., et al., Influence of Field, Crop and Climate Variables on Corn Silage Yield Maps. 2024. AgEng.
-
 160. Chandra Swain, K., et al., Detecting Weed and Barespot in Wild Blueberry Using Ultrasonic Sensor Technology, in Reno, Nevada. 2009, ASABE.
-
 161. Simoes Araujo, A.L., et al., Integrated weed management: insights from a weed resistance survey and non-chemical weed seed control in the Central Great Plains. 2023, Colorado State University.
-
 162. Krahmer, H., et al., Weed surveys and weed mapping in Europe: State of the art and future tasks. Crop Protection, 2020. 129: p. 105010.
-
 163. Saleh, A., et al., Semi-supervised weed detection for rapid deployment and enhanced efficiency. Computers and Electronics in Agriculture, 2025. 236: p. 110410.

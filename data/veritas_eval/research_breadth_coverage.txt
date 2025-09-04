@@ -1,0 +1,52 @@
+==========================================================================================
+    Research Breadth Coverage Analysis (deep research agent powered by gpt-5)
+==========================================================================================
+Total points evaluated: 49
+Fully Covered       : 25 / 49 (51.02%)
+Partially Covered   : 24 / 49 (48.98%)
+Not Covered         : 0 / 49 (0.00%)
+
+
+==========================================================================================
+    Research Breadth Coverage Analysis (deep research agent powered by gemini-2.5)
+==========================================================================================
+Total points evaluated: 49
+Fully Covered       : 10 / 49 (20.41%)
+Partially Covered   : 35 / 49 (71.43%)
+Not Covered         : 4 / 49 (8.16%)
+
+
+==========================================================================================
+    Research Breadth Coverage Analysis (deep research agent powered by gemini-2.5-flash)
+==========================================================================================
+Total points evaluated: 49
+Fully Covered       : 9 / 49 (18.37%)
+Partially Covered   : 33 / 49 (67.35%)
+Not Covered         : 7 / 49 (14.29%)
+
+
+==========================================================================================
+    Research Breadth Coverage Analysis (deep research agent powered by claude-4-sonnet)
+==========================================================================================
+Total points evaluated: 49
+Fully Covered       : 14 / 49 (28.57%)
+Partially Covered   : 34 / 49 (69.39%)
+Not Covered         : 1 / 49 (2.04%)
+
+
+==========================================================================================
+    Research Breadth Coverage Analysis (deep research agent powered by claude-3.7-sonnet)
+==========================================================================================
+Total points evaluated: 49
+Fully Covered       : 12 / 49 (24.49%)
+Partially Covered   : 32 / 49 (65.31%)
+Not Covered         : 5 / 49 (10.20%)
+
+
+==========================================================================================
+    Research Breadth Coverage Analysis Baseline (using google deep research)
+==========================================================================================
+Total points evaluated: 49
+Fully Covered       : 6 / 49 (12.24%)
+Partially Covered   : 36 / 49 (73.47%)
+Not Covered         : 7 / 49 (14.29%)

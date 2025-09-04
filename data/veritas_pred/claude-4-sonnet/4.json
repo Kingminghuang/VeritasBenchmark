@@ -1,0 +1,50 @@
+{
+  "question": "\nConsidering the proposed two-stage process of \"AI for Academic Survey,\" how does the evolution of methodologies in \"Related Work Retrieval\"\u2014from semantic and graph-guided approaches to sophisticated LLM-augmented and multi-agent systems\u2014directly enable and shape the increasing complexity and scope of \"Overview Report Generation,\" from initial research roadmap mapping to the autonomous creation of entire document-level surveys?\n",
+  "research_plan": "<research_outline>\n(1) Examine the foundational concepts and technical backgrounds of the two-stage \"AI for Academic Survey\" process:\n    (a) Define and analyze the \"Related Work Retrieval\" stage: its core objectives, methodological approaches, and technical requirements\n    (b) Define and analyze the \"Overview Report Generation\" stage: its synthesis capabilities, output complexity levels, and automation requirements\n    (c) Investigate the interdependencies between these two stages and how they form a cohesive academic survey generation pipeline\n\n(2) Map the evolutionary trajectory of Related Work Retrieval methodologies and their technical characteristics:\n    (a) Early semantic approaches: keyword-based matching, vector embeddings, topic modeling techniques, and their limitations in context understanding\n    (b) Graph-guided approaches: citation network analysis, knowledge graph construction, relationship discovery mechanisms, and structural understanding capabilities\n    (c) LLM-augmented systems: deep semantic understanding, context-aware relevance assessment, multi-modal analysis, and dynamic query refinement\n    (d) Multi-agent systems: specialized agent architectures, collaborative filtering, distributed search strategies, and consensus-based quality control\n\n(3) Analyze the corresponding evolution in Overview Report Generation complexity and scope:\n    (a) Research roadmap mapping: hierarchical organization, trend identification, gap analysis, and basic synthesis capabilities\n    (b) Section-level related work generation: focused literature reviews, extractive and generative methods, citation integration\n    (c) Document-level survey generation: comprehensive synthesis, autonomous narrative construction, publication-ready academic documents\n    (d) Advanced features: cross-disciplinary integration, temporal evolution tracking, sophisticated argumentation frameworks\n\n(4) Investigate the direct enabling mechanisms and causal relationships between retrieval evolution and generation complexity:\n    (a) Data quality enhancement: how improved retrieval precision and recall directly impact generation accuracy and completeness\n    (b) Scale management capabilities: how multi-agent systems enable processing of larger literature corpora for comprehensive surveys\n    (c) Relationship discovery: how sophisticated retrieval methods reveal complex paper relationships that inform advanced synthesis\n    (d) Cognitive load distribution: how parallel processing and specialized analysis enable autonomous document-level generation\n\n(5) Examine specific technological enablers and their multiplicative effects:\n    (a) Memory-guided systems: how advanced retrieval supports coherent content generation across survey sections\n    (b) Interactive and personalized frameworks: how sophisticated retrieval enables user-customizable survey generation\n    (c) Multi-modal integration: how advanced retrieval methods support incorporation of diverse content types beyond text\n    (d) Real-time adaptation: how dynamic retrieval capabilities enable continuously updated survey documents\n\n(6) Analyze case studies and concrete implementations demonstrating the retrieval-generation relationship:\n    (a) SurveyGen-I framework: coarse-to-fine retrieval enabling adaptive planning and memory-guided generation\n    (b) InteractiveSurvey systems: advanced retrieval supporting personalized and customizable survey creation\n    (c) SciSage and hierarchical multi-agent approaches: sophisticated retrieval enabling autonomous document-level synthesis\n    (d) AutoSurvey methodologies: systematic approaches combining advanced retrieval with comprehensive generation\n\n(7) Identify and evaluate the critical dependencies and failure modes in the retrieval-generation pipeline:\n    (a) Precision-accuracy dependencies: how retrieval false positives cascade into generation factual errors\n    (b) Recall-completeness relationships: how missed papers in retrieval create knowledge gaps in generated surveys\n    (c) Organization-structure mapping: how conceptual organization in retrieval shapes narrative flow in generation\n    (d) Quality assurance mechanisms: how multi-agent validation enables confident autonomous generation\n\n(8) Synthesize findings to establish the theoretical framework of multiplicative enabling effects:\n    (a) Foundation quality principle: how advanced retrieval provides necessary source material for autonomous generation\n    (b) Complexity handling theorem: how sophisticated systems manage scale required for document-level works\n    (c) Intelligence transfer mechanism: how understanding capabilities in retrieval directly inform analytical capabilities in generation\n    (d) Scope enablement analysis: how retrieval advancement exponentially expands potential survey sophistication\n\n(9) Project future developments and emerging trends in the retrieval-generation evolution:\n    (a) Fully autonomous research systems: end-to-end research including hypothesis generation and comprehensive synthesis\n    (b) Cross-disciplinary integration: systems capable of synthesizing knowledge across multiple research domains\n    (c) Collaborative human-AI research: seamless integration of human expertise with AI capabilities\n    (d) Real-time survey evolution: dynamic documents continuously incorporating new research as it emerges\n\n(10) Conclude with the identification of key insights about the symbiotic transformation:\n    (a) Demonstrate that this represents a synergistic rather than merely additive improvement\n    (b) Establish how advanced retrieval fundamentally changes the types of surveys that can be autonomously generated\n    (c) Explain the transition from simple literature organization tools to sophisticated academic analysis and synthesis systems\n    (d) Articulate the multiplicative relationship where each retrieval advancement exponentially expands generation potential\n</research_outline>",
+  "references": [
+    {
+      "title": "AI4Research: A Survey of Artificial Intelligence for Scientific Research",
+      "url": "https://arxiv.org/abs/2507.01903"
+    },
+    {
+      "title": "Semantic models for the first-stage retrieval: A comprehensive review",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3486250"
+    },
+    {
+      "title": "Transforming science with large language models: A survey on ai-assisted scientific discovery, experimentation, content generation, and evaluation",
+      "url": "https://arxiv.org/abs/2502.05151"
+    },
+    {
+      "title": "Benchmarking Computer Science Survey Generation",
+      "url": "https://arxiv.org/abs/2508.15658"
+    },
+    {
+      "title": "A survey on retrieval-augmented text generation for large language models",
+      "url": "https://arxiv.org/abs/2404.10981"
+    },
+    {
+      "title": "ReportBench: Evaluating Deep Research Agents via Academic Survey Tasks",
+      "url": "https://arxiv.org/abs/2508.15804"
+    },
+    {
+      "title": "SurveyGen: Quality-Aware Scientific Survey Generation with Large Language Models",
+      "url": "https://arxiv.org/abs/2508.17647"
+    },
+    {
+      "title": "Autosurvey: Large language models can automatically write surveys",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/d07a9fc7da2e2ec0574c38d5f504d105-Abstract-Conference.html"
+    },
+    {
+      "title": "A survey on knowledge-oriented retrieval-augmented generation",
+      "url": "https://arxiv.org/abs/2503.10677"
+    },
+    {
+      "title": "Surveyforge: On the outline heuristics, memory-driven generation, and multi-dimensional evaluation for automated survey writing",
+      "url": "https://arxiv.org/abs/2503.04629"
+    },
+    {
+      "title": "AI4Research: A Survey of Artificial Intelligence for Scientific Research",
+      "url": "https://arxiv.org/abs/2507.01903"
+    }
+  ]
+}

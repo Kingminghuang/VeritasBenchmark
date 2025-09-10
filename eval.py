@@ -93,16 +93,26 @@ def analyze_coverage_from_report(report_text, ground_truth_plan):
         "unknown": 0
     }
     
-    # 定义正则表达式来查找 "Coverage Status: [Status]"
-    pattern = re.compile(r"Coverage Status:\s*(.*)", re.IGNORECASE)
-    
+    # 定义正则表达式来查找 "Coverage Status: [Status]"或者 "**Coverage Status:** [Status]"
+    pattern = re.compile(r"(\*\*?Coverage Status:\*\*?\s*)(.*)", re.IGNORECASE)
+
     # 查找报告中所有的状态
     found_statuses = pattern.findall(report_text)
     
     for status in found_statuses:
-        clean_status = status.strip().lower()
+        if len(status) == 2:
+            clean_status = status[1].strip().lower()
+        else:
+            clean_status = status.strip().lower()
+        print(f"Found coverage status: {clean_status}")
         if clean_status in coverage_counts:
             coverage_counts[clean_status] += 1
+        elif "fully covered" in clean_status or "mostly covered" in clean_status or "largely covered" in clean_status:
+            coverage_counts["fully covered"] += 1
+        elif "partially covered" in clean_status:
+            coverage_counts["partially covered"] += 1
+        elif "not covered" in clean_status:
+            coverage_counts["not covered"] += 1
         else:
             coverage_counts["unknown"] += 1
             
@@ -116,67 +126,87 @@ def analyze_coverage_from_report(report_text, ground_truth_plan):
     return coverage_counts, num_points
 
 def display_coverage(title, counts, total_points):
-    print("\n" + "="*50)
-    print(f"    Quantitative Coverage Analysis ({title})")
-    print("="*50 + "\n")
+    content = "="*90 + "\n"
+    content += f"Quantitative Coverage Analysis ({title})\n"
+    content += "="*90 + "\n"
     
     if total_points > 0:
-        print(f"Total points evaluated: {total_points}\n")
-        
+        content += f"Total points evaluated: {total_points}\n"
         for status, count in counts.items():
             percentage = (count / total_points) * 100
             status_display = status.replace("_", " ").title().ljust(20)
-            print(f"{status_display}: {count} / {total_points} ({percentage:.2f}%)")
+            content += f"{status_display}: {count} / {total_points} ({percentage:.2f}%)\n"
+        return content
     else:
         print("Could not determine the total number of points for analysis.")
+        return ""
 
 
 if __name__ == "__main__":
-    src_dir = "data/veritas"
-    tgt_dir = "data/veritas_pred/claude-4-sonnet"
-    eval_dir = "data/veritas_eval/claude-4-sonnet"
-    os.makedirs(eval_dir, exist_ok=True)
+    src_dir = "data/CS/veritas"
+    preds = [
+        "claude-3.7-sonnet",
+        "claude-4-sonnet",
+        "gemini-2.5-deep-research",
+        "gemini-2.5-flash",
+        "gemini-2.5-pro",
+        "gpt-5",
+        "gpt-5-mini"
+    ]
 
-    total_stat = []
-    coverage_counts = {
-        "fully covered": 0,
-        "partially covered": 0,
-        "not covered": 0,
-        "unknown": 0
-    }
-    total_points = 0
-    for filename in os.listdir(src_dir):
-        if not filename.endswith(".json"):
-            continue
-        if not os.path.exists(os.path.join(tgt_dir, filename)):
-            continue
+    for pred in preds:
+        pred_dir = f"data/CS/veritas_pred/{pred}"
+        eval_dir = f"data/CS/veritas_eval_deepseek_reasoner/{pred}"
+        os.makedirs(eval_dir, exist_ok=True)
 
-        with open(os.path.join(src_dir, filename), "r") as f:
-            data = json.load(f)
-            ground_truth_plan = data["research_plan"]
-        with open(os.path.join(tgt_dir, filename), "r") as f:
-            data = json.load(f)
-            agent_generated_plan = data["research_plan"]
-
-        print(f"🚀 Starting evaluation of {filename}...")
-        eval_report = evaluate_plan_quality(ground_truth_plan, agent_generated_plan)
-        print("📝 Evaluation report generated.")
-        # print(eval_report)
-        print(f"🔍 Analyzing coverage rates of {filename}...")
-        counts, points = analyze_coverage_from_report(eval_report, ground_truth_plan)
-        display_coverage(filename, counts, points)
-        stat = {
-            "filename": filename,
-            "counts": counts,
-            "total_points": points,
-            "evaluation_report": eval_report
+        total_stat = []
+        coverage_counts = {
+            "fully covered": 0,
+            "partially covered": 0,
+            "not covered": 0,
+            "unknown": 0
         }
-        total_stat.append(stat)
+        total_points = 0
+        with open(os.path.join(eval_dir, "evaluation_report.txt"), "a", encoding="utf-8") as f_eval:
+            for filename in os.listdir(src_dir):
+                if not filename.endswith(".json"):
+                    continue
+                if not os.path.exists(os.path.join(pred_dir, filename)):
+                    continue
 
-        for status, count in counts.items():
-            coverage_counts[status] += count
-        total_points += points
-    
-    with open(os.path.join(eval_dir, "coverage.json"), "w", encoding="utf-8") as f:
-        json.dump(total_stat, f, ensure_ascii=False, indent=2)
-    display_coverage("deep research agent powered by claude-4-sonnet", coverage_counts, total_points)
+                with open(os.path.join(src_dir, filename), "r") as f:
+                    data = json.load(f)
+                    ground_truth_plan = data["research_plan"]
+                with open(os.path.join(pred_dir, filename), "r") as f:
+                    data = json.load(f)
+                    agent_generated_plan = data["research_plan"]
+
+                print(f"🚀 Starting evaluation of {filename} ({pred})...")
+                eval_report = evaluate_plan_quality(ground_truth_plan, agent_generated_plan)
+                print("📝 Evaluation report generated.")
+                # print(eval_report)
+                print(f"🔍 Analyzing coverage rates of {filename} ({pred})...")
+                counts, points = analyze_coverage_from_report(eval_report, ground_truth_plan)
+                coverage_content = display_coverage(filename, counts, points)
+                print(coverage_content)
+                stat = {
+                    "filename": filename,
+                    "counts": counts,
+                    "total_points": points,
+                    "evaluation_report": eval_report
+                }
+                total_stat.append(stat)
+
+                for status, count in counts.items():
+                    coverage_counts[status] += count
+                total_points += points
+
+                f_eval.write(f"\n\n{coverage_content}\n")
+                f_eval.write(f"{eval_report}\n")
+
+            with open(os.path.join(eval_dir, "coverage.json"), "w", encoding="utf-8") as f:
+                json.dump(total_stat, f, ensure_ascii=False, indent=2)
+
+            coverage_content = display_coverage(f"deep research agent powered by {pred}", coverage_counts, total_points)
+            print(coverage_content)
+            f_eval.write(f"\n\n{coverage_content}\n")

@@ -1,0 +1,68 @@
+==========================================================================================
+Quantitative Coverage Analysis (deep research agent powered by claude-3.7-sonnet)
+==========================================================================================
+Total points evaluated: 49
+Fully Covered       : 13 / 49 (26.53%)
+Partially Covered   : 26 / 49 (53.06%)
+Not Covered         : 10 / 49 (20.41%)
+
+
+
+==========================================================================================
+Quantitative Coverage Analysis (deep research agent powered by claude-4-sonnet)
+==========================================================================================
+Total points evaluated: 49
+Fully Covered       : 23 / 49 (46.94%)
+Partially Covered   : 21 / 49 (42.86%)
+Not Covered         : 5 / 49 (10.20%)
+
+
+
+==========================================================================================
+Quantitative Coverage Analysis (deep research agent powered by gemini-2.5-deep-research)
+==========================================================================================
+Total points evaluated: 49
+Fully Covered       : 10 / 49 (20.41%)
+Partially Covered   : 28 / 49 (57.14%)
+Not Covered         : 11 / 49 (22.45%)
+
+
+
+==========================================================================================
+Quantitative Coverage Analysis (deep research agent powered by gemini-2.5-flash)
+==========================================================================================
+Total points evaluated: 49
+Fully Covered       : 11 / 49 (22.45%)
+Partially Covered   : 24 / 49 (48.98%)
+Not Covered         : 14 / 49 (28.57%)
+
+
+
+==========================================================================================
+Quantitative Coverage Analysis (deep research agent powered by gemini-2.5-pro)
+==========================================================================================
+Total points evaluated: 49
+Fully Covered       : 11 / 49 (22.45%)
+Partially Covered   : 32 / 49 (65.31%)
+Not Covered         : 6 / 49 (12.24%)
+
+
+
+==========================================================================================
+Quantitative Coverage Analysis (deep research agent powered by gpt-5)
+==========================================================================================
+Total points evaluated: 49
+Fully Covered       : 34 / 49 (69.39%)
+Partially Covered   : 13 / 49 (26.53%)
+Not Covered         : 2 / 49 (4.08%)
+
+
+
+==========================================================================================
+Quantitative Coverage Analysis (deep research agent powered by gpt-5-mini)
+==========================================================================================
+Total points evaluated: 37
+Fully Covered       : 20 / 37 (54.05%)
+Partially Covered   : 15 / 37 (40.54%)
+Not Covered         : 2 / 37 (5.41%)
+

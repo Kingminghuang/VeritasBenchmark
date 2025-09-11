@@ -1,0 +1,270 @@
+{
+  "question": "\nGiven the fundamental controversies over the clinical validity and definition of metabolic syndrome, how do the practical challenges of inconsistent diagnostic criteria, socioeconomic disparities in healthcare access, and poor long-term patient adherence collectively interact to undermine its purported value as a unifying concept for effectively identifying and managing individuals at high risk for cardiovascular disease and type 2 diabetes?\n",
+  "research_plan": "<research_outline>\n(0) Plan and tool/team integration\n  (a) Tools and sequence\n    - web_search_agent: scope core guidelines, critiques, and high-quality reviews on metabolic syndrome (MetS), diagnostic criteria, disparities, and adherence.\n    - deep_researcher_agent: expand searches (systematic reviews, cohort/meta-analyses, guideline/position statements) if gaps remain after initial scan.\n    - deep_analyzer_agent: analyze any retrieved URLs/files and extract metrics (AUC, calibration, NRI/IDI, adherence rates) or perform basic comparisons.\n  (b) Team and roles\n    - Clinical epidemiologist: frame validity and utility questions; oversee study selection and bias appraisal.\n    - Health disparities researcher: lead SES/access and equity analyses.\n    - Biostatistician: specify causal and prognostic modeling; evaluate discrimination/calibration, reclassification, decision-curve net benefit.\n    - Implementation scientist/adherence specialist: assess real-world care pathways and adherence interventions.\n  (c) Protocol and verification\n    - Define inclusion/exclusion, outcomes, and analyses a priori; dual-screen key studies; triangulate findings across independent sources; sensitivity checks across MetS definitions and subpopulations.\n\n(1) Problem framing and scope\n  (a) Central question: How do inconsistent diagnostic criteria, socioeconomic disparities in healthcare access, and poor long-term adherence interact\u2014amid validity/definition controversies\u2014to undermine MetS as a unifying construct for identifying/managing individuals at high risk of CVD and T2D?\n  (b) Outcomes of interest\n    - Primary: incident ASCVD (MI, stroke, CV death); incident T2D.\n    - Secondary: all-cause mortality, CKD, NAFLD, risk-factor control, health service use, equity metrics.\n  (c) Populations and settings: adults across sex, race/ethnicity, and SES; primary care, cardiology, endocrinology; high-, middle-, and low-resource systems.\n\n(2) Foundational concepts and controversies\n  (a) Definitions and evolution: WHO (1998), NCEP ATP III (2001/2005), IDF (2005), AHA/NHLBI (2005), Joint Interim Statement (JIS, 2009).\n  (b) Core controversies\n    - Nosology: unified pathophysiology vs statistical clustering; whether diabetes should be included.\n    - Predictive value: incremental prognostic value of the MetS label beyond individual components and multivariable global risk engines is debated and often limited.\n    - Clinical utility: whether the label changes decisions, improves adherence, or yields better outcomes vs component-based or absolute-risk strategies.\n  (c) Clarify the \u201cunifying concept\u201d claim: intended to simplify high-risk identification and orchestrate multi-factor management; specify what success would look like.\n\n(3) Inconsistent diagnostic criteria: mapping and consequences\n  (a) Comparative mapping\n    - Mandatory vs count-based approaches; ethnic- and sex-specific waist cutoffs; thresholds for TG, HDL-C, BP (\u2265130/85 mmHg), fasting glucose (\u2265100 mg/dL); treatment-as-equivalent rules.\n  (b) Measurement/operational variability\n    - Fasting vs non-fasting labs; anthropometry technique/frequency; EHR coding (e.g., ICD-10-CM E88.81) and phenotype definitions.\n  (c) Consequences for identification and prediction\n    - Prevalence shifts and discordance (agreement/kappa) across definitions; temporal instability of MetS status; impact on discrimination (AUC/c-index), calibration, PPV/NPV.\n    - Reclassification vs alternatives (NRI/IDI) and decision-curve net benefit compared with absolute-risk scores.\n  (d) Policy/quality implications: difficulty standardizing registries and population metrics when case definitions vary across systems and time.\n\n(4) Socioeconomic and structural disparities in access, detection, and management\n  (a) Access barriers: insurance/cost-sharing, clinic proximity, transportation/work constraints, language/culture, structural racism, immigration/legal concerns.\n  (b) Detection biases: under-screening of lipids/glucose, infrequent waist measurement, reliance on fasting labs in low-resource settings; missingness patterns by SES/race/ethnicity.\n  (c) Management disparities: delays in initiating statins/antihypertensives/metformin; limited access to intensive lifestyle programs; built-environment constraints.\n  (d) Equity assessment: stratify performance/outcomes by SES and race/ethnicity; multilevel models; subgroup calibration and equal opportunity/fairness metrics.\n\n(5) Long-term adherence and real-world effectiveness\n  (a) Adherence domains/metrics: medications (PDC/MPR, persistence); lifestyle (weight maintenance, diet quality, physical activity; program enrollment/attrition).\n  (b) Determinants/modifiers: cost, polypharmacy, side effects, literacy, mental health, social support, neighborhood resources; strong SES gradients.\n  (c) Consequences: attenuation of expected benefits despite identification; treatment-resistant risk via poor persistence; heterogeneity by SES/race/ethnicity.\n  (d) Labeling effects: whether \u201cMetS\u201d framing helps or hinders motivation vs absolute-risk or factor-specific counseling; risk of stigma/overmedicalization.\n\n(6) Interaction framework: how inconsistency, disparities, and adherence jointly erode utility\n  (a) Causal diagram (DAG)\n    - Criteria inconsistency \u2192 unstable labeling \u2192 clinician uncertainty/fragmented care.\n    - SES/access \u2192 differential screening/diagnosis/treatment initiation \u2192 selective labeling and intervention exposure.\n    - Adherence (moderated by SES) \u2192 reduced realized benefit \u2192 weakens practical value of syndrome-guided care.\n  (b) Hypotheses\n    - After accounting for SES and adherence, MetS adds minimal predictive/management value over components or absolute-risk tools for CVD; added value for T2D is variable/context-dependent.\n    - Criteria choice mediates SES links to treatment initiation; SES modifies adherence\u2013outcome effects.\n  (c) Analytic tests\n    - Mediation (through treatment initiation/adherence) and moderation (criteria \u00d7 SES; SES \u00d7 adherence) analyses.\n    - Equity-focused validation: subgroup calibration and error-rate parity; disparate impact checks.\n\n(7) Comparative evaluation against alternative risk-stratification frameworks\n  (a) Benchmarks: individual risk-factor treat-to-target; absolute-risk tools (ASCVD PCE, QRISK, Framingham); diabetes risk engines (FINDRISC, ADA tools); continuous clustering (latent class/cluster analysis).\n  (b) Performance/utility: discrimination, calibration, NRI/IDI; decision-curve net benefit; clinical workload and explainability; robustness across SES/ethnic groups.\n  (c) Decision criteria: thresholds for preferring MetS-guided vs absolute-risk/component-based strategies in differing resource settings.\n\n(8) Data sources and variable specification\n  (a) Cohorts/systems: NHANES, MESA, ARIC, REGARDS, Framingham, EPIC, UK Biobank, PURE; integrated EHR/claims (e.g., VA, Kaiser) for adherence/utilization.\n  (b) Variables: MetS components (repeated measures), alternative definitions (ATP III/IDF/JIS; WHO), anthropometrics, lab fasting status; SES indicators (income, education, insurance, area deprivation), access measures (visit frequency, distance); adherence metrics; outcomes (ASCVD/T2D incidence, mortality).\n  (c) Data quality: multiple imputation; measurement-error models; competing risks; time-varying covariates.\n\n(9) Analytical strategy and modeling\n  (a) Descriptive/agreement: prevalence and kappa across definitions; subgroup summaries by SES/ethnicity.\n  (b) Prognostic modeling: Cox/competing risk models; incremental value of MetS beyond components and risk scores.\n  (c) Causal inference: propensity/IPTW/TMLE for treatment initiation; mediation of adherence; moderation by SES.\n  (d) Reclassification/clinical utility: NRI/IDI; decision-curve analysis; calibration-in-the-large and slope by subgroup.\n  (e) Policy simulation/economics: microsimulation/Markov models comparing strategies under varying access/adherence; budget impact; cost-effectiveness (cost/QALY); value-of-information.\n  (f) Fairness evaluation: subgroup calibration, equalized odds/TPR gaps; equity-adjusted net benefit.\n\n(10) Equity, heterogeneity, and global/LMIC considerations\n  (a) Ethnicity- and sex-specific waist thresholds: sensitivity analyses and external validity.\n  (b) Phenotypes: \u201clean MetS,\u201d visceral/ectopic adiposity across populations.\n  (c) LMIC feasibility: scarcity of fasting labs and anthropometry; risk of widening disparities if MetS labeling depends on inaccessible measurements; explore pragmatic substitutes with validation.\n\n(11) Implementation and policy translation\n  (a) Practice recommendations\n    - If using MetS, adopt harmonized JIS criteria; standardize measurement protocols; document EHR phenotype; keep BP 130/85 per MetS standards.\n    - Emphasize component control and absolute-risk framing where MetS adds no net benefit; implement care pathways prioritizing highest-yield interventions.\n  (b) Health-system levers: expand preventive access (screening outreach, mobile labs, telehealth); reduce costs (generics, subsidies); team-based chronic care; adherence supports (fixed-dose combos, pharmacist-led management, digital reminders, community health workers, social needs integration).\n  (c) Communication: test framing (\u201ccardiometabolic risk\u201d vs \u201cmetabolic syndrome\u201d) for comprehension/motivation; mitigate stigma.\n\n(12) Verification, robustness, and ethics\n  (a) Sensitivity analyses: across definitions (ATP III/IDF/JIS/WHO), waist cutoffs, fasting vs non-fasting labs; pre-specify any HbA1c substitutions as sensitivity only.\n  (b) External validation/transportability: replicate across cohorts, EHRs, countries, and resource settings.\n  (c) Bias/privacy: address residual confounding, selection/survivorship bias; ensure data privacy; transparent model reporting.\n  (d) Harms assessment: labeling/overmedicalization, workflow burden, opportunity costs vs benefits.\n\n(13) Synthesis and decision framework\n  (a) Integrate evidence to judge whether MetS offers incremental, equitable, and actionable value beyond alternatives.\n  (b) Go/no-go criteria: minimum thresholds for incremental discrimination, calibration, net benefit, and equity; identify contexts where MetS may be useful vs harmful.\n\n(14) Deliverables and timeline\n  (a) Deliverables: evidence map and criteria crosswalks; DAGs/interaction maps; analytic code and phenotype definitions; fairness/utility dashboards; policy brief; clinician/patient decision aids.\n  (b) Timeline: Weeks 1\u20132 scoping/protocol; Weeks 3\u20134 full-text synthesis and modeling; Week 5 verification and finalize deliverables.\n</research_outline>",
+  "references": [
+    {
+      "title": "The metabolic syndrome: Definitions, controversies and clinical utility",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-1-59745-192-5.pdf#page=14"
+    },
+    {
+      "title": "Metabolic syndrome under fire: weighing in on the truth",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0828282X06709217"
+    },
+    {
+      "title": "The metabolic syndrome: concepts and controversy",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0025619611609476"
+    },
+    {
+      "title": "Defining Metabolic Syndrome: what kind of causality, if any, is required?",
+      "url": "https://sciendo.com/2/v2/download/article/10.1515/disp-2017-0018.pdf"
+    },
+    {
+      "title": "Metabolic syndrome, or What you will: definitions and epidemiology",
+      "url": "https://journals.sagepub.com/doi/abs/10.3132/dvdr.2007.003"
+    },
+    {
+      "title": "Clinical staging to guide management of metabolic disorders and their sequelae: a European Atherosclerosis Society consensus statement",
+      "url": "https://academic.oup.com/eurheartj/advance-article-abstract/doi/10.1093/eurheartj/ehaf314/8125503"
+    },
+    {
+      "title": "The metabolic syndrome: a glance at its history",
+      "url": "https://journals.lww.com/jhypertension/fulltext/2006/04000/Role_of_oxidative_stress_in_cardiovascular.3.aspx"
+    },
+    {
+      "title": "The metabolic syndrome (MS) in the elderly: considerations on the diagnostic criteria of the International Diabetes Federation (IDF) and some proposed modifications",
+      "url": "https://www.sciencedirect.com/science/article/pii/S016749430800068X"
+    },
+    {
+      "title": "Metabolic syndrome in youth: current issues and challenges",
+      "url": "https://cdnsciencepub.com/doi/abs/10.1139/H06-094"
+    },
+    {
+      "title": "Abdominal obesity and the metabolic syndrome: contribution to global cardiometabolic risk",
+      "url": "https://www.ahajournals.org/doi/abs/10.1161/atvbaha.107.159228"
+    },
+    {
+      "title": "The metabolic syndrome: time for a critical appraisal",
+      "url": "https://htn.almazovcentre.ru/jour/article/view/1052?locale=en_US"
+    },
+    {
+      "title": "Harmonizing the metabolic syndrome: a joint interim statement of the international diabetes federation task force on epidemiology and prevention; national heart, lung\u00a0\u2026",
+      "url": "https://www.ahajournals.org/doi/abs/10.1161/CIRCULATIONAHA.109.192644"
+    },
+    {
+      "title": "Interrelationships with metabolic syndrome, obesity and cardiovascular risk",
+      "url": "https://www.ingentaconnect.com/content/ben/cvp/2016/00000014/00000005/art00005"
+    },
+    {
+      "title": "Diagnosis of metabolic syndrome using machine learning, statistical and risk quantification techniques: a systematic literature review",
+      "url": "https://www.medrxiv.org/content/10.1101/2020.06.01.20119339.abstract"
+    },
+    {
+      "title": "Cardiovascular risk assessment in patients with diabetes",
+      "url": "https://link.springer.com/article/10.1186/s13098-017-0225-1"
+    },
+    {
+      "title": "\" The metabolic syndrome... is dead\": These reports are an exaggeration",
+      "url": "https://link.springer.com/article/10.1186/1475-2840-10-11"
+    },
+    {
+      "title": "Pre-diabetes, metabolic syndrome, and cardiovascular risk",
+      "url": "https://www.jacc.org/doi/abs/10.1016/j.jacc.2011.08.080"
+    },
+    {
+      "title": "The impact of the metabolic score for insulin resistance on cardiovascular disease: a 10-year follow-up cohort study",
+      "url": "https://link.springer.com/article/10.1007/s40618-022-01925-0"
+    },
+    {
+      "title": "Associations of non-traditional cardiovascular risk factors and body mass index with metabolic syndrome in the Chinese elderly population",
+      "url": "https://link.springer.com/article/10.1186/s13098-023-01047-4"
+    },
+    {
+      "title": "Metabolic syndrome, fatty liver, and artificial intelligence-based epicardial adipose tissue measures predict long-term risk of cardiac events: a prospective study",
+      "url": "https://link.springer.com/article/10.1186/s12933-021-01220-x"
+    },
+    {
+      "title": "Metabolic syndrome, independent of its components, affects adversely cardiovascular morbidity in essential hypertensives",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0021915015301830"
+    },
+    {
+      "title": "Cardiovascular disease and risk factors in law enforcement personnel: a comprehensive review",
+      "url": "https://journals.lww.com/cardiologyinreview/fulltext/2012/07000/Cardiovascular_Disease_and_Risk_Factors_in_Law.1.aspx"
+    },
+    {
+      "title": "Impact of healthcare access and socio-economic conditions on prevalence of metabolic syndrome: Evidence from 2015 brfss",
+      "url": "https://www.inderscienceonline.com/doi/abs/10.1504/IJBEX.2020.108216"
+    },
+    {
+      "title": "Socioeconomic disparities in metabolic syndrome differ by gender: evidence from NHANES III",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1047279706001888"
+    },
+    {
+      "title": "Effects of socioeconomic status, health behavior, and physical activity on the prevalence of metabolic syndrome",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5931152/"
+    },
+    {
+      "title": "Socioeconomic inequalities in metabolic syndrome by age and gender in a Spanish working population",
+      "url": "https://www.mdpi.com/1660-4601/18/19/10333"
+    },
+    {
+      "title": "Trends in the prevalence of metabolic syndrome in the United States, 2011-2016",
+      "url": "https://jamanetwork.com/journals/jama/article-abstract/2767313"
+    },
+    {
+      "title": "Gender, socio-economic status and metabolic syndrome in middle-aged and old adults",
+      "url": "https://link.springer.com/article/10.1186/1471-2458-8-62"
+    },
+    {
+      "title": "Socio-economics status and metabolic syndrome: A meta-analysis",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1871402119302012"
+    },
+    {
+      "title": "Area-level socioeconomic characteristics and incidence of metabolic syndrome: a prospective cohort study",
+      "url": "https://link.springer.com/article/10.1186/1471-2458-13-681"
+    },
+    {
+      "title": "Metabolic syndrome prevalence by race/ethnicity and sex in the United States, National Health and Nutrition Examination Survey, 1988\u20132012",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5364735/"
+    },
+    {
+      "title": "Prevalence of metabolic syndrome in the United States national health and nutrition examination survey 2011\u201318",
+      "url": "https://academic.oup.com/pmj/article-abstract/99/1175/985/7076129"
+    },
+    {
+      "title": "The modified NCEP ATP III criteria maybe better than the IDF criteria in diagnosing Metabolic Syndrome among Malays in Kuala Lumpur",
+      "url": "https://link.springer.com/article/10.1186/1471-2458-10-678"
+    },
+    {
+      "title": "Is a new waist circumference and BMI needed for African Americans for the diagnosis of metabolic syndrome?",
+      "url": "https://drum.lib.umd.edu/bitstreams/e6676a90-bc42-4459-bacd-f91d17137b71/download"
+    },
+    {
+      "title": "Prevalence of metabolic syndrome using WHO, ATPIII and IDF definitions in Asian Indians: the Chennai Urban Rural Epidemiology Study (CURES\u201034)",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/dmrr.658"
+    },
+    {
+      "title": "Appropriate waist circumference cutoff values for the diagnosis of metabolic syndrome in Mexican American adults",
+      "url": "https://search.proquest.com/openview/e420ff437a7ad67e3db8665894c979a5/1?pq-origsite=gscholar&cbl=18750"
+    },
+    {
+      "title": "Metabolic syndrome in Canadian adults",
+      "url": "https://harvest.usask.ca/items/ef44c2fd-9077-466b-991b-307a02d60673"
+    },
+    {
+      "title": "Metabolic syndrome, obesity and ethnicity\u2014The SAMINOR Study",
+      "url": "https://munin.uit.no/handle/10037/22512"
+    },
+    {
+      "title": "The metabolic syndrome: a definition dilemma",
+      "url": "https://journals.co.za/doi/abs/10.10520/EJC23557"
+    },
+    {
+      "title": "\u2026\u00a0of the Metabolic Syndrome to Survey Data From the National Cholesterol Education Program Evaluation Project Utilizing Novel E\u2010Technology (NEPTUNE II)",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1559-4564.2006.05902.x"
+    },
+    {
+      "title": "Metabolic syndrome and chronic disease risk in South Asian immigrants: a review of prevalence, factors, and interventions",
+      "url": "https://www.mdpi.com/2227-9032/11/5/720"
+    },
+    {
+      "title": "Gender differences in the impact of metabolic syndrome components on mortality in older people: A systematic review and meta-analysis",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0939475320301575"
+    },
+    {
+      "title": "Long-term effectiveness of a lifestyle intervention: a pragmatic community trial to prevent metabolic syndrome",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0749379718323857"
+    },
+    {
+      "title": "Effects of a long-term lifestyle intervention program with Mediterranean diet and exercise for the management of patients with metabolic syndrome in a primary care\u00a0\u2026",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0953620515001028"
+    },
+    {
+      "title": "Long-term outcomes following completion of a structured nutrition and exercise lifestyle intervention program for patients with metabolic syndrome",
+      "url": "https://www.tandfonline.com/doi/abs/10.2147/DMSO.S175858"
+    },
+    {
+      "title": "A randomized lifestyle intervention with 5-year follow-up in subjects with impaired glucose tolerance: pronounced short-term impact but long-term adherence problems",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/1403494808101373"
+    },
+    {
+      "title": "Lifestyle intervention in the management of metabolic syndrome: could we improve adherence issues?",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0899900707003541"
+    },
+    {
+      "title": "Effectiveness of a lifestyle intervention on metabolic syndrome. A randomized controlled trial",
+      "url": "https://link.springer.com/article/10.1007/s11606-007-0399-6"
+    },
+    {
+      "title": "The effects of a community-based lifestyle intervention on metabolic syndrome and its components in adolescents: findings of a decade follow-up",
+      "url": "https://www.liebertpub.com/doi/abs/10.1089/met.2017.0055"
+    },
+    {
+      "title": "Long-term effects of a lifestyle intervention on weight and cardiovascular risk factors in individuals with type 2 diabetes mellitus: four-year results of the Look AHEAD\u00a0\u2026",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/226013"
+    },
+    {
+      "title": "Lifestyle intervention on metabolic syndrome and its impact on quality of life: a randomized controlled trial",
+      "url": "https://www.scielo.br/j/abc/a/n5BLc9W8d88mpcrDQvmnzhh/?lang=en"
+    },
+    {
+      "title": "\u2026\u00a0of a lifestyle intervention program using a mobile application for adults with metabolic syndrome, versus the effect of a program using a booklet: a pilot randomized\u00a0\u2026",
+      "url": "https://www.tandfonline.com/doi/abs/10.2147/CIA.S303920"
+    },
+    {
+      "title": "Improving medication adherence in cardiometabolic disease: practical and regulatory implications",
+      "url": "https://www.jacc.org/doi/abs/10.1016/j.jacc.2016.11.034"
+    },
+    {
+      "title": "Effectiveness of Nurse\u2010Led interventions on medication adherence in adults taking medication for metabolic syndrome: a systematic review and Meta\u2010Analysis",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jocn.16589"
+    },
+    {
+      "title": "Cardiometabolic patient-related factors influencing the adherence to lifestyle changes and overall treatment: a review of the recent literature",
+      "url": "https://www.mdpi.com/2075-1729/13/5/1153"
+    },
+    {
+      "title": "Gender-related factors in medication adherence for metabolic and cardiovascular health",
+      "url": "https://www.mdpi.com/2218-1989/13/10/1087"
+    },
+    {
+      "title": "Metabolic syndrome and cardiometabolic risk factors",
+      "url": "https://www.ingentaconnect.com/content/ben/cvp/2013/00000011/00000006/art00008"
+    },
+    {
+      "title": "The pharmacological management of metabolic syndrome",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/17512433.2018.1429910"
+    },
+    {
+      "title": "\u2026\u00a0behavioral interventions facilitated by health care providers at improving medication adherence in cardiometabolic conditions: a systematic review and meta-analysis",
+      "url": "https://academic.oup.com/abm/article-abstract/57/2/99/6653343"
+    },
+    {
+      "title": "Lifestyle or pharmacotherapy in cardio-metabolic disease prevention",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/17539447231177175"
+    },
+    {
+      "title": "Medication non-adherence and therapeutic inertia independently contribute to poor disease control for cardiometabolic diseases",
+      "url": "https://www.nature.com/articles/s41598-022-21916-8"
+    },
+    {
+      "title": "The metabolic syndrome\u2013What is it and how should it be managed?",
+      "url": "https://academic.oup.com/eurjpc/article-abstract/26/2_suppl/33/5925425"
+    },
+    {
+      "title": "The metabolic syndrome: time for a critical appraisal: joint statement from the American Diabetes Association and the European Association for the Study of Diabetes",
+      "url": "https://diabetesjournals.org/care/article-abstract/28/9/2289/24289"
+    },
+    {
+      "title": "The metabolic syndrome: time for a critical appraisal: joint statement from the American Diabetes Association and the European Association for the Study of Diabetes\u00a0\u2026",
+      "url": "https://diabetesjournals.org/care/article-abstract/29/1/175/24408"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 77672,
+    "output_tokens": 22815,
+    "total_tokens": 100487,
+    "input_cost": 0.09709000000000002,
+    "output_cost": 0.22815000000000002,
+    "total_cost": 0.32524000000000003
+  }
+}

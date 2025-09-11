@@ -1,0 +1,414 @@
+{
+  "question": "\nGiven that metabolic syndrome is a complex cluster of interrelated conditions stemming from insulin resistance, how does the interplay between non-modifiable risk factors (such as age and genetic predisposition) and modifiable lifestyle factors (like diet, physical activity, and stress) inform the rationale behind a multi-tiered management strategy that prioritizes comprehensive lifestyle modifications as the first-line therapy to prevent or delay the onset of cardiovascular disease and type 2 diabetes?\n",
+  "research_plan": "<research_outline>\n(1) Clarify the scope and definitions\n  (a) Define metabolic syndrome (MetS) and list diagnostic criteria and cut-points (AHA/NHLBI vs IDF), including waist circumference thresholds by sex/ethnicity.\n  (b) Define non-modifiable risk factors (age, sex, ethnicity, family history, genetic variants/polygenic risk).\n  (c) Define modifiable lifestyle factors (dietary patterns/quality, caloric balance, physical activity and sedentary time, sleep duration/quality, psychosocial stress, tobacco/alcohol).\n  (d) Frame outcomes: incident type 2 diabetes (T2D), atherosclerotic cardiovascular disease (ASCVD) events, mortality, and intermediate markers (BP, lipids, glycemia, central adiposity).\n\n(2) Establish pathophysiologic foundations centered on insulin resistance\n  (a) Mechanistic core: insulin resistance and compensatory hyperinsulinemia; \u03b2-cell stress/failure trajectory.\n  (b) Adipose tissue dysfunction: visceral adiposity, adipokine imbalance (adiponectin, leptin), lipolysis/FFA flux \u2192 hepatic insulin resistance.\n  (c) Ectopic fat deposition: hepatic steatosis (MASLD/NAFLD), intramyocellular lipids, pancreatic fat\u2014links to dysglycemia and atherogenic dyslipidemia.\n  (d) Chronic low-grade inflammation/oxidative stress: cytokines (TNF-\u03b1, IL-6), CRP; endothelial dysfunction and prothrombotic state.\n  (e) Neurohormonal activation: RAAS and sympathetic nervous system contributions to hypertension and insulin resistance.\n  (f) Circadian, sleep, and stress biology: HPA axis activation, sleep restriction/OSA effects on glucose regulation and appetite.\n\n(3) Map the interplay of non-modifiable and modifiable risks\n  (a) Age-related changes in body composition, sarcopenia, and insulin sensitivity; implications for intervention selection and intensity.\n  (b) Genetic predisposition/family history: polygenic risk modulation of response to lifestyle; gene\u2013environment interactions (e.g., diet quality \u00d7 genetic risk; activity \u00d7 insulin sensitivity).\n  (c) Sex differences and life-course factors (e.g., menopause; history of gestational diabetes) shaping risk and responsiveness.\n  (d) Ethnicity-specific considerations: differential MetS prevalence and waist thresholds (e.g., South Asian, East Asian, Hispanic, Black populations); cardiometabolic risk at lower BMI.\n  (e) Modifiable drivers: quantify effects of dietary patterns (Mediterranean/DASH vs Western), physical activity vs sedentary time, stress burden, and sleep inadequacy on insulin resistance and MetS components.\n  (f) Synthesize how non-modifiable factors set baseline susceptibility while modifiable factors determine phenotypic expression/trajectory\u2014justifying early, intensive lifestyle-first therapy.\n\n(4) Compile evidence for lifestyle-first management\n  (a) Landmark diabetes prevention trials:\n    (i) DPP: targets (\u22657% weight loss; \u2265150 min/wk moderate PA), ~58% relative risk reduction in T2D over ~3 years; durability from DPPOS.\n    (ii) Finnish DPS: ~58% T2D risk reduction with goals for weight loss, diet quality, and PA.\n    (iii) Da Qing Study: long-term reduction in T2D incidence and improved CV outcomes with diet/PA interventions.\n  (b) Diet quality and cardiovascular risk:\n    (i) PREDIMED: Mediterranean diet (EVOO/nuts) reduced major CV events in high-risk adults and improved MetS status.\n    (ii) PREDIMED-Plus: energy-restricted Mediterranean diet + activity produced greater weight and metabolic risk improvements.\n  (c) Exercise training evidence: aerobic + resistance training improves insulin sensitivity, visceral fat, BP, triglycerides, HDL-C; dose\u2013response relationships.\n  (d) Stress and sleep interventions: RCTs/meta-analyses showing improvements in stress markers, BP, and selected metabolic parameters; adjunctive role.\n  (e) Translational effectiveness: community/primary-care implementations of DPP demonstrate scalable risk reduction supporting population-level first-line use.\n\n(5) Summarize guideline and consensus recommendations prioritizing lifestyle modification\n  (a) AHA/NHLBI scientific statements on MetS: lifestyle modification as cornerstone; pharmacotherapy targets individual components as needed.\n  (b) ADA Standards of Care (prediabetes/MetS risk): prescribe intensive lifestyle programs; metformin criteria for high-risk; PA and nutrition therapy targets.\n  (c) Endocrine Society and AACE/ACE: intensive lifestyle intervention as first-line; thresholds for anti-obesity pharmacotherapy and metabolic surgery.\n  (d) IDF/ATP III harmonization: global perspective on central obesity; ethnic-specific waist cut points; lifestyle emphasis.\n  (e) Specify targets to operationalize \"first-line\":\n    (i) Weight loss: \u22655\u201310% in year 1; consider \u226510% for higher-risk phenotypes (e.g., MASLD).\n    (ii) Physical activity: \u2265150\u2013300 min/wk moderate or \u226575\u2013150 min/wk vigorous + 2\u20133 days/wk resistance; reduce sedentary time.\n    (iii) Diet: Mediterranean/DASH patterns; energy deficit; high fiber; reduced refined carbs/added sugars/SSBs; sodium moderation.\n    (iv) Sleep: 7\u20139 hours; assess/treat OSA where indicated.\n    (v) Stress/behavioral: CBT, mindfulness, goal setting, self-monitoring, motivational interviewing; smoking cessation and alcohol moderation.\n\n(6) Articulate the rationale for a multi-tiered, stepwise management strategy\n  (a) Tier 1 (universally for MetS/high risk): comprehensive lifestyle modification because it targets the root pathophysiology (insulin resistance), improves multiple components simultaneously, and is safe, scalable, and cost-effective.\n  (b) Tier 2 (add-on for residual risk or high baseline risk): targeted pharmacotherapy for dyslipidemia (statins; consider TG-lowering when indicated), hypertension (ACEi/ARB per ACC/AHA), dysglycemia (metformin in high-risk prediabetes; GLP-1 RA/SGLT2i in T2D with cardio-renal indications), and anti-obesity medications to sustain \u226510% weight loss when appropriate; manage MASLD per guidance.\n  (c) Tier 3 (refractory or severe cases): metabolic/bariatric surgery for severe obesity with metabolic complications; aggressive LDL-C lowering for very high ASCVD risk; multidisciplinary care for established CVD/T2D.\n  (d) Personalization by non-modifiable risk: older age, strong family history/polygenic risk, and high-risk ethnicity may warrant earlier/intensified Tier 1 and lower thresholds for Tier 2/3 escalation.\n\n(7) Monitoring, targets, and escalation thresholds\n  (a) Baseline and 3\u20136 month follow-up: waist circumference, weight/BMI, BP, fasting glucose/HbA1c, lipid panel (TG, HDL-C, LDL-C/non-HDL-C), liver enzymes; optional insulin resistance indices.\n  (b) Clinical outcomes: incident T2D and ASCVD events; use risk calculators to quantify benefit and guide intensity.\n  (c) Escalation rules: intensify or add pharmacotherapy if targets unmet after 3\u20136 months of high-adherence lifestyle or if baseline risk is high.\n\n(8) Implementation and health systems considerations\n  (a) Translate DPP-like programs into primary care/community; team-based delivery (dietitians, exercise physiologists, behavioral health); digital tools and group programs.\n  (b) Coverage and reimbursement for medical nutrition therapy, DPP programs, and health coaching.\n  (c) Equity: address social determinants and cultural tailoring to improve access and adherence in underserved populations.\n\n(9) Research gaps and future directions\n  (a) Precision lifestyle: genotype- and metabolome-informed nutrition/activity prescriptions; phenotyping insulin resistance (adipose vs hepatic vs muscle).\n  (b) Optimal stress/sleep intervention packages and their effects on hard cardiometabolic outcomes.\n  (c) Long-term adherence strategies; comparative and cost-effectiveness of Tier 2/3 adjuncts to lifestyle.\n  (d) Life-course interventions (youth, perimenopause, older adults) to modify age-related risk trajectories.\n\n(10) Verification and quality assurance steps\n  (a) Cross-validate targets and recommendations across \u22652 guidelines (AHA/NHLBI, ADA, Endocrine Society, IDF/AACE/ACE).\n  (b) Confirm trial effect sizes and generalizability via \u22652 landmark RCTs and meta-analyses (DPP, Finnish DPS, Da Qing; PREDIMED; Look AHEAD insights).\n  (c) Ensure the tiered strategy aligns with measured patient risk (age, genetics, ethnicity) and modifiable factor burden; document rationale for escalation.\n</research_outline>",
+  "references": [
+    {
+      "title": "The metabolic vascular syndrome-guide to an individualized treatment",
+      "url": "https://link.springer.com/article/10.1007/s11154-016-9345-4"
+    },
+    {
+      "title": "Diagnosis and management of the metabolic syndrome: an American Heart Association/National Heart, Lung, and Blood Institute scientific statement",
+      "url": "https://www.ahajournals.org/doi/abs/10.1161/CIRCULATIONAHA.105.169404"
+    },
+    {
+      "title": "Primary prevention of ASCVD and T2DM in patients at metabolic risk: an Endocrine Society clinical practice guideline",
+      "url": "https://academic.oup.com/jcem/article-abstract/104/9/3939/5540926"
+    },
+    {
+      "title": "Diagnostic criteria and management of metabolic syndrome: Evolution overtime",
+      "url": "https://bonga.unisimon.edu.co/items/e5dcbfd4-ad8d-4e97-a12b-50faa20096c1"
+    },
+    {
+      "title": "AHA/ADA Scientific Statement",
+      "url": "https://file.medtrib.cn/pdf/bf4fee76-0d77-4a09-b240-167ed382ebb8/2015%20AHA-ADA%E7%B3%96%E5%B0%BF%E7%97%85%E6%82%A3%E8%80%85CVD%E9%A2%84%E9%98%B2%E7%A7%91%E5%AD%A6%E5%A3%B0%E6%98%8E.pdf"
+    },
+    {
+      "title": "Pre-diabetes, metabolic syndrome, and cardiovascular risk",
+      "url": "https://www.jacc.org/doi/abs/10.1016/j.jacc.2011.08.080"
+    },
+    {
+      "title": "Treating the metabolic syndrome",
+      "url": "https://www.tandfonline.com/doi/abs/10.1586/14779072.5.3.491"
+    },
+    {
+      "title": "Clinical management of stable coronary artery disease in patients with type 2 diabetes mellitus: a scientific statement from the American Heart Association",
+      "url": "https://www.ahajournals.org/doi/abs/10.1161/CIR.0000000000000766"
+    },
+    {
+      "title": "Metabolic syndrome management",
+      "url": "https://www.tandfonline.com/doi/abs/10.1517/14656566.8.13.2059"
+    },
+    {
+      "title": "[Retracted] A Comprehensive Review on Metabolic Syndrome",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1155/2014/943162"
+    },
+    {
+      "title": "Genetics of insulin resistance and the metabolic syndrome",
+      "url": "https://link.springer.com/article/10.1007/s11886-016-0755-4"
+    },
+    {
+      "title": "Metabolic syndrome pathophysiology and predisposing factors",
+      "url": "https://www.thieme-connect.com/products/ejournals/html/10.1055/a-1263-0898"
+    },
+    {
+      "title": "Metabolic syndrome and insulin resistance: underlying causes and modification by exercise training",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/j.2040-4603.2013.tb00484.x"
+    },
+    {
+      "title": "Mechanisms and risk factors of metabolic syndrome in children and adolescents",
+      "url": "https://link.springer.com/article/10.1007/s12020-023-03642-x"
+    },
+    {
+      "title": "Metabolic syndrome",
+      "url": "https://www.nature.com/articles/s41572-024-00563-5"
+    },
+    {
+      "title": "A comprehensive review of metabolic syndrome and its role in cardiovascular disease and type 2 diabetes mellitus: mechanisms, risk factors, and management",
+      "url": "https://www.cureus.com/articles/287196-a-comprehensive-review-of-metabolic-syndrome-and-its-role-in-cardiovascular-disease-and-type-2-diabetes-mellitus-mechanisms-risk-factors-and-management.pdf"
+    },
+    {
+      "title": "Obesity, insulin resistance and comorbidities\u2013Mechanisms of association",
+      "url": "https://www.scielo.br/j/abem/a/8rrcF9Wccfw5yJfB9YgJ9pR/?lang=en"
+    },
+    {
+      "title": "The metabolic syndrome and schizophrenia",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1600-0447.2008.01317.x"
+    },
+    {
+      "title": "Cardiac health in women with metabolic syndrome: clinical aspects and pathophysiology",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1038/oby.2009.8"
+    },
+    {
+      "title": "Hyperinsulinaemia, a key factor of the metabolic syndrome in postmenopausal women",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0378512208003642"
+    },
+    {
+      "title": "\u2026\u00a0intervention and metformin on preventing or delaying diabetes among women with and without gestational diabetes: the Diabetes Prevention Program outcomes\u00a0\u2026",
+      "url": "https://academic.oup.com/jcem/article-abstract/100/4/1646/2815139"
+    },
+    {
+      "title": "Role of insulin secretion and sensitivity in the evolution of type 2 diabetes in the diabetes prevention program: effects of lifestyle intervention and metformin",
+      "url": "https://diabetesjournals.org/diabetes/article-abstract/54/8/2404/13723"
+    },
+    {
+      "title": "Sustained reduction in the incidence of type 2 diabetes by lifestyle intervention: follow-up of the Finnish Diabetes Prevention Study",
+      "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140673606697018/abstract"
+    },
+    {
+      "title": "Long-term benefits from lifestyle interventions for type 2 diabetes prevention: time to expand the efforts",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3632163/"
+    },
+    {
+      "title": "\u2026\u00a0of lifestyle intervention or metformin on diabetes development and microvascular complications over 15-year follow-up: the Diabetes Prevention Program Outcomes\u00a0\u2026",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2213858715002910"
+    },
+    {
+      "title": "Reduction in the incidence of type 2 diabetes with lifestyle intervention or metformin",
+      "url": "https://www.nejm.org/doi/abs/10.1056/NEJMoa012512"
+    },
+    {
+      "title": "Diabetes prevention in the real world: effectiveness of pragmatic lifestyle interventions for the prevention of type 2 diabetes and of the impact of adherence to guideline\u00a0\u2026",
+      "url": "https://diabetesjournals.org/care/article-abstract/37/4/922/32167"
+    },
+    {
+      "title": "Translating the Diabetes Prevention Program lifestyle intervention for weight loss into primary care: a randomized trial",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/1485081"
+    },
+    {
+      "title": "Prevention of diabetes through lifestyle intervention: lessons learned from the diabetes prevention program and outcomes study and its translation to practice",
+      "url": "https://link.springer.com/article/10.1007/s13668-014-0094-2"
+    },
+    {
+      "title": "Association of an intensive lifestyle intervention with remission of type 2 diabetes",
+      "url": "https://jamanetwork.com/journals/jama/article-abstract/1486829"
+    },
+    {
+      "title": "Mediterranean diets and metabolic syndrome status in the PREDIMED randomized trial",
+      "url": "https://www.cmaj.ca/content/186/17/E649.short"
+    },
+    {
+      "title": "Effect of a Mediterranean diet supplemented with nuts on metabolic syndrome status: one-year results of the PREDIMED randomized trial",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/773456"
+    },
+    {
+      "title": "Mediterranean diet and metabolic syndrome: the evidence",
+      "url": "https://www.cambridge.org/core/journals/public-health-nutrition/article/mediterranean-diet-and-metabolic-syndrome-the-evidence/F607EFDDBA7FA4BAB704F0CAE7DF7C66"
+    },
+    {
+      "title": "The antioxidant potential of the Mediterranean diet in patients at high cardiovascular risk: an in-depth review of the PREDIMED",
+      "url": "https://www.nature.com/articles/s41387-018-0025-1"
+    },
+    {
+      "title": "The Mediterranean diet, plasma metabolome, and cardiovascular disease risk",
+      "url": "https://academic.oup.com/eurheartj/article-abstract/41/28/2645/5836100"
+    },
+    {
+      "title": "Benefits of the Mediterranean diet: insights from the PREDIMED study",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0033062015000286"
+    },
+    {
+      "title": "Protective effects of the Mediterranean diet on type 2 diabetes and metabolic syndrome",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0022316623005898"
+    },
+    {
+      "title": "Effects of a Mediterranean-style diet on cardiovascular risk factors: a randomized trial",
+      "url": "https://www.acpjournals.org/doi/abs/10.7326/0003-4819-145-1-200607040-00004"
+    },
+    {
+      "title": "The PREDIMED trial, Mediterranean diet and health outcomes: how strong is the evidence?",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0939475317300984"
+    },
+    {
+      "title": "\u2026\u00a0intervention on energy-reduced Mediterranean diet adherence among patients with metabolic syndrome: interim analysis of the PREDIMED-Plus randomized clinical\u00a0\u2026",
+      "url": "https://jamanetwork.com/journals/jama/article-abstract/2752925"
+    },
+    {
+      "title": "Systematic review and meta-analysis of stress management intervention studies in patients with metabolic syndrome combined with psychological symptoms",
+      "url": "https://journals.lww.com/md-journal/fulltext/2023/10200/systematic_review_and_meta_analysis_of_stress.1.aspx?context=latestarticles"
+    },
+    {
+      "title": "Effectiveness of a lifestyle intervention on metabolic syndrome. A randomized controlled trial",
+      "url": "https://link.springer.com/article/10.1007/s11606-007-0399-6"
+    },
+    {
+      "title": "Lifestyle intervention on metabolic syndrome and its impact on quality of life: a randomized controlled trial",
+      "url": "https://www.scielo.br/j/abc/a/n5BLc9W8d88mpcrDQvmnzhh/?lang=en"
+    },
+    {
+      "title": "Educational intervention on perceived stress among adults with type 2 diabetes and metabolic syndrome: a non-randomized clinical trial",
+      "url": "http://www.scielo.org.co/scielo.php?pid=S0120-53072024000100003&script=sci_arttext&tlng=en"
+    },
+    {
+      "title": "\u2026\u00a0of different lifestyle interventions for enhancing wellbeing: the study design for a randomized controlled trial for persons with metabolic syndrome risk factors and\u00a0\u2026",
+      "url": "https://link.springer.com/article/10.1186/1471-2458-14-310"
+    },
+    {
+      "title": "Effects of an internet-based lifestyle intervention on cardio-metabolic risks and stress in Korean workers with metabolic syndrome: a controlled trial",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0738399114004418"
+    },
+    {
+      "title": "Effects of a randomized controlled trial of transcendental meditation on components of the metabolic syndrome in subjects with coronary heart disease",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/410453"
+    },
+    {
+      "title": "A randomized controlled trial of fasting and lifestyle modification in patients with metabolic syndrome: effects on patient-reported outcomes",
+      "url": "https://www.mdpi.com/2072-6643/14/17/3559"
+    },
+    {
+      "title": "\u2026\u00a0a lifestyle intervention program using a mobile application versus the effect of a program using a booklet for adults with metabolic syndrome: a three\u2010arm randomized\u00a0\u2026",
+      "url": "https://sigmapubs.onlinelibrary.wiley.com/doi/abs/10.1111/jnu.12883"
+    },
+    {
+      "title": "Effects of exercise intervention on mitochondrial stress biomarkers in metabolic syndrome patients: a randomized controlled trial",
+      "url": "https://www.mdpi.com/1660-4601/18/5/2242"
+    },
+    {
+      "title": "Diagnosis and management of the metabolic syndrome: an American Heart Association/National Heart, Lung, and Blood Institute scientific statement",
+      "url": "https://www.ahajournals.org/doi/abs/10.1161/CIRCULATIONAHA.105.169404"
+    },
+    {
+      "title": "\u2026\u00a0of metabolic syndrome: report of the American Heart Association/National Heart, Lung, and Blood Institute/American Diabetes Association conference on scientific\u00a0\u2026",
+      "url": "https://www.ahajournals.org/doi/abs/10.1161/01.cir.0000112379.88385.67"
+    },
+    {
+      "title": "Metabolic syndrome",
+      "url": "https://www.nature.com/articles/s41572-024-00563-5"
+    },
+    {
+      "title": "The metabolic syndrome: definitions, prevalence and management",
+      "url": "https://karger.com/jnn/article-abstract/1/3/100/181418"
+    },
+    {
+      "title": "Challenges associated with metabolic syndrome",
+      "url": "https://accpjournals.onlinelibrary.wiley.com/doi/abs/10.1592/phco.26.12part2.209S"
+    },
+    {
+      "title": "A review of the metabolic syndrome",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1262363607001632"
+    },
+    {
+      "title": "A constellation of complications: the metabolic syndrome",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1098359705800663"
+    },
+    {
+      "title": "The metabolic syndrome in children and adolescents: shifting the focus to cardiometabolic risk factor clustering",
+      "url": "https://publications.aap.org/pediatrics/article-abstract/140/2/e20171603/38714"
+    },
+    {
+      "title": "Treating the metabolic syndrome",
+      "url": "https://www.tandfonline.com/doi/abs/10.1586/14779072.5.3.491"
+    },
+    {
+      "title": "Sex-and gender-related prevalence, cardiovascular risk and therapeutic approach in metabolic syndrome: A review of the literature",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1043661816311008"
+    },
+    {
+      "title": "Primary prevention of ASCVD and T2DM in patients at metabolic risk: an Endocrine Society clinical practice guideline",
+      "url": "https://academic.oup.com/jcem/article-abstract/104/9/3939/5540926"
+    },
+    {
+      "title": "Lipid management in patients with endocrine disorders: an endocrine society clinical practice guideline",
+      "url": "https://academic.oup.com/jcem/article-abstract/105/12/3613/5909161"
+    },
+    {
+      "title": "5. Lifestyle Management: Standards of Medical Care in Diabetes\u20142019",
+      "url": "https://diabetesjournals.org/care/article-abstract/42/Supplement_1/S46/31274"
+    },
+    {
+      "title": "European Society of Endocrinology Clinical Practice Guideline: endocrine work-up in obesity",
+      "url": "https://academic.oup.com/ejendo/article-abstract/182/1/G1/6653910"
+    },
+    {
+      "title": "Guidelines for Cardiovascular Risk Reduction in Patients With Type 2 Diabetes: JACC Guideline Comparison",
+      "url": "https://www.jacc.org/doi/abs/10.1016/j.jacc.2022.02.046"
+    },
+    {
+      "title": "Lifestyle modification approaches for the treatment of obesity in adults.",
+      "url": "https://psycnet.apa.org/fulltext/2020-09435-009.html"
+    },
+    {
+      "title": "Treatment of diabetes in older adults: an Endocrine Society clinical practice guideline",
+      "url": "https://academic.oup.com/jcem/article-abstract/104/5/1520/5413486"
+    },
+    {
+      "title": "Treatment of metabolic syndrome in children",
+      "url": "https://www.frontiersin.org/articles/10.3389/fendo.2019.00702/full"
+    },
+    {
+      "title": "Metabolic syndrome in children and adolescents: diagnostic criteria, therapeutic options and perspectives",
+      "url": "https://link.springer.com/article/10.1007/s13679-019-00357-x"
+    },
+    {
+      "title": "Polycystic ovary syndrome in adolescence",
+      "url": "https://www.mdpi.com/2076-3271/7/10/101"
+    },
+    {
+      "title": "Metabolic syndrome",
+      "url": "https://www.nature.com/articles/s41572-024-00563-5"
+    },
+    {
+      "title": "Metabolic diseases in the East Asian populations",
+      "url": "https://www.nature.com/articles/s41575-025-01058-8"
+    },
+    {
+      "title": "Metabolic dysfunction-associated steatotic liver disease in adults",
+      "url": "https://www.nature.com/articles/s41572-025-00599-1"
+    },
+    {
+      "title": "Management: Lifestyle Medicine Approaches to Insulin Resistance, Prediabetes, Type 2 Diabetes, and Diabetes Complications",
+      "url": "https://www.taylorfrancis.com/chapters/edit/10.1201/9781003227793-37/management-lifestyle-medicine-approaches-insulin-resistance-prediabetes-type-2-diabetes-diabetes-complications-reshmi-srinath-tracey-rosa-leena-shah-jeffrey-mechanick"
+    },
+    {
+      "title": "Prediabetes",
+      "url": "https://www.nature.com/articles/s41572-025-00635-0"
+    },
+    {
+      "title": "Hidden in the Fat: Unpacking the Metabolic Tango Between Metabolic Dysfunction-Associated Steatotic Liver Disease and Metabolic Syndrome",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11989262/"
+    },
+    {
+      "title": "Insulin resistance in adipocytes: novel insights into the pathophysiology of metabolic syndrome",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0261561423004508"
+    },
+    {
+      "title": "Overview: Dysglycemia-Based Chronic Disease\u2014Exposing Lifestyle Medicine Targets",
+      "url": "https://www.taylorfrancis.com/chapters/edit/10.1201/9781003227793-35/overview-dysglycemia-based-chronic-disease%E2%80%94exposing-lifestyle-medicine-targets-michael-via-jeffrey-mechanick"
+    },
+    {
+      "title": "Polycystic ovary syndrome: A metabolic disorder with therapeutic opportunities",
+      "url": "https://www.cell.com/cell-metabolism/abstract/S1550-4131(25)00358-4"
+    },
+    {
+      "title": "32 Management: Approaches to Lifestyle Insulin Resistance, Medicine Prediabetes, Type 2 Diabetes, and Diabetes Complications",
+      "url": "https://books.google.com/books?hl=en&lr=&id=i6ITEQAAQBAJ&oi=fnd&pg=PA370&dq=Nature+Reviews+Disease+Primers+2024+metabolic+syndrome+management+lifestyle+insulin+resistance&ots=FMZ1vTP26I&sig=wD0biUL-1o_wItGcQd2wt6wwdnA"
+    },
+    {
+      "title": "Reduction in the incidence of type 2 diabetes with lifestyle intervention or metformin",
+      "url": "https://www.nejm.org/doi/abs/10.1056/NEJMoa012512"
+    },
+    {
+      "title": "Reduction in the incidence of type 2 diabetes with lifestyle intervention or metformin.",
+      "url": "https://jdc.jefferson.edu/medfp/322/"
+    },
+    {
+      "title": "Cardiovascular effects of intensive lifestyle intervention in type 2 diabetes",
+      "url": "https://www.nejm.org/doi/abs/10.1056/NEJMoa1212914"
+    },
+    {
+      "title": "TCF7L2 Polymorphisms and Progression to Diabetes in the Diabetes Prevention Program",
+      "url": "https://www.nejm.org/doi/abs/10.1056/NEJMoa062418"
+    },
+    {
+      "title": "Effect of nateglinide on the incidence of diabetes and cardiovascular events",
+      "url": "https://www.nejm.org/doi/abs/10.1056/NEJMoa1001122"
+    },
+    {
+      "title": "Initial management of glycemia in type 2 diabetes mellitus",
+      "url": "https://www.nejm.org/doi/abs/10.1056/NEJMcp021106"
+    },
+    {
+      "title": "Pioglitazone for diabetes prevention in impaired glucose tolerance",
+      "url": "https://www.nejm.org/doi/abs/10.1056/NEJMoa1010949"
+    },
+    {
+      "title": "Effect of valsartan on the incidence of diabetes and cardiovascular events",
+      "url": "https://www.nejm.org/doi/abs/10.1056/NEJMoa1001121"
+    },
+    {
+      "title": "Tirzepatide for obesity treatment and diabetes prevention",
+      "url": "https://www.nejm.org/doi/abs/10.1056/NEJMoa2410819"
+    },
+    {
+      "title": "Should the metabolic syndrome patient with prediabetes be offered pharmacotherapy?",
+      "url": "https://link.springer.com/article/10.1007/s11892-010-0170-y"
+    },
+    {
+      "title": "Mediterranean diets and metabolic syndrome status in the PREDIMED randomized trial",
+      "url": "https://www.cmaj.ca/content/186/17/E649.short"
+    },
+    {
+      "title": "Effect of a Mediterranean diet supplemented with nuts on metabolic syndrome status: one-year results of the PREDIMED randomized trial",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/773456"
+    },
+    {
+      "title": "\u2026\u00a0on energy-reduced Mediterranean diet adherence among patients with metabolic syndrome: interim analysis of the PREDIMED-Plus randomized clinical trial",
+      "url": "https://jamanetwork.com/journals/jama/article-abstract/2752925"
+    },
+    {
+      "title": "Mediterranean diet and risk of heart failure: results from the PREDIMED randomized controlled trial",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/ejhf.750"
+    },
+    {
+      "title": "Effects of a Mediterranean-style diet on cardiovascular risk factors: a randomized trial",
+      "url": "https://www.acpjournals.org/doi/abs/10.7326/0003-4819-145-1-200607040-00004"
+    },
+    {
+      "title": "Mediterranean diet and invasive breast cancer risk among women at high cardiovascular risk in the PREDIMED trial: a randomized clinical trial",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2434738"
+    },
+    {
+      "title": "The Mediterranean diet improves the systemic lipid and DNA oxidative damage in metabolic syndrome individuals. A randomized, controlled, trial",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0261561412001690"
+    },
+    {
+      "title": "Mediterranean diet improves high-density lipoprotein function in high-cardiovascular-risk individuals: a randomized controlled trial",
+      "url": "https://www.ahajournals.org/doi/abs/10.1161/circulationaha.116.023712"
+    },
+    {
+      "title": "\u2026\u00a0the Mediterranean diet and lifestyle intervention on lipoprotein subclass profiles among metabolic syndrome patients: findings of a randomized controlled trial",
+      "url": "https://www.mdpi.com/1422-0067/25/2/1338"
+    },
+    {
+      "title": "The Mediterranean diet, plasma metabolome, and cardiovascular disease risk",
+      "url": "https://academic.oup.com/eurheartj/article-abstract/41/28/2645/5836100"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 50420,
+    "output_tokens": 17028,
+    "total_tokens": 67448,
+    "input_cost": 0.063025,
+    "output_cost": 0.17028000000000001,
+    "total_cost": 0.233305
+  }
+}

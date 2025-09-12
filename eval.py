@@ -143,20 +143,20 @@ def display_coverage(title, counts, total_points):
 
 
 if __name__ == "__main__":
-    src_dir = "data/CS/veritas"
+    src_dir = "data/PubMed/veritas"
     preds = [
-        "claude-3.7-sonnet",
-        "claude-4-sonnet",
-        "gemini-2.5-deep-research",
-        "gemini-2.5-flash",
-        "gemini-2.5-pro",
+        # "claude-3.7-sonnet",
+        # "claude-4-sonnet",
+        # "gemini-2.5-deep-research",
+        # "gemini-2.5-flash",
+        # "gemini-2.5-pro",
         "gpt-5",
-        "gpt-5-mini"
+        # "gpt-5-mini"
     ]
 
     for pred in preds:
-        pred_dir = f"data/CS/veritas_pred/{pred}"
-        eval_dir = f"data/CS/veritas_eval_deepseek_reasoner/{pred}"
+        pred_dir = f"data/PubMed/veritas_pred/{pred}"
+        eval_dir = f"data/PubMed/veritas_eval_deepseek_reasoner/{pred}"
         os.makedirs(eval_dir, exist_ok=True)
 
         total_stat = []
@@ -167,6 +167,7 @@ if __name__ == "__main__":
             "unknown": 0
         }
         total_points = 0
+        costs = []
         with open(os.path.join(eval_dir, "evaluation_report.txt"), "a", encoding="utf-8") as f_eval:
             for filename in os.listdir(src_dir):
                 if not filename.endswith(".json"):
@@ -180,6 +181,9 @@ if __name__ == "__main__":
                 with open(os.path.join(pred_dir, filename), "r") as f:
                     data = json.load(f)
                     agent_generated_plan = data["research_plan"]
+                    token_usage = data.get("token_usage", {})
+                    if "total_cost" in data.get("token_usage", {}):
+                        costs.append(data["token_usage"]["total_cost"])
 
                 print(f"🚀 Starting evaluation of {filename} ({pred})...")
                 eval_report = evaluate_plan_quality(ground_truth_plan, agent_generated_plan)
@@ -193,7 +197,8 @@ if __name__ == "__main__":
                     "filename": filename,
                     "counts": counts,
                     "total_points": points,
-                    "evaluation_report": eval_report
+                    "evaluation_report": eval_report,
+                    "token_usage": token_usage
                 }
                 total_stat.append(stat)
 
@@ -210,3 +215,8 @@ if __name__ == "__main__":
             coverage_content = display_coverage(f"deep research agent powered by {pred}", coverage_counts, total_points)
             print(coverage_content)
             f_eval.write(f"\n\n{coverage_content}\n")
+            if len(costs) > 0:
+                avg_cost = sum(costs) / len(costs)
+                cost_content = f"Average cost per instance: ${avg_cost:.4f}\n"
+                print(cost_content)
+                f_eval.write(cost_content)

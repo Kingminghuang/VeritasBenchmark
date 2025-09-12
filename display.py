@@ -19,15 +19,15 @@ def display_coverage(title, counts, total_points):
         return ""
 
 if __name__ == "__main__":
-    eval_dir = "data/CS/veritas_eval_deepseek_reasoner"
+    eval_dir = "data/PubMed/veritas_eval_deepseek_reasoner"
     preds = [
-        "claude-3.7-sonnet",
-        "claude-4-sonnet",
-        "gemini-2.5-deep-research",
-        "gemini-2.5-flash",
-        "gemini-2.5-pro",
+        # "claude-3.7-sonnet",
+        # "claude-4-sonnet",
+        # "gemini-2.5-deep-research",
+        # "gemini-2.5-flash",
+        # "gemini-2.5-pro",
         "gpt-5",
-        "gpt-5-mini"
+        # "gpt-5-mini"
     ]
 
     with open(os.path.join(eval_dir, "research_coverage.txt"), "a", encoding="utf-8") as f_cov:
@@ -40,6 +40,7 @@ if __name__ == "__main__":
                 "not covered": 0,
             }
             total_points = 0
+            costs = []
             for stat in coverages:
                 print(f"Evaluating coverage for {stat['filename']}...")
                 print(display_coverage(stat['filename'], stat['counts'], stat['total_points']))
@@ -48,8 +49,15 @@ if __name__ == "__main__":
                         continue
                     coverage_counts[status] += count
                 total_points += stat['total_points']
+                if "total_cost" in stat.get("token_usage", {}):
+                    costs.append(stat["token_usage"]["total_cost"])
             if total_points != sum(coverage_counts.values()):
                 print("Warning: Total points do not match sum of individual status counts.")
             coverage_content = display_coverage(f"deep research agent powered by {pred}", coverage_counts, total_points)
             print(coverage_content)
             f_cov.write(f"\n\n{coverage_content}\n")
+            if len(costs) > 0:
+                avg_cost = sum(costs) / len(costs)
+                cost_content = f"Average cost per instance: ${avg_cost:.4f}\n"
+                print(cost_content)
+                f_cov.write(cost_content)

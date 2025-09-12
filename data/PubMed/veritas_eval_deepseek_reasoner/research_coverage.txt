@@ -1,0 +1,9 @@
+==========================================================================================
+Quantitative Coverage Analysis (deep research agent powered by gpt-5)
+==========================================================================================
+Total points evaluated: 54
+Fully Covered       : 48 / 54 (88.89%)
+Partially Covered   : 6 / 54 (11.11%)
+Not Covered         : 0 / 54 (0.00%)
+
+Average cost per instance: $0.1985

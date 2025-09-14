@@ -169,7 +169,7 @@ Please follow this structure:
     return extract_xml(response, "research_plan")
 
 if __name__ == "__main__":
-    corpus_dir = "data/PubMed/veritas"
+    corpus_dir = "data/PMC11835574/veritas"
     for file in os.listdir(corpus_dir):
         if not file.endswith(".json"):
             continue

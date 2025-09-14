@@ -113,8 +113,8 @@ def references_extraction(chapter_text, references):
 
 
 if __name__ == "__main__":
-    corpus_file = "data/PubMed/corpus.json"
-    src_file = "data/PubMed/A Comprehensive Review of Metabolic Syndrome.md"
+    corpus_file = "data/PMC11742314/corpus.json"
+    src_file = "data/PMC11742314/Multi-functional dressings for recovery and screenable treatment of wounds.md"
     print(f"正在处理文件: {src_file}")
     full_paper_text = load_paper(src_file)
     print(f"论文总字数: {len(full_paper_text)} 字")
@@ -123,7 +123,7 @@ if __name__ == "__main__":
         json.dump({"sections": sections, "references": references}, f, ensure_ascii=False, indent=2)
     print(f"{len(sections)}个章节被解析。")
 
-    veritas_dir = "data/PubMed/veritas"
+    veritas_dir = "data/PMC11742314/veritas"
     os.makedirs(veritas_dir, exist_ok=True)
     for i, section in enumerate(sections):
         if section['level'] != 3:

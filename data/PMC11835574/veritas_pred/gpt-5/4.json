@@ -1,0 +1,314 @@
+{
+  "question": "\nConsidering society's fundamental dependence on large-scale energy generation and the dual pressures of rising demand and the environmental unsustainability of fossil fuels, how does the strategic transition toward Distributed Energy Resources (DERs) explain the emergence of photovoltaic (PV) systems as a leading solution, and what does their rapid global expansion imply about the evolving structure and reliability of our future energy infrastructure?",
+  "research_plan": "<research_outline>\n(1) Clarify the research question, scope, and causal framing\n  (a) Restate inquiry: (i) Why the DER strategy elevates PV as a leading solution; (ii) What PV\u2019s rapid expansion implies for future grid structure and reliability.\n  (b) Define system boundaries: electricity sector focus with interfaces to mobility (EVs), buildings (heating/cooling), and industry.\n  (c) Time horizons: near term (0\u20135 years), medium term (5\u201315), long term (15\u201330).\n  (d) Geographic lens: global synthesis with regional contrasts (OECD vs. emerging economies; high-solar vs. mid-latitude systems; islands/weak grids).\n\n(2) Foundational concepts and metrics\n  (a) Define Distributed Energy Resources (DERs): distributed generation, storage, controllable loads/demand response (DR), EVs, and aggregation (virtual power plants, VPPs) at distribution/customer levels.\n  (b) Define PV systems: residential/commercial/industrial rooftop, community solar, small ground-mount; inverter-based; hybrids (PV+storage, AC- vs. DC-coupled).\n  (c) Grid structure typologies: centralized vs. decentralized; active distribution networks; DSOs; VPPs; microgrids; TSO-DSO coordination.\n  (d) Reliability constructs and metrics: adequacy vs. security vs. resilience; ELCC/capacity credit, LOLE/LOLP, EUE, SAIDI/SAIFI/MAIFI, frequency/voltage stability, system strength.\n\n(3) Strategic drivers of the DER transition\n  (a) Macro drivers: electrification-led demand growth; decarbonization and air quality; energy security; resilience to extreme weather and disasters.\n  (b) Technological enablers: cost declines/learning curves in PV, inverters, batteries; digitalization (AMI, IoT, edge control, DERMS/ADMS).\n  (c) Planning/implementation benefits: modularity, siting near load, short lead times, incremental capex, scalability.\n  (d) Policy and regulation: renewable targets, auctions, tax credits; evolution of net metering/net billing; interconnection/performance standards (e.g., IEEE 1547, UL 1741 SB, IEEE 2800, EU NC RfG, AS/NZS 4777.2).\n\n(4) Mechanisms explaining PV\u2019s emergence as the leading DER\n  (a) Economics: low LCOE via steep learning; low O&M; standardized finance (PPAs, leases, community models); sensitivity to interest rates and soft costs.\n  (b) Technical fit: modular from watts to MW; integration into built environments; low water use; rapid deployment; high scalability.\n  (c) Inverter-based controllability: Volt/VAR, ride-through, active power/voltage control; emerging grid-forming capabilities.\n  (d) Portfolio complementarity: PV + storage for shifting/firming; PV with DR and managed EV charging; co-optimization within VPPs.\n  (e) Benchmarking vs. other DERs: small wind, CHP/fuel cells, micro-hydro, standalone DR\u2014trade-offs in cost, emissions, siting, dispatchability, scalability.\n\n(5) Evidence base on PV\u2019s rapid global expansion\n  (a) Deployment patterns: growth rates; utility vs. distributed shares; leading regions (China, EU, US, India, Australia, LATAM, MENA).\n  (b) Distributed adoption: rooftop/C&I penetration; prosumer models; community/cooperative solar; tariff evolution.\n  (c) Market structure: installers/EPCs, aggregators/VPP operators, DERMS/ADMS vendors; supply chain dynamics and concentration.\n  (d) Constraints and catalysts: interconnection queues, permitting/soft costs, financing conditions, grid upgrade needs, policy stability.\n\n(6) Structural implications for future grids\n  (a) From one-way to bi-directional power flows: feeder backfeed, voltage regulation, protection redesign, hosting capacity analysis.\n  (b) Active distribution operations: DERMS/ADMS deployment, telemetry/communications, interoperability (e.g., IEEE 2030.5, OpenADR, IEC 61850).\n  (c) Aggregation and markets: VPPs and DER aggregators; distribution-level markets and local flexibility procurement; TSO-DSO data exchange and coordination.\n  (d) Microgrids and resilience nodes: islanding for critical loads; community/campus microgrids; black-start via storage with grid-forming inverters (emerging practice).\n  (e) Transmission interplay: local deferral potential vs. system-level needs for geographic diversity and balancing; congestion and curtailment patterns.\n\n(7) Reliability and resilience implications under high PV DER penetration\n  (a) Adequacy: ELCC of PV and PV+storage; duck-curve dynamics; seasonal adequacy (e.g., winter peaks, multi-day lulls).\n  (b) Operational flexibility: ramping needs; reserves; curtailment management; forecasting improvements; dynamic operating envelopes.\n  (c) Stability and system strength: reduced synchronous inertia/fault current; fast frequency response; grid-forming inverters; model validation and evolving grid codes.\n  (d) Power quality and protection: harmonics, voltage excursions, anti-islanding, adaptive/directional protection schemes.\n  (e) Resilience: reduced single points of failure; outage performance of PV+storage and microgrids; wildfire/public safety shutoffs; extreme weather impacts.\n  (f) Cyber-physical security: expanded attack surface; authentication, certification, coordinated defense across millions of endpoints.\n\n(8) Enabling solutions and mitigations\n  (a) Storage scale-up: distributed and co-located batteries (2\u20138+ hours); value stacking (arbitrage, capacity, ancillary services, resilience).\n  (b) Demand-side flexibility: time-/location-aware tariffs, DR programs, managed EV charging/V2G/V2H.\n  (c) Advanced inverter capabilities: standardized smart-inverter functions; progressive adoption of grid-forming controls; ride-through and performance testing.\n  (d) Planning and operations upgrades: probabilistic adequacy; stochastic unit commitment; T&D co-planning; feeder reconfiguration; DER visibility/telemetry.\n  (e) Policy/market design: aggregator participation in wholesale/capacity/ancillary markets; export compensation based on locational/time value; non-wires alternatives procurement; permitting/interconnection reform.\n  (f) Interoperability and data: open standards; secure telemetry; device certification and lifecycle management; data access and privacy.\n\n(9) Comparative portfolio view and sector coupling\n  (a) Complementarity with wind, hydro, geothermal, and firm low-carbon resources for seasonal balancing.\n  (b) Sector coupling sinks: hydrogen/e-fuels, thermal storage, flexible industrial loads to absorb surplus PV.\n  (c) Cost-reliability trade-offs: PV+storage vs. transmission buildout; centralized hardening vs. distributed resilience; locational diversity vs. local autonomy.\n\n(10) Case studies and learning agendas\n  (a) High-PV regions: South Australia (rooftop dominance, dynamic operating envelopes), California (duck curve, NEM reform, PV+storage hybrids), Germany (distributed PV in liberalized markets), China (gigawatt-scale growth and curtailment mitigation).\n  (b) Islands/weak grids: Hawaii, Puerto Rico, remote microgrids\u2014resilience-led architectures and grid-forming pilots.\n  (c) Transferability analysis: regulatory context, resource quality, grid topology, socioeconomic factors; lessons learned and pitfalls.\n\n(11) Methods, models, metrics, and datasets\n  (a) Models: capacity expansion; production cost; probabilistic adequacy (Monte Carlo); distribution power flow/hosting capacity; EMT/phasor stability; VPP/DERMS control simulations.\n  (b) Metrics: LCOE/LCOS; ELCC; LOLE/EUE; SAIDI/SAIFI/MAIFI/CEMI; curtailment; hosting capacity; emissions intensity; resilience KPIs.\n  (c) Datasets/sources: IEA/IRENA statistics; NREL/Lazard cost benchmarks; TSO/ISO reports (e.g., CAISO, AEMO, ENTSO-E, NERC); IEEE/IEC standards; utility interconnection/hosting capacity data.\n  (d) Scenario/stress tests: PV penetration trajectories; storage durations; tariff/market variants; extreme weather (heat waves, smoke, Dunkelflaute); cyber incident drills.\n\n(12) Risks, constraints, and sustainability\n  (a) Interconnection queues and distribution upgrade bottlenecks; transparent hosting capacity maps.\n  (b) Supply chain concentration; manufacturing diversification; materials and recycling (PV modules, inverters, batteries).\n  (c) Land use and dual-use strategies: rooftops, canopies, agrivoltaics, biodiversity safeguards.\n  (d) Workforce and operational readiness: installer capacity; utility/aggregator operational and cyber skills.\n  (e) Equity and affordability: community solar/VPPs; inclusive financing; avoiding regressive cost shifts.\n\n(13) Synthesis: answering the core question\n  (a) Causal chain: decarbonization + electrification + digitalization -> DER viability; PV\u2019s cost/modularity/standardization -> leadership within DER portfolios.\n  (b) Structural thesis: hybrid grids with active, bi-directional distribution systems; orchestrated DERs (VPPs, microgrids); strengthened DSO roles and TSO-DSO coordination; continued transmission for diversity and balancing.\n  (c) Reliability pathway: robust reliability via PV coupled with storage, DR, advanced inverters, forecasting, and market/planning reforms; emerging grid-forming/black-start capabilities primarily via storage-enabled systems.\n\n(14) Policy and investment priorities\n  (a) Standards and compliance: implement IEEE 1547/UL 1741 SB, IEEE 2800, EU NC RfG, AS/NZS 4777.2; roadmap grid-forming requirements and model validation.\n  (b) Market reforms: aggregator access to capacity/ancillary markets; time/location-aware tariffs; compensation for local flexibility and resilience services.\n  (c) Integrated planning and transparency: T&D co-optimization; probabilistic criteria; hosting capacity maps; streamlined permitting and interconnection.\n  (d) Equity and circularity: community participation, recycling infrastructure, sustainable and diversified supply chains.\n\n(15) Deliverables and timeline for the research program\n  (a) Landscape scan and data catalog; annotated bibliography.\n  (b) Modeling suite results (adequacy, operations, distribution hosting, stability).\n  (c) Case study briefs and policy diagnostics.\n  (d) Synthesis report: PV leadership rationale and grid structure/reliability roadmap; stakeholder-specific actions.\n</research_outline>",
+  "references": [
+    {
+      "title": "A review of traditional and advanced MPPT approaches for PV systems under uniformly insolation and partially shaded conditions",
+      "url": "https://www.mdpi.com/2076-3417/15/3/1031",
+      "content": ""
+    },
+    {
+      "title": "MPPT ALGORITHM FOR SOLAR-PV SYSTEM",
+      "url": "https://journal.unesa.ac.id/index.php/jistel/article/view/38881",
+      "content": ""
+    },
+    {
+      "title": "A Comprehensive Overview with Planning Guidelines for the Adoption of Utility-Scale PV Systems",
+      "url": "https://www.mdpi.com/1996-1073/17/24/6245",
+      "content": ""
+    },
+    {
+      "title": "Advances and Optimization Trends in Photovoltaic Systems: A Systematic Review",
+      "url": "https://www.mdpi.com/2673-2688/6/9/225",
+      "content": ""
+    },
+    {
+      "title": "Performance validation of global MPPT for efficient power extraction through PV system under complex partial shading effects",
+      "url": "https://www.nature.com/articles/s41598-025-01816-3",
+      "content": ""
+    },
+    {
+      "title": "A Comprehensive Review of Solar Photovoltaic Systems: Scope, Technologies, Applications, Progress, Challenges and Recommendations",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10955279/",
+      "content": ""
+    },
+    {
+      "title": "OPTIMIZING SOLAR POWER\u2014UNDERSTANDING PHOTOVOLTAIC EFFICIENCY FROM CELL TO SYSTEM SCALE",
+      "url": "https://www.seruvenyayinevi.com/Webkontrol/uploads/Fck/enginnermart25.pdf#page=71",
+      "content": ""
+    },
+    {
+      "title": "Dynamic and Adaptive Photovoltaic Shading Systems: Design and Architectural Integration for Energy Production and Indoor Comfort.",
+      "url": "https://webthesis.biblio.polito.it/33696/",
+      "content": ""
+    },
+    {
+      "title": "Maximum power extraction from solar PV systems using intelligent based soft computing strategies: A critical review and comprehensive performance analysis",
+      "url": "https://www.cell.com/heliyon/fulltext/S2405-8440(23)09625-1",
+      "content": ""
+    },
+    {
+      "title": "AI-Enhanced MPPT Control for Grid-Connected Photovoltaic Systems Using ANFIS-PSO Optimization",
+      "url": "https://www.mdpi.com/2079-9292/14/13/2649",
+      "content": ""
+    },
+    {
+      "title": "A review on topology and control strategies of high-power inverters in large-scale photovoltaic power plants",
+      "url": "https://www.cell.com/heliyon/fulltext/S2405-8440(25)00714-5",
+      "content": ""
+    },
+    {
+      "title": "A comprehensive review of multi-level inverters, modulation, and control for grid-interfaced solar PV systems",
+      "url": "https://www.nature.com/articles/s41598-024-84296-1",
+      "content": ""
+    },
+    {
+      "title": "Multilevel inverters design, topologies, and applications: research issues, current, and future directions",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10704631/",
+      "content": ""
+    },
+    {
+      "title": "Advancements in Power Converter Technologies for Integrated Energy Storage Systems: Optimizing Renewable Energy Storage and Grid Integration",
+      "url": "https://www.mdpi.com/2227-9717/13/6/1819",
+      "content": ""
+    },
+    {
+      "title": "Topological advances in isolated DC\u2013DC converters: High-efficiency design for renewable energy integration",
+      "url": "https://www.mdpi.com/2071-1050/17/6/2336",
+      "content": ""
+    },
+    {
+      "title": "The role of multilevel inverters in mitigating harmonics and improving power quality in renewable-powered smart grids: a comprehensive review",
+      "url": "https://www.mdpi.com/1996-1073/18/8/2065",
+      "content": ""
+    },
+    {
+      "title": "Advancements in multilevel inverters for efficient Harnessing of renewable energy: A comprehensive review and application analysis",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10713318/",
+      "content": ""
+    },
+    {
+      "title": "Survey of Reliability Challenges and Assessment in Power Grids with High Penetration of Inverter-Based Resources",
+      "url": "https://www.mdpi.com/1996-1073/17/21/5352",
+      "content": ""
+    },
+    {
+      "title": "Comprehensive review and analysis of photovoltaic energy conversion topologies",
+      "url": "https://www.researchgate.net/profile/Mansouri-Adil/publication/379543749_Comprehensive_review_and_analysis_of_photovoltaic_energy_conversion_topologies/links/660e8a4e390c214cfd35dc94/Comprehensive-review-and-analysis-of-photovoltaic-energy-conversion-topologies.pdf",
+      "content": ""
+    },
+    {
+      "title": "Advancing Power Systems with Renewable Energy and Intelligent Technologies: A Comprehensive Review on Grid Transformation and Integration",
+      "url": "https://www.mdpi.com/2079-9292/14/6/1159",
+      "content": ""
+    },
+    {
+      "title": "Dynamic global maximum power point tracking for partially shaded PV arrays in grid-connected PV systems",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10501931/",
+      "content": ""
+    },
+    {
+      "title": "\u2026\u00a0PARTIAL SHADING VIA GLOBAL MAXIMUM POWER POINT TRACKING TO OPTIMIZE PHOTOVOLTAIC ENERGY SYSTEMS: A COMPREHENSIVE REVIEW\u00a0\u2026",
+      "url": "https://www.africanscholarpublications.com/wp-content/uploads/2025/06/Proceedings-1-1.pdf",
+      "content": ""
+    },
+    {
+      "title": "A genetic algorithm approach for flexible power point tracking in partial shading conditions",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2590123024011952",
+      "content": ""
+    },
+    {
+      "title": "Design and Analysis of an Adaptive Global Maximum Power Point Tracking Algorithm for Enhanced Partial Shading Detection and GMPP Tracking",
+      "url": "https://link.springer.com/article/10.1007/s13369-025-10018-y",
+      "content": ""
+    },
+    {
+      "title": "Maximum power point tracking in PV arrays exposed to partial shading condition irrespective of the array configuration",
+      "url": "https://link.springer.com/article/10.1007/s12667-024-00666-8",
+      "content": ""
+    },
+    {
+      "title": "Smart hybrid algorithm for global maximum power point tracking under partial shading conditions",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/15567036.2024.2417089",
+      "content": ""
+    },
+    {
+      "title": "A novel improved grey wolf algorithm based global maximum power point tracker method considering partial shading",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10381715/",
+      "content": ""
+    },
+    {
+      "title": "Enhanced maximum power point tracking using modified PSO hybrid with MPC under partial shading conditions",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10701066/",
+      "content": ""
+    },
+    {
+      "title": "Global flexible power point tracking based on reinforcement learning for partially shaded PV arrays",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10709872/",
+      "content": ""
+    },
+    {
+      "title": "Comparative Analysis of the MPPT Algorithm in a Residence and a Grid-Connected Solar PV System Under Partial Shade Conditions-A Review",
+      "url": "https://ejournal.csol.or.id/index.php/csol/article/view/91",
+      "content": ""
+    },
+    {
+      "title": "A comprehensive review of control strategies to overcome challenges during LVRT in PV systems",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9525416/",
+      "content": ""
+    },
+    {
+      "title": "Modeling and stability analysis of $ LCL $-type grid-connected inverters: A comprehensive overview",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8804168/",
+      "content": ""
+    },
+    {
+      "title": "Grid\u2010connected photovoltaic inverters with low\u2010voltage ride through for a residential\u2010scale system: A review",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/2050-7038.12630",
+      "content": ""
+    },
+    {
+      "title": "Enhanced Current Limiting Strategy for Droop-Controlled Grid-Connected Inverters During LVRT",
+      "url": "http://ore.exeter.ac.uk/repository/handle/10871/141130",
+      "content": ""
+    },
+    {
+      "title": "Challenges And Issues In LVRT Control Strategies For Grid-Interfaced PV Systems: A Brief Review",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10995127/",
+      "content": ""
+    },
+    {
+      "title": "A review of control techniques for inverter-based distributed energy resources applications",
+      "url": "https://www.mdpi.com/1996-1073/17/12/2940",
+      "content": ""
+    },
+    {
+      "title": "Recent advances and control techniques in grid connected PV system\u2013A review",
+      "url": "https://www.academia.edu/download/57883651/4075-18147-1-PB.pdf",
+      "content": ""
+    },
+    {
+      "title": "Review and comparison of grid-tied inverter controllers in microgrids",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8926515/",
+      "content": ""
+    },
+    {
+      "title": "Critical review on various inverter topologies for PV system architectures",
+      "url": "https://ietresearch.onlinelibrary.wiley.com/doi/abs/10.1049/iet-rpg.2020.0317",
+      "content": ""
+    },
+    {
+      "title": "A multiobjective control strategy for harmonic current mitigation with enhanced LVRT operation of a grid-tied PV system without PLL under abnormal grid conditions",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9934897/",
+      "content": ""
+    },
+    {
+      "title": "Techno-Economic Optimization and Design of a Large-Scale Photovoltaic System",
+      "url": "https://webthesis.biblio.polito.it/34581/",
+      "content": ""
+    },
+    {
+      "title": "Modular HF Isolated MV String Inverters Enable a New Paradigm for Large PV Farms",
+      "url": "https://www.osti.gov/biblio/1907385",
+      "content": ""
+    },
+    {
+      "title": "Modular Wide-bandgap String Inverters for Low-cost Medium-voltage Transformerless PV Systems",
+      "url": "https://www.osti.gov/biblio/2310962",
+      "content": ""
+    },
+    {
+      "title": "A Comprehensive Overview with Planning Guidelines for the Adoption of Utility-Scale PV Systems",
+      "url": "https://www.mdpi.com/1996-1073/17/24/6245",
+      "content": ""
+    },
+    {
+      "title": "Identifying critical failures in PV systems based on PV inverters' monitoring unit: A techno-economic analysis",
+      "url": "https://www.mdpi.com/1996-1073/17/18/4738",
+      "content": ""
+    },
+    {
+      "title": "A Comprehensive Review of Solar PV Integration with Smart-Grids: Challenges, Standards, and Grid Codes",
+      "url": "https://www.mdpi.com/1996-1073/18/9/2221",
+      "content": ""
+    },
+    {
+      "title": "Us solar photovoltaic system and energy storage cost benchmarks, with minimum sustainable price analysis: Q1 2023",
+      "url": "https://www.osti.gov/biblio/2005540",
+      "content": ""
+    },
+    {
+      "title": "\u2026\u00a0Evaluation of Photovoltaic Self-Consumption Systems on Industrial Rooftops Under Continental Mediterranean Climate Conditions with Multi-String Inverter Topology",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5202003",
+      "content": ""
+    },
+    {
+      "title": "Impact on the Technical Performance of a Utility-Scale PV Plant when Using Different Sizes and Numbers of Transformers",
+      "url": "https://lup.lub.lu.se/student-papers/search/publication/9163705",
+      "content": ""
+    },
+    {
+      "title": "testing of grid connected rooftop solar photovoltaic systems for commercial buildings",
+      "url": "https://books.google.com/books?hl=en&lr=&id=4Nx3EQAAQBAJ&oi=fnd&pg=PA141&dq=string+vs+central+vs+modular+inverters+utility-scale+PV+comparative+study+2020+2024&ots=Mi3HuH7Tmt&sig=_JxtswqymfikieFjJE5hlWZehNA",
+      "content": ""
+    },
+    {
+      "title": "A Comprehensive Review of Solar PV Integration with Smart-Grids: Challenges, Standards, and Grid Codes",
+      "url": "https://www.mdpi.com/1996-1073/18/9/2221",
+      "content": ""
+    },
+    {
+      "title": "Reviews of Photovoltaic and Energy Storage Systems in Buildings for Sustainable Power Generation and Utilization from Perspectives of System Integration\u00a0\u2026",
+      "url": "https://www.mdpi.com/1996-1073/18/11/2683",
+      "content": ""
+    },
+    {
+      "title": "AI-Enhanced MPPT Control for Grid-Connected Photovoltaic Systems Using ANFIS-PSO Optimization",
+      "url": "https://www.mdpi.com/2079-9292/14/13/2649",
+      "content": ""
+    },
+    {
+      "title": "Next-Generation Smart Inverters: Bridging AI, Cybersecurity, and Policy Gaps for Sustainable Energy Transition",
+      "url": "https://www.mdpi.com/2227-7080/13/4/136",
+      "content": ""
+    },
+    {
+      "title": "Photovoltaics and Battery-Based End-to-End Direct Current Sustainable Power Networks-Concept, Design, and Control",
+      "url": "https://search.proquest.com/openview/9246c03e80aee3a70693cb2b33a62aca/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      "content": ""
+    },
+    {
+      "title": "An improved method to estimate maximum available power for frequency support from solar PV plants under varying weather conditions",
+      "url": "https://ieeexplore.ieee.org/abstract/document/11000272/",
+      "content": ""
+    },
+    {
+      "title": "Discontinuous Multilevel Pulse Width Modulation Technique for Grid Voltage Quality Improvement and Inverter Loss Reduction in Photovoltaic Systems",
+      "url": "https://www.mdpi.com/2079-9292/14/13/2695",
+      "content": ""
+    },
+    {
+      "title": "Hybrid and Advanced Energy Storage Systems: Integration, Applications, and Future Trends",
+      "url": "https://www.intechopen.com/chapters/1219526",
+      "content": ""
+    },
+    {
+      "title": "Solar\u2010Powered Green Hydrogen from Electrolyzer (PV\u2010H2): A Review",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/solr.202500150",
+      "content": ""
+    },
+    {
+      "title": "Hybrid and Advanced Energy Storage Systems: Integration",
+      "url": "https://books.google.com/books?hl=en&lr=&id=u55fEQAAQBAJ&oi=fnd&pg=PA3&dq=synergy+of+high-power+inverter+technology+and+MPPT+algorithms+in+utility-scale+PV+plants+partial+shading+grid+integration+review+2024+2025&ots=q5R8OumID_&sig=EsYMm5lA54yRsiC5D4XiIT9B_Oc",
+      "content": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 67497,
+    "output_tokens": 18230,
+    "total_tokens": 85727,
+    "input_cost": 0.08437125000000001,
+    "output_cost": 0.18230000000000002,
+    "total_cost": 0.26667125
+  }
+}

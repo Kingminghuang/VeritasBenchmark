@@ -1,0 +1,314 @@
+{
+  "question": "\nTo what extent do the synergistic advancements in high-power inverter technology and sophisticated Maximum Power Point Tracking (MPPT) algorithms\u2014ranging from classic calculation-based methods to intelligent hybrid schemes\u2014collectively address the multifaceted design and operational challenges of Large-Scale PV Power Plants, particularly in optimizing energy extraction under dynamic and partially shaded conditions while mitigating the inherent limitations of component complexity, power loss, and grid integration?\n",
+  "research_plan": "Plan (tools and team members)\n- Tools to use\n  - planning_tool: track steps and completion.\n  - web_search_agent: scan for current themes and terminology on high-power inverters, MPPT (including PSC/global), and grid-integration.\n  - deep_researcher_agent: reserve for deeper sweeps if gaps arise after the scan.\n  - deep_analyzer_agent: decompose the ORIGINAL TASK, structure taxonomy, KPIs, and synthesize the final outline.\n- Team roles\n  - PV Systems Lead: define scope and KPIs; map plant architectures.\n  - Power Electronics Specialist: inverter topologies, devices, modulation, thermal/EMI, efficiency.\n  - Control/MPPT Scientist: classical vs intelligent/hybrid MPPT, PSC/global methods, real-time feasibility.\n  - Grid Integration Expert: grid codes, LVRT/FRT, grid-following/forming coordination with MPPT.\n  - Reliability & O&M Analyst: complexity vs MTBF/MTTR, failure modes, maintainability.\n  - Techno-Economic Analyst: LCOE/NPV framework; CAPEX/OPEX\u2013yield trade-offs.\n  - Test & Validation Engineer: EN 50530/Sandia profiles, HIL/SiL, field A/B tests and KPIs.\n- Step-by-step execution\n  1) Use web_search_agent to refresh terminology and contemporary directions across inverters, MPPT (dynamic/PSC), and grid-integration.\n  2) Use deep_analyzer_agent on the ORIGINAL TASK to decompose research dimensions and map them to outline sections; align with KPIs and constraints.\n  3) Synthesize a hierarchical research outline centered on inverter\u2013MPPT synergy for dynamic and partially shaded conditions, emphasizing complexity, power-loss, and grid-integration mitigations.\n  4) Verify coverage versus task requirements; ensure metrics, benchmarks, and validation paths are explicit.\n\n<research_outline>\n(1) Define scope, terms, and KPIs\n  (a) Scope: utility-scale PV plants (1500 Vdc) using central, string, or clustered \u201cvirtual-central\u201d architectures; optional DC/DC front-ends and DMPPT/MLPE.\n  (b) Key concepts: high-power inverter tech (2L vs multilevel NPC/T-type/ANPC, CHB/MMC; Si vs SiC/GaN wide-bandgap) and MPPT classes (classical calculation-based, global/PSC-aware, intelligent, hybrid, distributed).\n  (c) Operating conditions: fast irradiance ramps, partially shaded conditions (row/soiling/terrain/cloud-edge), temperature swings, curtailment events, weak-grid operation.\n  (d) KPIs and constraints: annual energy yield and performance ratio; static/dynamic MPPT efficiency (EN 50530); global MPP hit rate; convergence time; inverter EU/CEC and partial-load efficiency; DC-link ripple; THD/flicker; LVRT/HVRT pass rate; P\u2013Q capability; ramp-rate compliance; component count vs MTBF; LCOE/NPV impact.\n\n(2) Baseline challenges for large-scale PV\n  (a) Dynamic irradiance and PSC: multi-peak P\u2013V curves, local maxima trapping, time-varying operating point.\n  (b) Power-stage constraints: efficiency vs bandwidth trade-offs, filter resonance/EMI/dv-dt, thermal cycling, current limits.\n  (c) System complexity: multi-channel MPPT coordination, communication, cybersecurity, commissioning.\n  (d) Grid integration: weak-grid stability, synchronization (PLL vs PLL-less/gfm), ride-through, harmonic standards, ancillary services.\n  (e) Reliability and O&M: added failure points with DMPPT/MLPE; bypass diode stress; maintainability and spares.\n\n(3) High-power inverter technology landscape\n  (a) Architectures: central vs string vs modular MV string/clustered; transformer and MV feeders; optional per-string DC/DC.\n  (b) Topologies: 2L VSI; 3L NPC/T-type/ANPC (mainstream at utility scale); CHB and MMC for MV; isolated MV string concepts.\n  (c) Semiconductors: SiC for higher switching frequency and efficiency; GaN at lower power; implications for filter size, bandwidth, and partial-load performance.\n  (d) Modulation/control: SPWM/SVM, discontinuous PWM, SHE-PWM; neutral-point balancing; model predictive control; active damping of LCL; dead-time compensation.\n  (e) Grid-following vs grid-forming: droop/virtual inertia; transition behaviors; interaction with MPPT dynamics under events.\n  (f) Thermal/EMI design: liquid cooling, mission-profile-based design, EMI filtering for high dv/dt devices.\n\n(4) MPPT algorithm taxonomy and implementation realities\n  (a) Classical: P&O, Incremental Conductance, Fractional Voc/Isc, Ripple Correlation, extremum seeking.\n  (b) Enhanced classical: adaptive step size, perturbation scheduling, predictive drift-free variants, noise-robust filtering.\n  (c) Global/PSC-aware: periodic sweeps/segment scans; curve reconstruction/mapping; PSC detection triggers; bounded scans to limit losses.\n  (d) Intelligent/metaheuristic: PSO/DE/GWO/GA/SA; fuzzy/ANN/ANFIS/SVM; reinforcement learning (policy/value methods); MPC-based MPPT with constraints.\n  (e) Hybrids: coarse global search + fine local tracker; loss-/thermal-aware objectives to maximize net AC energy, not just DC power.\n  (f) Distributed MPPT: multi-MPPT string inputs; module/submodule optimizers; CHB submodule MPPT; energy gain vs added losses and reliability impacts.\n  (g) Real-time constraints: DSP/FPGA feasibility, deterministic timing, quantization/sensor noise, synchronization with inverter control loops.\n\n(5) Synergy mechanisms: inverter technology \u00d7 MPPT algorithms\n  (a) Bandwidth alignment: SiC-enabled higher bandwidth reduces MPPT-induced oscillations and supports faster convergence under ramps.\n  (b) Architectural decoupling: per-string DC/DC and multi-MPPT inputs isolate mismatch; CHB/MMC submodule MPPT enhances PSC tolerance where economic.\n  (c) Loss-aware operation: integrate inverter efficiency maps and switching-loss models into MPPT cost functions; minimize scan and dither losses.\n  (d) Stability and compliance: coordinate MPPT with grid-following/forming controls and LVRT/FRT logic; rate-limit or suspend MPPT during grid events; enforce ramp-rate and PQ priorities.\n  (e) Diagnostics and forecasting: shade/fault detection, irradiance forecasting, and telemetry-driven MPPT mode switching and scheduling.\n\n(6) Experimental scenarios, datasets, and benchmarks\n  (a) Dynamic profiles: EN 50530 static/dynamic tests; Sandia/NREL transient irradiance; standardized PSC patterns (cloud edge, row shadows, random soiling).\n  (b) Grid events: voltage sags/swells (depth-duration matrix), frequency excursions, unbalance, harmonics; weak-grid cases; gfm vs gfl comparisons.\n  (c) Testbeds: PV emulator with PSC capability; HIL/RTDS; grid emulator; field trials where possible.\n  (d) KPIs and logs: tracking efficiency, GMPPT hit rate, time-to-GMPP, scan overhead, DC-link ripple, THD/flicker, thermal cycling metrics, LVRT/HVRT pass rate, availability.\n\n(7) Design trade-offs and comparative evaluations\n  (a) Energy capture vs computation/scan losses across MPPT classes at various switching frequencies and filter designs.\n  (b) Complexity/reliability trade-offs: DMPPT and CHB increase component count but can raise yield under severe PSC; quantify MTBF/MTTR and redundancy effects.\n  (c) Efficiency and thermal behavior: Si vs SiC; DPWM vs continuous PWM; filter sizing; partial-load maps; heat-sink mass and cooling.\n  (d) Control stability: MPPT step size vs inner loop bandwidth; DC-link dynamics; PLL/gfm interactions; active damping margins.\n\n(8) Grid-integration co-design\n  (a) Grid codes and standards: IEEE 1547/1547.1, UL 1741 SB, IEEE 2800, ENTSO-E NC RfG; mapping behaviors to compliance tests.\n  (b) Ancillary services: Volt/VAR, Volt/Watt, frequency-watt; headroom reservation and curtailment-aware MPPT; ramp-rate enforcement.\n  (c) Harmonics/EMI: LCL design and active damping; effect of MPPT perturbations on harmonic spectra; EMC compliance.\n  (d) Plant-level coordination: EMS/SCADA supervisory control that arbitrates MPPT, curtailment, and grid services across many inverters.\n\n(9) Power-loss minimization strategies\n  (a) Converter-level: optimized switching frequency/interleaving, soft-switching, dead-time compensation, SHE-PWM to reduce harmonics.\n  (b) MPPT-level: low-dither steady-state tracking, bounded/global scans with intelligent triggers, predictive/hybrid schemes to reduce retracking overhead.\n  (c) System-level: architecture choices minimizing extra conversion stages; operating point selection considering net AC efficiency.\n\n(10) Techno-economic assessment framework\n  (a) Compare architectures: central vs string vs CHB/DMPPT hybrids under varying PSC severity and grid strength.\n  (b) Metrics: CAPEX/OPEX, yield gain, added losses, availability; compute LCOE/NPV changes and sensitivity to site conditions.\n  (c) Scenarios: shading persistence, ambient temperature, device tech (Si vs SiC), curtailment frequency, O&M practices.\n\n(11) Integrated modeling and stability analysis\n  (a) Multi-timescale co-simulation: PV array + MPPT + inverter control + grid; include bypass diodes and thermal coupling.\n  (b) Small-signal analysis: coupled MPPT/DC-link/current-loop/PLL or grid-forming loops; anti-windup and saturation handling.\n  (c) Robustness: parameter uncertainty, sensor noise, latency; gain scheduling across operating points.\n\n(12) Comparative case studies\n  (a) SiC 3L T-type with enhanced classical vs hybrid metaheuristic MPPT under fast ramps and PSC.\n  (b) Multi-MPPT string vs central + selective MLPE in heterogeneous shading fields.\n  (c) Loss-aware vs power-only MPPT: net AC energy and thermal stress over annual missions.\n  (d) Grid-following vs grid-forming: stability and energy capture on weak grids.\n\n(13) Decision guidelines and best practices\n  (a) Site-dependent selection matrix: mismatch severity, grid strength, curtailment regime, O&M capability \u2192 recommended inverter/MPPT pairing.\n  (b) Control hierarchy and tuning: bandwidth allocation, MPPT step scheduling, LVRT/FRT coordination, ramp-rate and PQ priority policies.\n  (c) Commissioning/operations: DC voltage window selection vs module temperature; scan scheduling; cybersecurity posture (IEC 62351); test reproducibility.\n\n(14) Open challenges and future directions\n  (a) Certifiable AI/ML MPPT with formal safety and stability guarantees and deterministic fallbacks.\n  (b) Degradation-/soiling-aware MPPT and array reconfiguration co-optimization.\n  (c) Fleet-level coordination with storage; curtailment-optimized MPPT for grid services.\n  (d) Standardized PSC dynamic benchmarks and public datasets for reproducible evaluation.\n\n(15) Verification and success criteria\n  (a) Evidence triangulation: multiple independent sources (peer-reviewed, standards, vendor) per key claim.\n  (b) Acceptance thresholds: target dynamic MPPT efficiency uplift vs baseline; THD/flicker within limits; verified LVRT/HVRT; stability margins on weak grids; availability not degraded by added complexity.\n  (c) Reproducibility: open models, versioned datasets, parameter transparency; field A/B tests with statistical confidence.\n</research_outline>",
+  "references": [
+    {
+      "title": "A review of traditional and advanced MPPT approaches for PV systems under uniformly insolation and partially shaded conditions",
+      "url": "https://www.mdpi.com/2076-3417/15/3/1031",
+      "content": ""
+    },
+    {
+      "title": "MPPT ALGORITHM FOR SOLAR-PV SYSTEM",
+      "url": "https://journal.unesa.ac.id/index.php/jistel/article/view/38881",
+      "content": ""
+    },
+    {
+      "title": "A Comprehensive Overview with Planning Guidelines for the Adoption of Utility-Scale PV Systems",
+      "url": "https://www.mdpi.com/1996-1073/17/24/6245",
+      "content": ""
+    },
+    {
+      "title": "Advances and Optimization Trends in Photovoltaic Systems: A Systematic Review",
+      "url": "https://www.mdpi.com/2673-2688/6/9/225",
+      "content": ""
+    },
+    {
+      "title": "Performance validation of global MPPT for efficient power extraction through PV system under complex partial shading effects",
+      "url": "https://www.nature.com/articles/s41598-025-01816-3",
+      "content": ""
+    },
+    {
+      "title": "A Comprehensive Review of Solar Photovoltaic Systems: Scope, Technologies, Applications, Progress, Challenges and Recommendations",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10955279/",
+      "content": ""
+    },
+    {
+      "title": "OPTIMIZING SOLAR POWER\u2014UNDERSTANDING PHOTOVOLTAIC EFFICIENCY FROM CELL TO SYSTEM SCALE",
+      "url": "https://www.seruvenyayinevi.com/Webkontrol/uploads/Fck/enginnermart25.pdf#page=71",
+      "content": ""
+    },
+    {
+      "title": "Dynamic and Adaptive Photovoltaic Shading Systems: Design and Architectural Integration for Energy Production and Indoor Comfort.",
+      "url": "https://webthesis.biblio.polito.it/33696/",
+      "content": ""
+    },
+    {
+      "title": "Maximum power extraction from solar PV systems using intelligent based soft computing strategies: A critical review and comprehensive performance analysis",
+      "url": "https://www.cell.com/heliyon/fulltext/S2405-8440(23)09625-1",
+      "content": ""
+    },
+    {
+      "title": "AI-Enhanced MPPT Control for Grid-Connected Photovoltaic Systems Using ANFIS-PSO Optimization",
+      "url": "https://www.mdpi.com/2079-9292/14/13/2649",
+      "content": ""
+    },
+    {
+      "title": "A review on topology and control strategies of high-power inverters in large-scale photovoltaic power plants",
+      "url": "https://www.cell.com/heliyon/fulltext/S2405-8440(25)00714-5",
+      "content": ""
+    },
+    {
+      "title": "A comprehensive review of multi-level inverters, modulation, and control for grid-interfaced solar PV systems",
+      "url": "https://www.nature.com/articles/s41598-024-84296-1",
+      "content": ""
+    },
+    {
+      "title": "Multilevel inverters design, topologies, and applications: research issues, current, and future directions",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10704631/",
+      "content": ""
+    },
+    {
+      "title": "Advancements in Power Converter Technologies for Integrated Energy Storage Systems: Optimizing Renewable Energy Storage and Grid Integration",
+      "url": "https://www.mdpi.com/2227-9717/13/6/1819",
+      "content": ""
+    },
+    {
+      "title": "Topological advances in isolated DC\u2013DC converters: High-efficiency design for renewable energy integration",
+      "url": "https://www.mdpi.com/2071-1050/17/6/2336",
+      "content": ""
+    },
+    {
+      "title": "The role of multilevel inverters in mitigating harmonics and improving power quality in renewable-powered smart grids: a comprehensive review",
+      "url": "https://www.mdpi.com/1996-1073/18/8/2065",
+      "content": ""
+    },
+    {
+      "title": "Advancements in multilevel inverters for efficient Harnessing of renewable energy: A comprehensive review and application analysis",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10713318/",
+      "content": ""
+    },
+    {
+      "title": "Survey of Reliability Challenges and Assessment in Power Grids with High Penetration of Inverter-Based Resources",
+      "url": "https://www.mdpi.com/1996-1073/17/21/5352",
+      "content": ""
+    },
+    {
+      "title": "Comprehensive review and analysis of photovoltaic energy conversion topologies",
+      "url": "https://www.researchgate.net/profile/Mansouri-Adil/publication/379543749_Comprehensive_review_and_analysis_of_photovoltaic_energy_conversion_topologies/links/660e8a4e390c214cfd35dc94/Comprehensive-review-and-analysis-of-photovoltaic-energy-conversion-topologies.pdf",
+      "content": ""
+    },
+    {
+      "title": "Advancing Power Systems with Renewable Energy and Intelligent Technologies: A Comprehensive Review on Grid Transformation and Integration",
+      "url": "https://www.mdpi.com/2079-9292/14/6/1159",
+      "content": ""
+    },
+    {
+      "title": "Dynamic global maximum power point tracking for partially shaded PV arrays in grid-connected PV systems",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10501931/",
+      "content": ""
+    },
+    {
+      "title": "\u2026\u00a0PARTIAL SHADING VIA GLOBAL MAXIMUM POWER POINT TRACKING TO OPTIMIZE PHOTOVOLTAIC ENERGY SYSTEMS: A COMPREHENSIVE REVIEW\u00a0\u2026",
+      "url": "https://www.africanscholarpublications.com/wp-content/uploads/2025/06/Proceedings-1-1.pdf",
+      "content": ""
+    },
+    {
+      "title": "A genetic algorithm approach for flexible power point tracking in partial shading conditions",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2590123024011952",
+      "content": ""
+    },
+    {
+      "title": "Design and Analysis of an Adaptive Global Maximum Power Point Tracking Algorithm for Enhanced Partial Shading Detection and GMPP Tracking",
+      "url": "https://link.springer.com/article/10.1007/s13369-025-10018-y",
+      "content": ""
+    },
+    {
+      "title": "Maximum power point tracking in PV arrays exposed to partial shading condition irrespective of the array configuration",
+      "url": "https://link.springer.com/article/10.1007/s12667-024-00666-8",
+      "content": ""
+    },
+    {
+      "title": "Smart hybrid algorithm for global maximum power point tracking under partial shading conditions",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/15567036.2024.2417089",
+      "content": ""
+    },
+    {
+      "title": "A novel improved grey wolf algorithm based global maximum power point tracker method considering partial shading",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10381715/",
+      "content": ""
+    },
+    {
+      "title": "Enhanced maximum power point tracking using modified PSO hybrid with MPC under partial shading conditions",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10701066/",
+      "content": ""
+    },
+    {
+      "title": "Global flexible power point tracking based on reinforcement learning for partially shaded PV arrays",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10709872/",
+      "content": ""
+    },
+    {
+      "title": "Comparative Analysis of the MPPT Algorithm in a Residence and a Grid-Connected Solar PV System Under Partial Shade Conditions-A Review",
+      "url": "https://ejournal.csol.or.id/index.php/csol/article/view/91",
+      "content": ""
+    },
+    {
+      "title": "A comprehensive review of control strategies to overcome challenges during LVRT in PV systems",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9525416/",
+      "content": ""
+    },
+    {
+      "title": "Modeling and stability analysis of $ LCL $-type grid-connected inverters: A comprehensive overview",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8804168/",
+      "content": ""
+    },
+    {
+      "title": "Grid\u2010connected photovoltaic inverters with low\u2010voltage ride through for a residential\u2010scale system: A review",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/2050-7038.12630",
+      "content": ""
+    },
+    {
+      "title": "Enhanced Current Limiting Strategy for Droop-Controlled Grid-Connected Inverters During LVRT",
+      "url": "http://ore.exeter.ac.uk/repository/handle/10871/141130",
+      "content": ""
+    },
+    {
+      "title": "Challenges And Issues In LVRT Control Strategies For Grid-Interfaced PV Systems: A Brief Review",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10995127/",
+      "content": ""
+    },
+    {
+      "title": "A review of control techniques for inverter-based distributed energy resources applications",
+      "url": "https://www.mdpi.com/1996-1073/17/12/2940",
+      "content": ""
+    },
+    {
+      "title": "Recent advances and control techniques in grid connected PV system\u2013A review",
+      "url": "https://www.academia.edu/download/57883651/4075-18147-1-PB.pdf",
+      "content": ""
+    },
+    {
+      "title": "Review and comparison of grid-tied inverter controllers in microgrids",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8926515/",
+      "content": ""
+    },
+    {
+      "title": "Critical review on various inverter topologies for PV system architectures",
+      "url": "https://ietresearch.onlinelibrary.wiley.com/doi/abs/10.1049/iet-rpg.2020.0317",
+      "content": ""
+    },
+    {
+      "title": "A multiobjective control strategy for harmonic current mitigation with enhanced LVRT operation of a grid-tied PV system without PLL under abnormal grid conditions",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9934897/",
+      "content": ""
+    },
+    {
+      "title": "Techno-Economic Optimization and Design of a Large-Scale Photovoltaic System",
+      "url": "https://webthesis.biblio.polito.it/34581/",
+      "content": ""
+    },
+    {
+      "title": "Modular HF Isolated MV String Inverters Enable a New Paradigm for Large PV Farms",
+      "url": "https://www.osti.gov/biblio/1907385",
+      "content": ""
+    },
+    {
+      "title": "Modular Wide-bandgap String Inverters for Low-cost Medium-voltage Transformerless PV Systems",
+      "url": "https://www.osti.gov/biblio/2310962",
+      "content": ""
+    },
+    {
+      "title": "A Comprehensive Overview with Planning Guidelines for the Adoption of Utility-Scale PV Systems",
+      "url": "https://www.mdpi.com/1996-1073/17/24/6245",
+      "content": ""
+    },
+    {
+      "title": "Identifying critical failures in PV systems based on PV inverters' monitoring unit: A techno-economic analysis",
+      "url": "https://www.mdpi.com/1996-1073/17/18/4738",
+      "content": ""
+    },
+    {
+      "title": "A Comprehensive Review of Solar PV Integration with Smart-Grids: Challenges, Standards, and Grid Codes",
+      "url": "https://www.mdpi.com/1996-1073/18/9/2221",
+      "content": ""
+    },
+    {
+      "title": "Us solar photovoltaic system and energy storage cost benchmarks, with minimum sustainable price analysis: Q1 2023",
+      "url": "https://www.osti.gov/biblio/2005540",
+      "content": ""
+    },
+    {
+      "title": "\u2026\u00a0Evaluation of Photovoltaic Self-Consumption Systems on Industrial Rooftops Under Continental Mediterranean Climate Conditions with Multi-String Inverter Topology",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5202003",
+      "content": ""
+    },
+    {
+      "title": "Impact on the Technical Performance of a Utility-Scale PV Plant when Using Different Sizes and Numbers of Transformers",
+      "url": "https://lup.lub.lu.se/student-papers/search/publication/9163705",
+      "content": ""
+    },
+    {
+      "title": "testing of grid connected rooftop solar photovoltaic systems for commercial buildings",
+      "url": "https://books.google.com/books?hl=en&lr=&id=4Nx3EQAAQBAJ&oi=fnd&pg=PA141&dq=string+vs+central+vs+modular+inverters+utility-scale+PV+comparative+study+2020+2024&ots=Mi3HuH7Tmt&sig=_JxtswqymfikieFjJE5hlWZehNA",
+      "content": ""
+    },
+    {
+      "title": "A Comprehensive Review of Solar PV Integration with Smart-Grids: Challenges, Standards, and Grid Codes",
+      "url": "https://www.mdpi.com/1996-1073/18/9/2221",
+      "content": ""
+    },
+    {
+      "title": "Reviews of Photovoltaic and Energy Storage Systems in Buildings for Sustainable Power Generation and Utilization from Perspectives of System Integration\u00a0\u2026",
+      "url": "https://www.mdpi.com/1996-1073/18/11/2683",
+      "content": ""
+    },
+    {
+      "title": "AI-Enhanced MPPT Control for Grid-Connected Photovoltaic Systems Using ANFIS-PSO Optimization",
+      "url": "https://www.mdpi.com/2079-9292/14/13/2649",
+      "content": ""
+    },
+    {
+      "title": "Next-Generation Smart Inverters: Bridging AI, Cybersecurity, and Policy Gaps for Sustainable Energy Transition",
+      "url": "https://www.mdpi.com/2227-7080/13/4/136",
+      "content": ""
+    },
+    {
+      "title": "Photovoltaics and Battery-Based End-to-End Direct Current Sustainable Power Networks-Concept, Design, and Control",
+      "url": "https://search.proquest.com/openview/9246c03e80aee3a70693cb2b33a62aca/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      "content": ""
+    },
+    {
+      "title": "An improved method to estimate maximum available power for frequency support from solar PV plants under varying weather conditions",
+      "url": "https://ieeexplore.ieee.org/abstract/document/11000272/",
+      "content": ""
+    },
+    {
+      "title": "Discontinuous Multilevel Pulse Width Modulation Technique for Grid Voltage Quality Improvement and Inverter Loss Reduction in Photovoltaic Systems",
+      "url": "https://www.mdpi.com/2079-9292/14/13/2695",
+      "content": ""
+    },
+    {
+      "title": "Hybrid and Advanced Energy Storage Systems: Integration, Applications, and Future Trends",
+      "url": "https://www.intechopen.com/chapters/1219526",
+      "content": ""
+    },
+    {
+      "title": "Solar\u2010Powered Green Hydrogen from Electrolyzer (PV\u2010H2): A Review",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/solr.202500150",
+      "content": ""
+    },
+    {
+      "title": "Hybrid and Advanced Energy Storage Systems: Integration",
+      "url": "https://books.google.com/books?hl=en&lr=&id=u55fEQAAQBAJ&oi=fnd&pg=PA3&dq=synergy+of+high-power+inverter+technology+and+MPPT+algorithms+in+utility-scale+PV+plants+partial+shading+grid+integration+review+2024+2025&ots=q5R8OumID_&sig=EsYMm5lA54yRsiC5D4XiIT9B_Oc",
+      "content": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 55816,
+    "output_tokens": 16704,
+    "total_tokens": 72520,
+    "input_cost": 0.06977,
+    "output_cost": 0.16704000000000002,
+    "total_cost": 0.23681000000000002
+  }
+}

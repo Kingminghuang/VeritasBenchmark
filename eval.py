@@ -143,7 +143,7 @@ def display_coverage(title, counts, total_points):
 
 
 if __name__ == "__main__":
-    src_dir = "data/PubMed/veritas"
+    src_dir = "data/PMC11835574/veritas"
     preds = [
         # "claude-3.7-sonnet",
         # "claude-4-sonnet",
@@ -155,8 +155,8 @@ if __name__ == "__main__":
     ]
 
     for pred in preds:
-        pred_dir = f"data/PubMed/veritas_pred/{pred}"
-        eval_dir = f"data/PubMed/veritas_eval_deepseek_reasoner/{pred}"
+        pred_dir = f"data/PMC11835574/veritas_pred/{pred}"
+        eval_dir = f"data/PMC11835574/veritas_eval_deepseek_reasoner/{pred}"
         os.makedirs(eval_dir, exist_ok=True)
 
         total_stat = []
